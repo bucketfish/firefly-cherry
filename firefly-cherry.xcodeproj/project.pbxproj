@@ -77,6 +77,7 @@
 		4CFE55942AA8A76E00299450 /* ImageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageType.swift; sourceTree = "<group>"; };
 		4CFE55962AA8A78700299450 /* ColorScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorScheme.swift; sourceTree = "<group>"; };
 		4CFE55982AA8A8E500299450 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
+		4CFE559A2AA8A97300299450 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +161,7 @@
 				4CD8DA712AA83F0D0077D9B9 /* Preview Content */,
 				4CD8DAAC2AA871D80077D9B9 /* RPCHandler.swift */,
 				4CFE55982AA8A8E500299450 /* .gitignore */,
+				4CFE559A2AA8A97300299450 /* README.md */,
 			);
 			path = "firefly-cherry";
 			sourceTree = "<group>";
