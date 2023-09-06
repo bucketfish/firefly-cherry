@@ -16,6 +16,8 @@ struct PomodoroView: View {
     @AppStorage("pomodoroLength") private var pomodoroLength = 25
     @AppStorage("shortbreakLength") private var shortbreakLength = 5
     @AppStorage("longbreakLength") private var longbreakLength = 30
+    
+    @AppStorage("useDiscordRPC") private var useDiscordRPC = true
 
     
     @State var duration = 25 * 60
@@ -30,6 +32,7 @@ struct PomodoroView: View {
             VStack (spacing: 0){
                 
                 Text("\(String(repeating: "🍅", count: pomodoro_count))")
+                    .font(.largeTitle)
                     .padding(.bottom, 5)
                 
                     HStack {
@@ -79,7 +82,6 @@ struct PomodoroView: View {
                         case false:
                             runTimer()
                         }
-                        
                     }
                     .buttonStyle(PomodoroStartButton())
                     .padding([.leading, .top, .bottom], 5)
@@ -126,7 +128,7 @@ struct PomodoroView: View {
             return
         }
         
-        setupRPC(pomocount: pomodoro_count, state: current_state, countdownTime: duration)
+        if (useDiscordRPC) {setupRPC(pomocount: pomodoro_count, state: current_state, countdownTime: duration)}
         
         timerRunning = true
         _ = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
@@ -151,7 +153,7 @@ struct PomodoroView: View {
     func pauseTimer() {
         timerRunning = false
         
-        setupRPC(pomocount: pomodoro_count, state: current_state, paused: true)
+        if (useDiscordRPC) { setupRPC(pomocount: pomodoro_count, state: current_state, paused: true) }
     }
     
     func nextTimerState() {

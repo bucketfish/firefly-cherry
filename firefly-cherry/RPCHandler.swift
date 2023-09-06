@@ -61,6 +61,9 @@ func setupRPC(pomocount: Int, state: PomodoroState, countdownTime: Int = 0, paus
     
 }
 
+func disconnectRPC() {
+    rpc.disconnect()
+}
 
 
 
