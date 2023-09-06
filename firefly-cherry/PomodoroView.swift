@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Subsonic
 
 enum PomodoroState {
     case pomodoro, short_break, long_break
@@ -18,6 +19,9 @@ struct PomodoroView: View {
     @AppStorage("longbreakLength") private var longbreakLength = 30
     
     @AppStorage("useDiscordRPC") private var useDiscordRPC = true
+    
+    @AppStorage("timerSound") private var timerSound: TimerSounds = .harp
+    @AppStorage("timerVolume") private var timerVolume = 0.5
 
     
     @State var duration = 25 * 60
@@ -140,12 +144,10 @@ struct PomodoroView: View {
                 duration -= 1
             }
             
-            
             if (duration <= 0) {
                 timer.invalidate()
                 nextTimerState()
             }
-            
             
         }
     }
@@ -155,8 +157,10 @@ struct PomodoroView: View {
         
         if (useDiscordRPC) { setupRPC(pomocount: pomodoro_count, state: current_state, paused: true) }
     }
-    
+    // MARK: time's up
     func nextTimerState() {
+        play(sound: timerSound.rawValue + ".mp3", volume: timerVolume)
+        
         if (current_state == .pomodoro) {
             pomodoro_count += 1
         

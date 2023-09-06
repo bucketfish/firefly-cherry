@@ -30,6 +30,10 @@
 		4CFE55952AA8A76E00299450 /* ImageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFE55942AA8A76E00299450 /* ImageType.swift */; };
 		4CFE55972AA8A78700299450 /* ColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFE55962AA8A78700299450 /* ColorScheme.swift */; };
 		4CFE55992AA8A8E500299450 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 4CFE55982AA8A8E500299450 /* .gitignore */; };
+		4CFE559C2AA8AE3600299450 /* Subsonic in Frameworks */ = {isa = PBXBuildFile; productRef = 4CFE559B2AA8AE3600299450 /* Subsonic */; };
+		4CFE559F2AA8AF0900299450 /* marimba.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4CFE559E2AA8AF0900299450 /* marimba.mp3 */; };
+		4CFE55A12AA8AF0E00299450 /* harp.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4CFE55A02AA8AF0E00299450 /* harp.mp3 */; };
+		4CFE55A32AA8AF7D00299450 /* TimerSounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFE55A22AA8AF7D00299450 /* TimerSounds.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +82,9 @@
 		4CFE55962AA8A78700299450 /* ColorScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorScheme.swift; sourceTree = "<group>"; };
 		4CFE55982AA8A8E500299450 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		4CFE559A2AA8A97300299450 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		4CFE559E2AA8AF0900299450 /* marimba.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = marimba.mp3; sourceTree = "<group>"; };
+		4CFE55A02AA8AF0E00299450 /* harp.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = harp.mp3; sourceTree = "<group>"; };
+		4CFE55A22AA8AF7D00299450 /* TimerSounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerSounds.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CFE559C2AA8AE3600299450 /* Subsonic in Frameworks */,
 				4C2744412AA8964700DFD5E0 /* SwordRPC in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -146,6 +154,7 @@
 		4CD8DA6A2AA83F0C0077D9B9 /* firefly-cherry */ = {
 			isa = PBXGroup;
 			children = (
+				4CFE559D2AA8AEFB00299450 /* Resources */,
 				4CFE55932AA8A76400299450 /* Enums */,
 				4CFE55902AA8A72100299450 /* Components */,
 				4CFE55892AA8A6D200299450 /* SettingsViews */,
@@ -224,8 +233,18 @@
 			children = (
 				4CFE55942AA8A76E00299450 /* ImageType.swift */,
 				4CFE55962AA8A78700299450 /* ColorScheme.swift */,
+				4CFE55A22AA8AF7D00299450 /* TimerSounds.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		4CFE559D2AA8AEFB00299450 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4CFE55A02AA8AF0E00299450 /* harp.mp3 */,
+				4CFE559E2AA8AF0900299450 /* marimba.mp3 */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,6 +265,7 @@
 			name = "firefly-cherry";
 			packageProductDependencies = (
 				4C2744402AA8964700DFD5E0 /* SwordRPC */,
+				4CFE559B2AA8AE3600299450 /* Subsonic */,
 			);
 			productName = "firefly-cherry";
 			productReference = 4CD8DA682AA83F0C0077D9B9 /* firefly-cherry.app */;
@@ -339,7 +359,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CD8DA732AA83F0D0077D9B9 /* Preview Assets.xcassets in Resources */,
+				4CFE55A12AA8AF0E00299450 /* harp.mp3 in Resources */,
 				4CFE55992AA8A8E500299450 /* .gitignore in Resources */,
+				4CFE559F2AA8AF0900299450 /* marimba.mp3 in Resources */,
 				4CD8DA702AA83F0D0077D9B9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -378,6 +400,7 @@
 				4CD8DAA52AA854960077D9B9 /* SettingsView.swift in Sources */,
 				4CD8DA752AA83F0D0077D9B9 /* Persistence.swift in Sources */,
 				4CD8DA6E2AA83F0C0077D9B9 /* ContentView.swift in Sources */,
+				4CFE55A32AA8AF7D00299450 /* TimerSounds.swift in Sources */,
 				4CD8DA9F2AA843D40077D9B9 /* PomodoroStateButtonStyles.swift in Sources */,
 				4CD8DA6C2AA83F0C0077D9B9 /* firefly_cherryApp.swift in Sources */,
 				4CFE55922AA8A74700299450 /* TextFieldWithStepper.swift in Sources */,
@@ -712,6 +735,11 @@
 		4C2744402AA8964700DFD5E0 /* SwordRPC */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SwordRPC;
+		};
+		4CFE559B2AA8AE3600299450 /* Subsonic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4CD8DAA82AA8676C0077D9B9 /* XCRemoteSwiftPackageReference "Subsonic" */;
+			productName = Subsonic;
 		};
 /* End XCSwiftPackageProductDependency section */
 

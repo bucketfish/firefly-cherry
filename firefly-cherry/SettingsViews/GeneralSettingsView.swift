@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Subsonic
 
 struct GeneralSettingsView: View {
     @AppStorage("useDiscordRPC") private var useDiscordRPC = true

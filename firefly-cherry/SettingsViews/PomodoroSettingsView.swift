@@ -6,17 +6,16 @@
 //
 
 import SwiftUI
+import Subsonic
 
 struct PomodoroSettingsView: View {
     @AppStorage("pomodoroLength") private var pomodoroLength = 25
     @AppStorage("shortbreakLength") private var shortbreakLength = 5
     @AppStorage("longbreakLength") private var longbreakLength = 30
 
-    @State var timerSoundIndex = 0
-    
-    var timerSounds = [
-    "apple pie", "idk bro", "lemonade", "yasss"
-    ]
+    @AppStorage("timerSound") private var timerSound = TimerSounds.harp
+    @AppStorage("timerVolume") private var timerVolume = 0.5
+
 
     var body: some View {
         Form {
@@ -36,12 +35,30 @@ struct PomodoroSettingsView: View {
             Divider()
                 .padding(.bottom)
             
-            Section (header: Text("timer sound").bold()) {
-                Picker(selection: $timerSoundIndex, label: Text("timer sound")) {
-                    ForEach(0 ..< timerSounds.count) { count in
-                        Text(self.timerSounds[count])
-                    }
+            Section (header: Text("timer alarm").bold()) {
+                Picker(selection: $timerSound, label: Text("alarm sound")) {
+                    Text("harp").tag(TimerSounds.harp)
+                    Text("marimba").tag(TimerSounds.marimba)
                 }
+                .onChange(of: timerSound) { _ in
+                    stopAllManagedSounds()
+                    play(sound: timerSound.rawValue + ".mp3", volume: timerVolume)
+                }
+                
+                Slider(value: $timerVolume, onEditingChanged: { editing in
+                    if (!editing) {
+                        stopAllManagedSounds()
+                        play(sound: timerSound.rawValue + ".mp3", volume: timerVolume)
+                    }
+                }) {
+                    Text("volume")
+                }
+//                .onChange(of: timerVolume) { _ in
+//                    play(sound: timerSound.rawValue + ".mp3", volume: timerVolume)
+//
+//                }
+                
+                
             }
 
         }
