@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C2744372AA8867B00DFD5E0 /* Atomics in Frameworks */ = {isa = PBXBuildFile; productRef = 4C2744362AA8867B00DFD5E0 /* Atomics */; };
+		4C27443A2AA8869200DFD5E0 /* NIO in Frameworks */ = {isa = PBXBuildFile; productRef = 4C2744392AA8869200DFD5E0 /* NIO */; };
+		4C27443D2AA8886400DFD5E0 /* SwordRPC in Frameworks */ = {isa = PBXBuildFile; productRef = 4C27443C2AA8886400DFD5E0 /* SwordRPC */; };
 		4CD8DA6C2AA83F0C0077D9B9 /* firefly_cherryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD8DA6B2AA83F0C0077D9B9 /* firefly_cherryApp.swift */; };
 		4CD8DA6E2AA83F0C0077D9B9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD8DA6D2AA83F0C0077D9B9 /* ContentView.swift */; };
 		4CD8DA702AA83F0D0077D9B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CD8DA6F2AA83F0D0077D9B9 /* Assets.xcassets */; };
@@ -21,6 +24,8 @@
 		4CD8DAA12AA848280077D9B9 /* PomodoroStartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD8DAA02AA848280077D9B9 /* PomodoroStartButton.swift */; };
 		4CD8DAA52AA854960077D9B9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD8DAA42AA854960077D9B9 /* SettingsView.swift */; };
 		4CD8DAA72AA85E4D0077D9B9 /* BackgroundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD8DAA62AA85E4D0077D9B9 /* BackgroundImageView.swift */; };
+		4CD8DAAA2AA8676C0077D9B9 /* Subsonic in Frameworks */ = {isa = PBXBuildFile; productRef = 4CD8DAA92AA8676C0077D9B9 /* Subsonic */; };
+		4CD8DAAD2AA871D80077D9B9 /* RPCHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD8DAAC2AA871D80077D9B9 /* RPCHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C2744342AA8866400DFD5E0 /* SwordRPC-0.3.0 */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "SwordRPC-0.3.0"; path = "../../../../Desktop/SwordRPC-0.3.0"; sourceTree = "<group>"; };
 		4CD8DA682AA83F0C0077D9B9 /* firefly-cherry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "firefly-cherry.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CD8DA6B2AA83F0C0077D9B9 /* firefly_cherryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firefly_cherryApp.swift; sourceTree = "<group>"; };
 		4CD8DA6D2AA83F0C0077D9B9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -59,6 +65,7 @@
 		4CD8DAA02AA848280077D9B9 /* PomodoroStartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroStartButton.swift; sourceTree = "<group>"; };
 		4CD8DAA42AA854960077D9B9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		4CD8DAA62AA85E4D0077D9B9 /* BackgroundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundImageView.swift; sourceTree = "<group>"; };
+		4CD8DAAC2AA871D80077D9B9 /* RPCHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPCHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +73,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C27443D2AA8886400DFD5E0 /* SwordRPC in Frameworks */,
+				4C27443A2AA8869200DFD5E0 /* NIO in Frameworks */,
+				4CD8DAAA2AA8676C0077D9B9 /* Subsonic in Frameworks */,
+				4C2744372AA8867B00DFD5E0 /* Atomics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,13 +97,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C2744332AA8866400DFD5E0 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				4C2744342AA8866400DFD5E0 /* SwordRPC-0.3.0 */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		4C27443B2AA8886400DFD5E0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4CD8DA5F2AA83F0C0077D9B9 = {
 			isa = PBXGroup;
 			children = (
+				4C2744332AA8866400DFD5E0 /* Packages */,
 				4CD8DA6A2AA83F0C0077D9B9 /* firefly-cherry */,
 				4CD8DA812AA83F0E0077D9B9 /* firefly-cherryTests */,
 				4CD8DA8B2AA83F0E0077D9B9 /* firefly-cherryUITests */,
 				4CD8DA692AA83F0C0077D9B9 /* Products */,
+				4C27443B2AA8886400DFD5E0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -120,6 +148,7 @@
 				4CD8DA792AA83F0D0077D9B9 /* firefly_cherry.entitlements */,
 				4CD8DA762AA83F0D0077D9B9 /* firefly_cherry.xcdatamodeld */,
 				4CD8DA712AA83F0D0077D9B9 /* Preview Content */,
+				4CD8DAAC2AA871D80077D9B9 /* RPCHandler.swift */,
 			);
 			path = "firefly-cherry";
 			sourceTree = "<group>";
@@ -174,6 +203,12 @@
 			dependencies = (
 			);
 			name = "firefly-cherry";
+			packageProductDependencies = (
+				4CD8DAA92AA8676C0077D9B9 /* Subsonic */,
+				4C2744362AA8867B00DFD5E0 /* Atomics */,
+				4C2744392AA8869200DFD5E0 /* NIO */,
+				4C27443C2AA8886400DFD5E0 /* SwordRPC */,
+			);
 			productName = "firefly-cherry";
 			productReference = 4CD8DA682AA83F0C0077D9B9 /* firefly-cherry.app */;
 			productType = "com.apple.product-type.application";
@@ -246,6 +281,11 @@
 				Base,
 			);
 			mainGroup = 4CD8DA5F2AA83F0C0077D9B9;
+			packageReferences = (
+				4CD8DAA82AA8676C0077D9B9 /* XCRemoteSwiftPackageReference "Subsonic" */,
+				4C2744352AA8867B00DFD5E0 /* XCRemoteSwiftPackageReference "swift-atomics" */,
+				4C2744382AA8869200DFD5E0 /* XCRemoteSwiftPackageReference "swift-nio" */,
+			);
 			productRefGroup = 4CD8DA692AA83F0C0077D9B9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -290,6 +330,7 @@
 			files = (
 				4CD8DA9C2AA83F810077D9B9 /* PomodoroView.swift in Sources */,
 				4CD8DA782AA83F0D0077D9B9 /* firefly_cherry.xcdatamodeld in Sources */,
+				4CD8DAAD2AA871D80077D9B9 /* RPCHandler.swift in Sources */,
 				4CD8DAA12AA848280077D9B9 /* PomodoroStartButton.swift in Sources */,
 				4CD8DAA72AA85E4D0077D9B9 /* BackgroundImageView.swift in Sources */,
 				4CD8DAA52AA854960077D9B9 /* SettingsView.swift in Sources */,
@@ -612,6 +653,55 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4C2744352AA8867B00DFD5E0 /* XCRemoteSwiftPackageReference "swift-atomics" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-atomics.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		4C2744382AA8869200DFD5E0 /* XCRemoteSwiftPackageReference "swift-nio" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-nio.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+		4CD8DAA82AA8676C0077D9B9 /* XCRemoteSwiftPackageReference "Subsonic" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/Subsonic";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4C2744362AA8867B00DFD5E0 /* Atomics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4C2744352AA8867B00DFD5E0 /* XCRemoteSwiftPackageReference "swift-atomics" */;
+			productName = Atomics;
+		};
+		4C2744392AA8869200DFD5E0 /* NIO */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4C2744382AA8869200DFD5E0 /* XCRemoteSwiftPackageReference "swift-nio" */;
+			productName = NIO;
+		};
+		4C27443C2AA8886400DFD5E0 /* SwordRPC */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SwordRPC;
+		};
+		4CD8DAA92AA8676C0077D9B9 /* Subsonic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4CD8DAA82AA8676C0077D9B9 /* XCRemoteSwiftPackageReference "Subsonic" */;
+			productName = Subsonic;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		4CD8DA762AA83F0D0077D9B9 /* firefly_cherry.xcdatamodeld */ = {

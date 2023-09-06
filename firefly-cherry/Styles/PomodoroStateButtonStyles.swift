@@ -15,15 +15,15 @@ struct PomodoroStateButton: ButtonStyle {
         configuration.label
             .padding(.horizontal, 15)
             .padding(.vertical, 10)
-            .background(selected ? .white : .clear)
+            .background(selected ? Color("PomodoroText") : .clear)
             .cornerRadius(10)
             .font(.title2)
             .contentShape(Rectangle())
             .overlay (
                 RoundedRectangle(cornerRadius: 10)
-                    .strokeBorder(.white, lineWidth: 2)
+                    .strokeBorder(Color("PomodoroText"), lineWidth: 2)
             )
-            .foregroundColor(selected ? .black : .white)
+            .foregroundColor(selected ? Color("PomodoroTextOpp") : Color("PomodoroText"))
     }
 }
 

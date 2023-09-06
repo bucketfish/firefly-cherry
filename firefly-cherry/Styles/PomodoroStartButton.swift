@@ -21,9 +21,9 @@ struct PomodoroStartButton: ButtonStyle {
             .contentShape(Rectangle())
             .overlay (
                 RoundedRectangle(cornerRadius: 10)
-                    .strokeBorder(.white, lineWidth: 2)
+                    .strokeBorder(Color("PomodoroText"), lineWidth: 2)
             )
-            .foregroundColor(.white)
+            .foregroundColor(Color("PomodoroText"))
 //            .bold()
             
     }

@@ -7,6 +7,18 @@
 
 import SwiftUI
 
+enum ImageType: String, Equatable, CaseIterable {
+    case premade, web, upload
+    var id: Self { self }
+}
+
+
+
+enum ColorScheme: String, Equatable, CaseIterable {
+    case light, dark, system
+    var id: Self { self }
+}
+
 
 struct TextFieldWithStepper: View {
     @State var title: String
@@ -26,7 +38,15 @@ struct TextFieldWithStepper: View {
 }
 
 
-
+struct GeneralSettingsView: View {
+    
+    var body: some View {
+        Button("disconnect from discord rich presence") {
+            
+        }
+    }
+    
+}
 struct PomodoroSettingsView: View {
 //    @AppStorage("showPreview") private var showPreview = true
 //    @AppStorage("fontSize") private var fontSize = 12.0
@@ -74,7 +94,8 @@ struct PomodoroSettingsView: View {
 }
 
 struct DisplaySettingsView: View {
-    @AppStorage("useWebImage") private var useWebImage = false
+    @AppStorage("colorScheme") private var colorScheme: ColorScheme = .system
+    @AppStorage("imageType") private var imageType: ImageType = .premade
     @AppStorage("webImageLink") private var webImageLink: String = ""
     @AppStorage("backgroundImageIndex") private var backgroundImageIndex = 0
     
@@ -84,16 +105,30 @@ struct DisplaySettingsView: View {
     
     var body: some View {
         Form {
-            Section (header: Text("background image").bold())
-            {
-                Toggle("use web image", isOn: $useWebImage)
-                    .toggleStyle(.checkbox)
-                
-                if (useWebImage) {
-                    TextField("web image link", text: $webImageLink)
-                        .textFieldStyle(.roundedBorder)
+            Section (header: Text("colors").bold()) {
+                Picker(selection: $colorScheme, label: Text("color scheme")) {
+                    Text("light").tag(ColorScheme.light)
+                    Text("dark").tag(ColorScheme.dark)
+                    Text("system").tag(ColorScheme.system)
                 }
-                else {
+                .pickerStyle(.segmented)
+                
+            }
+            
+            
+            Divider()
+                .padding(.bottom)
+            
+            
+            Section (header: Text("background image").bold()) {
+                Picker(selection: $imageType, label: Text("image source")) {
+                    Text("default").tag(ImageType.premade)
+                    Text("web image").tag(ImageType.web)
+                    Text("custom").tag(ImageType.upload)
+                }
+                .pickerStyle(.segmented)
+                
+                if (imageType == .premade) {
                     Picker(selection: $backgroundImageIndex, label: Text("choose image")) {
                         ForEach(0..<backgroundImages.count) {count in
                             HStack {
@@ -101,6 +136,14 @@ struct DisplaySettingsView: View {
                             }
                         }
                     }
+                }
+                else if (imageType == .web) {
+                    TextField("web image link", text: $webImageLink)
+                        .textFieldStyle(.roundedBorder)
+                }
+                else {
+                    Text("coming soon!")
+                    
                     
                 }
             }
@@ -128,12 +171,7 @@ struct SettingsView: View {
                     Label("display", systemImage: "display")
                 }
                 .tag(Tabs.display)
-            
-//            AdvancedSettingsView()
-//                .tabItem {
-//                    Label("Advanced", systemImage: "star")
-//                }
-//                .tag(Tabs.advanced)
+
         }
         .padding(20)
         

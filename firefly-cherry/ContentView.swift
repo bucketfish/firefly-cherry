@@ -24,13 +24,13 @@ struct ContentView: View {
             
             PomodoroView()
             
-            VStack {
-                HStack {
-                    Text("test")
-                }
-                .padding(.top, 20)
-                Spacer()
-            }
+//            VStack {
+//                HStack {
+//                    Text("test")
+//                }
+//                .padding(.top, 20)
+//                Spacer()
+//            }
             
         }
         

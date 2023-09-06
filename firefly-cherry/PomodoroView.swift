@@ -20,7 +20,7 @@ struct PomodoroView: View {
     
     @State var duration = 25 * 60
     @State var current_state: PomodoroState = .pomodoro
-    @State var completed_pomodoros = 0
+    @State var pomodoro_count = 1
     
     @State var timerRunning = false
     
@@ -28,6 +28,9 @@ struct PomodoroView: View {
     var body: some View {
   
             VStack (spacing: 0){
+                
+                Text("\(String(repeating: "🍅", count: pomodoro_count))")
+                    .padding(.bottom, 5)
                 
                     HStack {
                         Button("pomodoro") {
@@ -66,6 +69,7 @@ struct PomodoroView: View {
                 Text(formatTimer(duration))
                     .font(.custom("Avenir", size: 120, relativeTo: .largeTitle))
                     .bold()
+                    .foregroundColor(Color("PomodoroText"))
                 
                 HStack {
                     Button(timerRunning ? "pause" : "start") {
@@ -86,6 +90,7 @@ struct PomodoroView: View {
                     } label: {
                         Image(systemName: "arrow.counterclockwise")
                             .font(.largeTitle)
+                            .foregroundColor(Color("PomodoroText"))
 
                     }
                     .buttonStyle(.plain)
@@ -96,6 +101,7 @@ struct PomodoroView: View {
                     } label: {
                         Image(systemName: "gearshape.fill")
                             .font(.largeTitle)
+                            .foregroundColor(Color("PomodoroText"))
 
                     }
                     .buttonStyle(.plain)
@@ -120,6 +126,8 @@ struct PomodoroView: View {
             return
         }
         
+        setupRPC(pomocount: pomodoro_count, state: current_state, countdownTime: duration)
+        
         timerRunning = true
         _ = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
             
@@ -131,12 +139,10 @@ struct PomodoroView: View {
             }
             
             
-  
             if (duration <= 0) {
                 timer.invalidate()
                 nextTimerState()
             }
-            
             
             
         }
@@ -144,13 +150,15 @@ struct PomodoroView: View {
     
     func pauseTimer() {
         timerRunning = false
+        
+        setupRPC(pomocount: pomodoro_count, state: current_state, paused: true)
     }
     
     func nextTimerState() {
         if (current_state == .pomodoro) {
-            completed_pomodoros += 1
+            pomodoro_count += 1
         
-            if (completed_pomodoros == 4) {
+            if (pomodoro_count > 4) {
                 changeTimerState(.long_break)
             }
             else {

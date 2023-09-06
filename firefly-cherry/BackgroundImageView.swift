@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BackgroundImageView: View {
-    @AppStorage("useWebImage") private var useWebImage = false
+    @AppStorage("imageType") private var imageType: ImageType = .premade
     @AppStorage("webImageLink") private var webImageLink = ""
     @AppStorage("backgroundImageIndex") private var backgroundImageIndex = 0
     
@@ -19,9 +19,11 @@ struct BackgroundImageView: View {
 
     
     var body: some View {
-        if (useWebImage) {
+        if (imageType == .web) {
             AsyncImage(url: URL(string: webImageLink)) { image in
-                image.resizable()
+                image
+                    .resizable()
+                    .scaledToFill()
                 
             } placeholder: {
                 ProgressView()
@@ -29,7 +31,6 @@ struct BackgroundImageView: View {
             .onChange(of: webImageLink) {newLink in
                 testoggle.toggle()
             }
-
             
         }
         else {
