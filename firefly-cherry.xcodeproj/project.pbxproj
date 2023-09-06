@@ -29,6 +29,7 @@
 		4CFE55922AA8A74700299450 /* TextFieldWithStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFE55912AA8A74700299450 /* TextFieldWithStepper.swift */; };
 		4CFE55952AA8A76E00299450 /* ImageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFE55942AA8A76E00299450 /* ImageType.swift */; };
 		4CFE55972AA8A78700299450 /* ColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFE55962AA8A78700299450 /* ColorScheme.swift */; };
+		4CFE55992AA8A8E500299450 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 4CFE55982AA8A8E500299450 /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4C27443F2AA8952E00DFD5E0 /* SwordRPC-master */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "SwordRPC-master"; path = "../../../../Desktop/SwordRPC-master"; sourceTree = "<group>"; };
+		4C27443F2AA8952E00DFD5E0 /* SwordRPC-master */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "SwordRPC-master"; path = "../SwordRPC-master"; sourceTree = "<group>"; };
 		4CD8DA682AA83F0C0077D9B9 /* firefly-cherry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "firefly-cherry.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CD8DA6B2AA83F0C0077D9B9 /* firefly_cherryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firefly_cherryApp.swift; sourceTree = "<group>"; };
 		4CD8DA6D2AA83F0C0077D9B9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -75,6 +76,7 @@
 		4CFE55912AA8A74700299450 /* TextFieldWithStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldWithStepper.swift; sourceTree = "<group>"; };
 		4CFE55942AA8A76E00299450 /* ImageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageType.swift; sourceTree = "<group>"; };
 		4CFE55962AA8A78700299450 /* ColorScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorScheme.swift; sourceTree = "<group>"; };
+		4CFE55982AA8A8E500299450 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 				4CD8DA762AA83F0D0077D9B9 /* firefly_cherry.xcdatamodeld */,
 				4CD8DA712AA83F0D0077D9B9 /* Preview Content */,
 				4CD8DAAC2AA871D80077D9B9 /* RPCHandler.swift */,
+				4CFE55982AA8A8E500299450 /* .gitignore */,
 			);
 			path = "firefly-cherry";
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CD8DA732AA83F0D0077D9B9 /* Preview Assets.xcassets in Resources */,
+				4CFE55992AA8A8E500299450 /* .gitignore in Resources */,
 				4CD8DA702AA83F0D0077D9B9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
