@@ -16,5 +16,10 @@ struct firefly_cherryApp: App {
             ContentView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
+        #if os(macOS)
+        Settings {
+            SettingsView()
+        }
+        #endif
     }
 }

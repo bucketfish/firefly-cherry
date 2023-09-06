@@ -16,6 +16,11 @@
 		4CD8DA832AA83F0E0077D9B9 /* firefly_cherryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD8DA822AA83F0E0077D9B9 /* firefly_cherryTests.swift */; };
 		4CD8DA8D2AA83F0E0077D9B9 /* firefly_cherryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD8DA8C2AA83F0E0077D9B9 /* firefly_cherryUITests.swift */; };
 		4CD8DA8F2AA83F0E0077D9B9 /* firefly_cherryUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD8DA8E2AA83F0E0077D9B9 /* firefly_cherryUITestsLaunchTests.swift */; };
+		4CD8DA9C2AA83F810077D9B9 /* PomodoroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD8DA9B2AA83F810077D9B9 /* PomodoroView.swift */; };
+		4CD8DA9F2AA843D40077D9B9 /* PomodoroStateButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD8DA9E2AA843D40077D9B9 /* PomodoroStateButtonStyles.swift */; };
+		4CD8DAA12AA848280077D9B9 /* PomodoroStartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD8DAA02AA848280077D9B9 /* PomodoroStartButton.swift */; };
+		4CD8DAA52AA854960077D9B9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD8DAA42AA854960077D9B9 /* SettingsView.swift */; };
+		4CD8DAA72AA85E4D0077D9B9 /* BackgroundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD8DAA62AA85E4D0077D9B9 /* BackgroundImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +54,11 @@
 		4CD8DA882AA83F0E0077D9B9 /* firefly-cherryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "firefly-cherryUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CD8DA8C2AA83F0E0077D9B9 /* firefly_cherryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firefly_cherryUITests.swift; sourceTree = "<group>"; };
 		4CD8DA8E2AA83F0E0077D9B9 /* firefly_cherryUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firefly_cherryUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4CD8DA9B2AA83F810077D9B9 /* PomodoroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroView.swift; sourceTree = "<group>"; };
+		4CD8DA9E2AA843D40077D9B9 /* PomodoroStateButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroStateButtonStyles.swift; sourceTree = "<group>"; };
+		4CD8DAA02AA848280077D9B9 /* PomodoroStartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroStartButton.swift; sourceTree = "<group>"; };
+		4CD8DAA42AA854960077D9B9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		4CD8DAA62AA85E4D0077D9B9 /* BackgroundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +109,12 @@
 		4CD8DA6A2AA83F0C0077D9B9 /* firefly-cherry */ = {
 			isa = PBXGroup;
 			children = (
+				4CD8DA9D2AA843B20077D9B9 /* Styles */,
 				4CD8DA6B2AA83F0C0077D9B9 /* firefly_cherryApp.swift */,
 				4CD8DA6D2AA83F0C0077D9B9 /* ContentView.swift */,
+				4CD8DA9B2AA83F810077D9B9 /* PomodoroView.swift */,
+				4CD8DAA42AA854960077D9B9 /* SettingsView.swift */,
+				4CD8DAA62AA85E4D0077D9B9 /* BackgroundImageView.swift */,
 				4CD8DA6F2AA83F0D0077D9B9 /* Assets.xcassets */,
 				4CD8DA742AA83F0D0077D9B9 /* Persistence.swift */,
 				4CD8DA792AA83F0D0077D9B9 /* firefly_cherry.entitlements */,
@@ -133,6 +147,15 @@
 				4CD8DA8E2AA83F0E0077D9B9 /* firefly_cherryUITestsLaunchTests.swift */,
 			);
 			path = "firefly-cherryUITests";
+			sourceTree = "<group>";
+		};
+		4CD8DA9D2AA843B20077D9B9 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				4CD8DA9E2AA843D40077D9B9 /* PomodoroStateButtonStyles.swift */,
+				4CD8DAA02AA848280077D9B9 /* PomodoroStartButton.swift */,
+			);
+			path = Styles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,9 +288,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CD8DA9C2AA83F810077D9B9 /* PomodoroView.swift in Sources */,
 				4CD8DA782AA83F0D0077D9B9 /* firefly_cherry.xcdatamodeld in Sources */,
+				4CD8DAA12AA848280077D9B9 /* PomodoroStartButton.swift in Sources */,
+				4CD8DAA72AA85E4D0077D9B9 /* BackgroundImageView.swift in Sources */,
+				4CD8DAA52AA854960077D9B9 /* SettingsView.swift in Sources */,
 				4CD8DA752AA83F0D0077D9B9 /* Persistence.swift in Sources */,
 				4CD8DA6E2AA83F0C0077D9B9 /* ContentView.swift in Sources */,
+				4CD8DA9F2AA843D40077D9B9 /* PomodoroStateButtonStyles.swift in Sources */,
 				4CD8DA6C2AA83F0C0077D9B9 /* firefly_cherryApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
