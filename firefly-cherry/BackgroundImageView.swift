@@ -24,10 +24,12 @@ struct BackgroundImageView: View {
                 image
                     .resizable()
                     .scaledToFill()
+                    
                 
             } placeholder: {
                 ProgressView()
             }
+            .ignoresSafeArea()
             .onChange(of: webImageLink) {newLink in
                 testoggle.toggle()
             }
@@ -37,6 +39,7 @@ struct BackgroundImageView: View {
             Image(backgroundImages[backgroundImageIndex])
                 .resizable()
                 .scaledToFill()
+                .ignoresSafeArea()
         }
     }
 

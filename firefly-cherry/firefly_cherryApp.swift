@@ -21,7 +21,13 @@ struct firefly_cherryApp: App {
             ContentView()
                 .preferredColorScheme(colorScheme == ColorScheme.system ? defaultScheme : colorScheme == ColorScheme.dark ? .dark : .light)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .onDisappear {
+                    NSApplication.shared.terminate(self)
+                    
+                }
         }
+        .windowStyle(.hiddenTitleBar)
+        
         #if os(macOS)
         Settings {
             SettingsView()
