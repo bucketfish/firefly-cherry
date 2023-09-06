@@ -1,0 +1,602 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4CD8DA6C2AA83F0C0077D9B9 /* firefly_cherryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD8DA6B2AA83F0C0077D9B9 /* firefly_cherryApp.swift */; };
+		4CD8DA6E2AA83F0C0077D9B9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD8DA6D2AA83F0C0077D9B9 /* ContentView.swift */; };
+		4CD8DA702AA83F0D0077D9B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CD8DA6F2AA83F0D0077D9B9 /* Assets.xcassets */; };
+		4CD8DA732AA83F0D0077D9B9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CD8DA722AA83F0D0077D9B9 /* Preview Assets.xcassets */; };
+		4CD8DA752AA83F0D0077D9B9 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD8DA742AA83F0D0077D9B9 /* Persistence.swift */; };
+		4CD8DA782AA83F0D0077D9B9 /* firefly_cherry.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4CD8DA762AA83F0D0077D9B9 /* firefly_cherry.xcdatamodeld */; };
+		4CD8DA832AA83F0E0077D9B9 /* firefly_cherryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD8DA822AA83F0E0077D9B9 /* firefly_cherryTests.swift */; };
+		4CD8DA8D2AA83F0E0077D9B9 /* firefly_cherryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD8DA8C2AA83F0E0077D9B9 /* firefly_cherryUITests.swift */; };
+		4CD8DA8F2AA83F0E0077D9B9 /* firefly_cherryUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD8DA8E2AA83F0E0077D9B9 /* firefly_cherryUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4CD8DA7F2AA83F0E0077D9B9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4CD8DA602AA83F0C0077D9B9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4CD8DA672AA83F0C0077D9B9;
+			remoteInfo = "firefly-cherry";
+		};
+		4CD8DA892AA83F0E0077D9B9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4CD8DA602AA83F0C0077D9B9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4CD8DA672AA83F0C0077D9B9;
+			remoteInfo = "firefly-cherry";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4CD8DA682AA83F0C0077D9B9 /* firefly-cherry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "firefly-cherry.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CD8DA6B2AA83F0C0077D9B9 /* firefly_cherryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firefly_cherryApp.swift; sourceTree = "<group>"; };
+		4CD8DA6D2AA83F0C0077D9B9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4CD8DA6F2AA83F0D0077D9B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4CD8DA722AA83F0D0077D9B9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4CD8DA742AA83F0D0077D9B9 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		4CD8DA772AA83F0D0077D9B9 /* firefly_cherry.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = firefly_cherry.xcdatamodel; sourceTree = "<group>"; };
+		4CD8DA792AA83F0D0077D9B9 /* firefly_cherry.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = firefly_cherry.entitlements; sourceTree = "<group>"; };
+		4CD8DA7E2AA83F0E0077D9B9 /* firefly-cherryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "firefly-cherryTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CD8DA822AA83F0E0077D9B9 /* firefly_cherryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firefly_cherryTests.swift; sourceTree = "<group>"; };
+		4CD8DA882AA83F0E0077D9B9 /* firefly-cherryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "firefly-cherryUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CD8DA8C2AA83F0E0077D9B9 /* firefly_cherryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firefly_cherryUITests.swift; sourceTree = "<group>"; };
+		4CD8DA8E2AA83F0E0077D9B9 /* firefly_cherryUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firefly_cherryUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4CD8DA652AA83F0C0077D9B9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4CD8DA7B2AA83F0E0077D9B9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4CD8DA852AA83F0E0077D9B9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4CD8DA5F2AA83F0C0077D9B9 = {
+			isa = PBXGroup;
+			children = (
+				4CD8DA6A2AA83F0C0077D9B9 /* firefly-cherry */,
+				4CD8DA812AA83F0E0077D9B9 /* firefly-cherryTests */,
+				4CD8DA8B2AA83F0E0077D9B9 /* firefly-cherryUITests */,
+				4CD8DA692AA83F0C0077D9B9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4CD8DA692AA83F0C0077D9B9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4CD8DA682AA83F0C0077D9B9 /* firefly-cherry.app */,
+				4CD8DA7E2AA83F0E0077D9B9 /* firefly-cherryTests.xctest */,
+				4CD8DA882AA83F0E0077D9B9 /* firefly-cherryUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4CD8DA6A2AA83F0C0077D9B9 /* firefly-cherry */ = {
+			isa = PBXGroup;
+			children = (
+				4CD8DA6B2AA83F0C0077D9B9 /* firefly_cherryApp.swift */,
+				4CD8DA6D2AA83F0C0077D9B9 /* ContentView.swift */,
+				4CD8DA6F2AA83F0D0077D9B9 /* Assets.xcassets */,
+				4CD8DA742AA83F0D0077D9B9 /* Persistence.swift */,
+				4CD8DA792AA83F0D0077D9B9 /* firefly_cherry.entitlements */,
+				4CD8DA762AA83F0D0077D9B9 /* firefly_cherry.xcdatamodeld */,
+				4CD8DA712AA83F0D0077D9B9 /* Preview Content */,
+			);
+			path = "firefly-cherry";
+			sourceTree = "<group>";
+		};
+		4CD8DA712AA83F0D0077D9B9 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				4CD8DA722AA83F0D0077D9B9 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4CD8DA812AA83F0E0077D9B9 /* firefly-cherryTests */ = {
+			isa = PBXGroup;
+			children = (
+				4CD8DA822AA83F0E0077D9B9 /* firefly_cherryTests.swift */,
+			);
+			path = "firefly-cherryTests";
+			sourceTree = "<group>";
+		};
+		4CD8DA8B2AA83F0E0077D9B9 /* firefly-cherryUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4CD8DA8C2AA83F0E0077D9B9 /* firefly_cherryUITests.swift */,
+				4CD8DA8E2AA83F0E0077D9B9 /* firefly_cherryUITestsLaunchTests.swift */,
+			);
+			path = "firefly-cherryUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4CD8DA672AA83F0C0077D9B9 /* firefly-cherry */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4CD8DA922AA83F0E0077D9B9 /* Build configuration list for PBXNativeTarget "firefly-cherry" */;
+			buildPhases = (
+				4CD8DA642AA83F0C0077D9B9 /* Sources */,
+				4CD8DA652AA83F0C0077D9B9 /* Frameworks */,
+				4CD8DA662AA83F0C0077D9B9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "firefly-cherry";
+			productName = "firefly-cherry";
+			productReference = 4CD8DA682AA83F0C0077D9B9 /* firefly-cherry.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4CD8DA7D2AA83F0E0077D9B9 /* firefly-cherryTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4CD8DA952AA83F0E0077D9B9 /* Build configuration list for PBXNativeTarget "firefly-cherryTests" */;
+			buildPhases = (
+				4CD8DA7A2AA83F0E0077D9B9 /* Sources */,
+				4CD8DA7B2AA83F0E0077D9B9 /* Frameworks */,
+				4CD8DA7C2AA83F0E0077D9B9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4CD8DA802AA83F0E0077D9B9 /* PBXTargetDependency */,
+			);
+			name = "firefly-cherryTests";
+			productName = "firefly-cherryTests";
+			productReference = 4CD8DA7E2AA83F0E0077D9B9 /* firefly-cherryTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4CD8DA872AA83F0E0077D9B9 /* firefly-cherryUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4CD8DA982AA83F0E0077D9B9 /* Build configuration list for PBXNativeTarget "firefly-cherryUITests" */;
+			buildPhases = (
+				4CD8DA842AA83F0E0077D9B9 /* Sources */,
+				4CD8DA852AA83F0E0077D9B9 /* Frameworks */,
+				4CD8DA862AA83F0E0077D9B9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4CD8DA8A2AA83F0E0077D9B9 /* PBXTargetDependency */,
+			);
+			name = "firefly-cherryUITests";
+			productName = "firefly-cherryUITests";
+			productReference = 4CD8DA882AA83F0E0077D9B9 /* firefly-cherryUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4CD8DA602AA83F0C0077D9B9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					4CD8DA672AA83F0C0077D9B9 = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					4CD8DA7D2AA83F0E0077D9B9 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 4CD8DA672AA83F0C0077D9B9;
+					};
+					4CD8DA872AA83F0E0077D9B9 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 4CD8DA672AA83F0C0077D9B9;
+					};
+				};
+			};
+			buildConfigurationList = 4CD8DA632AA83F0C0077D9B9 /* Build configuration list for PBXProject "firefly-cherry" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4CD8DA5F2AA83F0C0077D9B9;
+			productRefGroup = 4CD8DA692AA83F0C0077D9B9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4CD8DA672AA83F0C0077D9B9 /* firefly-cherry */,
+				4CD8DA7D2AA83F0E0077D9B9 /* firefly-cherryTests */,
+				4CD8DA872AA83F0E0077D9B9 /* firefly-cherryUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4CD8DA662AA83F0C0077D9B9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CD8DA732AA83F0D0077D9B9 /* Preview Assets.xcassets in Resources */,
+				4CD8DA702AA83F0D0077D9B9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4CD8DA7C2AA83F0E0077D9B9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4CD8DA862AA83F0E0077D9B9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4CD8DA642AA83F0C0077D9B9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CD8DA782AA83F0D0077D9B9 /* firefly_cherry.xcdatamodeld in Sources */,
+				4CD8DA752AA83F0D0077D9B9 /* Persistence.swift in Sources */,
+				4CD8DA6E2AA83F0C0077D9B9 /* ContentView.swift in Sources */,
+				4CD8DA6C2AA83F0C0077D9B9 /* firefly_cherryApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4CD8DA7A2AA83F0E0077D9B9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CD8DA832AA83F0E0077D9B9 /* firefly_cherryTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4CD8DA842AA83F0E0077D9B9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CD8DA8D2AA83F0E0077D9B9 /* firefly_cherryUITests.swift in Sources */,
+				4CD8DA8F2AA83F0E0077D9B9 /* firefly_cherryUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4CD8DA802AA83F0E0077D9B9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4CD8DA672AA83F0C0077D9B9 /* firefly-cherry */;
+			targetProxy = 4CD8DA7F2AA83F0E0077D9B9 /* PBXContainerItemProxy */;
+		};
+		4CD8DA8A2AA83F0E0077D9B9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4CD8DA672AA83F0C0077D9B9 /* firefly-cherry */;
+			targetProxy = 4CD8DA892AA83F0E0077D9B9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		4CD8DA902AA83F0E0077D9B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4CD8DA912AA83F0E0077D9B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		4CD8DA932AA83F0E0077D9B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "firefly-cherry/firefly_cherry.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"firefly-cherry/Preview Content\"";
+				DEVELOPMENT_TEAM = PZ67JK9YFQ;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "me.bucketfish.firefly-cherry";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		4CD8DA942AA83F0E0077D9B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "firefly-cherry/firefly_cherry.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"firefly-cherry/Preview Content\"";
+				DEVELOPMENT_TEAM = PZ67JK9YFQ;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "me.bucketfish.firefly-cherry";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		4CD8DA962AA83F0E0077D9B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PZ67JK9YFQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "me.bucketfish.firefly-cherryTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/firefly-cherry.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/firefly-cherry";
+			};
+			name = Debug;
+		};
+		4CD8DA972AA83F0E0077D9B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PZ67JK9YFQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "me.bucketfish.firefly-cherryTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/firefly-cherry.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/firefly-cherry";
+			};
+			name = Release;
+		};
+		4CD8DA992AA83F0E0077D9B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PZ67JK9YFQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "me.bucketfish.firefly-cherryUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "firefly-cherry";
+			};
+			name = Debug;
+		};
+		4CD8DA9A2AA83F0E0077D9B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PZ67JK9YFQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "me.bucketfish.firefly-cherryUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "firefly-cherry";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4CD8DA632AA83F0C0077D9B9 /* Build configuration list for PBXProject "firefly-cherry" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CD8DA902AA83F0E0077D9B9 /* Debug */,
+				4CD8DA912AA83F0E0077D9B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4CD8DA922AA83F0E0077D9B9 /* Build configuration list for PBXNativeTarget "firefly-cherry" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CD8DA932AA83F0E0077D9B9 /* Debug */,
+				4CD8DA942AA83F0E0077D9B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4CD8DA952AA83F0E0077D9B9 /* Build configuration list for PBXNativeTarget "firefly-cherryTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CD8DA962AA83F0E0077D9B9 /* Debug */,
+				4CD8DA972AA83F0E0077D9B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4CD8DA982AA83F0E0077D9B9 /* Build configuration list for PBXNativeTarget "firefly-cherryUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CD8DA992AA83F0E0077D9B9 /* Debug */,
+				4CD8DA9A2AA83F0E0077D9B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4CD8DA762AA83F0D0077D9B9 /* firefly_cherry.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4CD8DA772AA83F0D0077D9B9 /* firefly_cherry.xcdatamodel */,
+			);
+			currentVersion = 4CD8DA772AA83F0D0077D9B9 /* firefly_cherry.xcdatamodel */;
+			path = firefly_cherry.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 4CD8DA602AA83F0C0077D9B9 /* Project object */;
+}
