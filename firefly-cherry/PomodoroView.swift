@@ -176,8 +176,9 @@ struct PomodoroView: View {
     
     func changeTimerState(_ state: PomodoroState, autostart:Bool = true) {
         
-        pauseTimer()
-        
+        if (timerRunning) {
+            pauseTimer()
+        }
         
         switch state {
         case .pomodoro:
@@ -194,6 +195,7 @@ struct PomodoroView: View {
         if (autostart) {
             runTimer()
         }
+
         
     }
 }
