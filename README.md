@@ -1,9 +1,14 @@
-#  firefly-cherry
+#  firefly-cherry — cute & joyful pomodoro :)
 
-hello!
+![Screenshot 2023-09-06 at 9 24 59 PM](https://github.com/bucketfish/firefly-cherry/assets/66538443/cb1c9bf4-4622-4a61-8b6a-2dd301a6f2da)
 
-this my attempt at making a native macos pomodoro app that supports custom backgrounds and discord rich presence.
+features
+- custom backgrounds
+- different sounds to choose from & more coming soon
+- custom pomodoro timings
+- discord rich presence when you are focusing!
 
+## contribute
 to contribute, you'll need to add [PKBeam's fork of SwordRPC](https://github.com/PKBeam/SwordRPC) as a package. for some reason i couldn't import it directly and had to add it manually.
 
 you'll also want to add your own discord bot id, if you're making it something new :)
