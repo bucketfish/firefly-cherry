@@ -1,4 +1,4 @@
-#  firefly-cherry — joyful pomodoro with a cherry on top :)
+#  firefly-cherry — joyful pomodoro :)
 
 ![Screenshot 2023-09-06 at 9 24 59 PM](https://github.com/bucketfish/firefly-cherry/assets/66538443/cb1c9bf4-4622-4a61-8b6a-2dd301a6f2da)
 
