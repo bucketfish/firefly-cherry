@@ -36,6 +36,7 @@ struct PomodoroBackgroundCircularProgressView: View {
             
         }
         .frame(width: 500, height: 500)
+        .opacity(0.5)
         
     }
     

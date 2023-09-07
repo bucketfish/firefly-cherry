@@ -12,6 +12,7 @@
 		4CC2AF4C2AA993A700138E11 /* PomodoroBackgroundCircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC2AF4B2AA993A700138E11 /* PomodoroBackgroundCircularProgressView.swift */; };
 		4CC2AF4E2AA996E200138E11 /* PomodoroState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC2AF4D2AA996E200138E11 /* PomodoroState.swift */; };
 		4CC2AF502AA998DB00138E11 /* ProgressBarType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC2AF4F2AA998DB00138E11 /* ProgressBarType.swift */; };
+		4CC2AF522AA99C0800138E11 /* PomodoroBackgroundBarProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC2AF512AA99C0800138E11 /* PomodoroBackgroundBarProgressView.swift */; };
 		4CD8DA6C2AA83F0C0077D9B9 /* firefly_cherryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD8DA6B2AA83F0C0077D9B9 /* firefly_cherryApp.swift */; };
 		4CD8DA6E2AA83F0C0077D9B9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD8DA6D2AA83F0C0077D9B9 /* ContentView.swift */; };
 		4CD8DA702AA83F0D0077D9B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CD8DA6F2AA83F0D0077D9B9 /* Assets.xcassets */; };
@@ -63,6 +64,7 @@
 		4CC2AF4B2AA993A700138E11 /* PomodoroBackgroundCircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroBackgroundCircularProgressView.swift; sourceTree = "<group>"; };
 		4CC2AF4D2AA996E200138E11 /* PomodoroState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroState.swift; sourceTree = "<group>"; };
 		4CC2AF4F2AA998DB00138E11 /* ProgressBarType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarType.swift; sourceTree = "<group>"; };
+		4CC2AF512AA99C0800138E11 /* PomodoroBackgroundBarProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroBackgroundBarProgressView.swift; sourceTree = "<group>"; };
 		4CD8DA682AA83F0C0077D9B9 /* firefly-cherry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "firefly-cherry.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CD8DA6B2AA83F0C0077D9B9 /* firefly_cherryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firefly_cherryApp.swift; sourceTree = "<group>"; };
 		4CD8DA6D2AA83F0C0077D9B9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 				4CD8DA9B2AA83F810077D9B9 /* PomodoroView.swift */,
 				4CD8DAA62AA85E4D0077D9B9 /* BackgroundImageView.swift */,
 				4CC2AF4B2AA993A700138E11 /* PomodoroBackgroundCircularProgressView.swift */,
+				4CC2AF512AA99C0800138E11 /* PomodoroBackgroundBarProgressView.swift */,
 			);
 			path = MainAppViews;
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 				4CD8DA9C2AA83F810077D9B9 /* PomodoroView.swift in Sources */,
 				4CC2AF4A2AA98E7100138E11 /* DisplaySettingsBackgroundFileChooser.swift in Sources */,
 				4CD8DA782AA83F0D0077D9B9 /* firefly_cherry.xcdatamodeld in Sources */,
+				4CC2AF522AA99C0800138E11 /* PomodoroBackgroundBarProgressView.swift in Sources */,
 				4CD8DAAD2AA871D80077D9B9 /* RPCHandler.swift in Sources */,
 				4CFE558F2AA8A70E00299450 /* DisplaySettingsView.swift in Sources */,
 				4CD8DAA12AA848280077D9B9 /* PomodoroStartButton.swift in Sources */,

@@ -39,7 +39,12 @@ struct PomodoroView: View {
                 
                 Text("\(String(repeating: "🍅", count: pomodoro_count))")
                     .font(.largeTitle)
-                    .padding(.bottom, 5)
+                    .padding(.bottom, 10)
+                
+                if (progressBarType == .top) {
+                    PomodoroBackgroundBarProgressView(state: $current_state, current: $duration)
+                        .padding(.bottom, 10)
+                }
                 
                     HStack {
                         Button("pomodoro") {
@@ -80,6 +85,12 @@ struct PomodoroView: View {
                     .bold()
                     .foregroundColor(Color("PomodoroText"))
                 
+                if (progressBarType == .middle) {
+                    PomodoroBackgroundBarProgressView(state: $current_state, current: $duration)
+                        .padding(.bottom, 10)
+                        .padding(.top, -20)
+                }
+                
                 HStack {
                     Button(timerRunning ? "pause" : "start") {
                         switch timerRunning {
@@ -118,6 +129,11 @@ struct PomodoroView: View {
                 }
                 .background(Color("AccentColor"))
                 .cornerRadius(10)
+                
+                if (progressBarType == .bottom) {
+                    PomodoroBackgroundBarProgressView(state: $current_state, current: $duration)
+                        .padding(.top, 10)
+                }
                 
             }
         }

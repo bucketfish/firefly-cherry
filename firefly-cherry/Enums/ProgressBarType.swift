@@ -8,6 +8,6 @@
 import Foundation
 
 enum ProgressBarType: String, Equatable, CaseIterable {
-    case circular, top, bottom, none
+    case circular, top, middle, bottom, none
     var id: Self {self}
 }
