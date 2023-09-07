@@ -32,6 +32,7 @@ struct DisplaySettingsView: View {
     @AppStorage("colorScheme") private var colorScheme: ColorScheme = .system
     
     
+    @AppStorage("imageInterpolation") private var imageInterpolation = false
     @AppStorage("imageType") private var imageType: ImageType = .premade
     @AppStorage("webImageLink") private var webImageLink: String = ""
     @AppStorage("localImageLink") private var localImageLink: URL?
@@ -43,6 +44,9 @@ struct DisplaySettingsView: View {
     var backgroundImages = [
         "sample_background", "sunset"
     ]
+    
+    
+    @State var showInterpolationPopover = false
     
     var body: some View {
         Form {
@@ -102,6 +106,22 @@ struct DisplaySettingsView: View {
                 else {
                     DisplaySettingsBackgroundFileChooser(filepath: $localImageLink)
                 }
+                
+                HStack (alignment: .bottom) {
+                    Toggle("interpolate image", isOn: $imageInterpolation)
+                    
+                    Button {
+                        showInterpolationPopover.toggle()
+                    } label: {
+                        Image(systemName: "info.circle")
+                            .popover(isPresented: $showInterpolationPopover) {
+                                Text("turn this off if you're using pixel art!")
+                                    .padding()
+                            }
+                    }
+                    .buttonStyle(.plain)
+                }
+                .padding(.vertical, 2)
             }
             
             Divider()

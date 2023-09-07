@@ -9,6 +9,8 @@ import SwiftUI
 
 struct BackgroundImageView: View {
     @AppStorage("imageType") private var imageType: ImageType = .premade
+    @AppStorage("imageInterpolation") private var imageInterpolation = false
+
     @AppStorage("webImageLink") private var webImageLink = ""
     @AppStorage("localImageLink") private var localImageLink: URL?
     @AppStorage("backgroundImageIndex") private var backgroundImageIndex = 0
@@ -22,6 +24,7 @@ struct BackgroundImageView: View {
         if (imageType == .web) {
             AsyncImage(url: URL(string: webImageLink)) { image in
                 image
+                    .interpolation(imageInterpolation ? .medium : .none)
                     .resizable()
                     .scaledToFill()
             } placeholder: {
@@ -33,6 +36,7 @@ struct BackgroundImageView: View {
         else if (imageType == .upload) {
             AsyncImage(url: localImageLink) { image in
                 image
+                    .interpolation(imageInterpolation ? .medium : .none)
                     .resizable()
                     .scaledToFill()
             } placeholder: {
