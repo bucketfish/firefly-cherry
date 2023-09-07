@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SpotifyNowPlayingView: View {
+    @AppStorage("cornerRadius") private var cornerRadius: Double = 10
     @AppStorage("customColor") private var customColorString: String = ""
 
     
@@ -17,7 +18,7 @@ struct SpotifyNowPlayingView: View {
     
     var body: some View {
         if (songName != "NOTRUNNING") {
-            HStack {
+            HStack (spacing: 4) {
                 Group {
                     
                     Button {
@@ -36,9 +37,9 @@ struct SpotifyNowPlayingView: View {
                             .resizable()
                             .scaledToFill()
                             .frame(width: 25, height: 25)
-                            .cornerRadius(5)
+                            .cornerRadius(cornerRadius / 2)
                     } placeholder: {
-                        ProgressView()
+//                        ProgressView()
                     }
                     
                     Text("\(songName)")
@@ -68,7 +69,6 @@ struct SpotifyNowPlayingView: View {
                 
             }
             .foregroundColor(Color("PomodoroText"))
-            .cornerRadius(10)
             .opacity(0.8)
         }
         else {

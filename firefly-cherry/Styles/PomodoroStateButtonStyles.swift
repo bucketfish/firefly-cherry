@@ -9,6 +9,8 @@ import Foundation
 import SwiftUI
 
 struct PomodoroStateButton: ButtonStyle {
+    @AppStorage("cornerRadius") private var cornerRadius: Double = 10
+
     var selected: Bool = false
     func makeBody(configuration: Configuration) -> some View {
         
@@ -16,11 +18,11 @@ struct PomodoroStateButton: ButtonStyle {
             .padding(.horizontal, 15)
             .padding(.vertical, 10)
             .background(selected ? Color("PomodoroText") : .clear)
-            .cornerRadius(10)
+            .cornerRadius(cornerRadius - 5)
             .font(.title2)
             .contentShape(Rectangle())
             .overlay (
-                RoundedRectangle(cornerRadius: 10)
+                RoundedRectangle(cornerRadius: cornerRadius - 5)
                     .strokeBorder(Color("PomodoroText"), lineWidth: 2)
             )
             .foregroundColor(selected ? Color("PomodoroTextOpp") : Color("PomodoroText"))

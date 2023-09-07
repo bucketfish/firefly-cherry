@@ -31,6 +31,7 @@
 		4CD8DAA52AA854960077D9B9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD8DAA42AA854960077D9B9 /* SettingsView.swift */; };
 		4CD8DAA72AA85E4D0077D9B9 /* BackgroundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD8DAA62AA85E4D0077D9B9 /* BackgroundImageView.swift */; };
 		4CD8DAAD2AA871D80077D9B9 /* RPCHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD8DAAC2AA871D80077D9B9 /* RPCHandler.swift */; };
+		4CE0FB7A2AA9EBBE009BC9E0 /* BackgroundImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE0FB792AA9EBBE009BC9E0 /* BackgroundImages.swift */; };
 		4CFE558B2AA8A6E300299450 /* GeneralSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFE558A2AA8A6E300299450 /* GeneralSettingsView.swift */; };
 		4CFE558D2AA8A6F700299450 /* PomodoroSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFE558C2AA8A6F700299450 /* PomodoroSettingsView.swift */; };
 		4CFE558F2AA8A70E00299450 /* DisplaySettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFE558E2AA8A70E00299450 /* DisplaySettingsView.swift */; };
@@ -91,6 +92,7 @@
 		4CD8DAA42AA854960077D9B9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		4CD8DAA62AA85E4D0077D9B9 /* BackgroundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundImageView.swift; sourceTree = "<group>"; };
 		4CD8DAAC2AA871D80077D9B9 /* RPCHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPCHandler.swift; sourceTree = "<group>"; };
+		4CE0FB792AA9EBBE009BC9E0 /* BackgroundImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundImages.swift; sourceTree = "<group>"; };
 		4CFE558A2AA8A6E300299450 /* GeneralSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSettingsView.swift; sourceTree = "<group>"; };
 		4CFE558C2AA8A6F700299450 /* PomodoroSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroSettingsView.swift; sourceTree = "<group>"; };
 		4CFE558E2AA8A70E00299450 /* DisplaySettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplaySettingsView.swift; sourceTree = "<group>"; };
@@ -268,6 +270,7 @@
 				4CFE55A22AA8AF7D00299450 /* TimerSounds.swift */,
 				4CC2AF4D2AA996E200138E11 /* PomodoroState.swift */,
 				4CC2AF4F2AA998DB00138E11 /* ProgressBarType.swift */,
+				4CE0FB792AA9EBBE009BC9E0 /* BackgroundImages.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -434,6 +437,7 @@
 				4CC2AF4C2AA993A700138E11 /* PomodoroBackgroundCircularProgressView.swift in Sources */,
 				4CFE558B2AA8A6E300299450 /* GeneralSettingsView.swift in Sources */,
 				4CFE55952AA8A76E00299450 /* ImageType.swift in Sources */,
+				4CE0FB7A2AA9EBBE009BC9E0 /* BackgroundImages.swift in Sources */,
 				4CD8DAA72AA85E4D0077D9B9 /* BackgroundImageView.swift in Sources */,
 				4CC2AF562AA9BB1300138E11 /* SpotifySettingsView.swift in Sources */,
 				4CD8DAA52AA854960077D9B9 /* SettingsView.swift in Sources */,

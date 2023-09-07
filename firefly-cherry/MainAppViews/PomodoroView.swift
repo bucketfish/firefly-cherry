@@ -12,7 +12,7 @@ struct PomodoroView: View {
     
     @AppStorage("enableSpotify") private var enableSpotify = true
 
-    
+    @AppStorage("cornerRadius") private var cornerRadius: Double = 10
     @AppStorage("customColor") private var customColorString: String = ""
 
     @AppStorage("pomodoroLength") private var pomodoroLength = 25
@@ -80,7 +80,7 @@ struct PomodoroView: View {
                         
                     }
                     .background(stringToColor(string: customColorString))
-                    .cornerRadius(10)
+                    .cornerRadius(cornerRadius)
                     
                     
             
@@ -140,7 +140,7 @@ struct PomodoroView: View {
                     .padding([.trailing, .top, .bottom], 5)
                 }
                 .background(stringToColor(string: customColorString))
-                .cornerRadius(10)
+                .cornerRadius(cornerRadius)
                 
                 if (progressBarType == .bottom) {
                     PomodoroBackgroundBarProgressView(state: $current_state, current: $duration)

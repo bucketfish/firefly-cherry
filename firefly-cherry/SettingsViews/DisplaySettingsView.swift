@@ -27,6 +27,9 @@ func stringToColor(string: String) -> Color {
 }
 
 struct DisplaySettingsView: View {
+    
+    @AppStorage("cornerRadius") private var cornerRadius: Double = 10
+    
     @AppStorage("customColor") private var customColorString: String = ""
     @State var customColor: Color = Color("AccentColor")
     @AppStorage("colorScheme") private var colorScheme: ColorScheme = .system
@@ -50,7 +53,16 @@ struct DisplaySettingsView: View {
     
     var body: some View {
         Form {
-            Section (header: Text("colors").bold()) {
+            Section (header: Text("").bold()) {
+                
+                
+                
+                Slider(value: $cornerRadius, in: 0...25, step: 1) {
+                    Text("corner radius")
+                }
+                
+
+
                 Picker(selection: $colorScheme, label: Text("text color")) {
                     ForEach(ColorScheme.allCases, id: \.id) { type in
                         Text(type.rawValue).tag(type)
