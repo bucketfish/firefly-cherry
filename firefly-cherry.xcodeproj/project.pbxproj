@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4C2744412AA8964700DFD5E0 /* SwordRPC in Frameworks */ = {isa = PBXBuildFile; productRef = 4C2744402AA8964700DFD5E0 /* SwordRPC */; };
+		4C49AC082AAA2A35004EE20D /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C49AC072AAA2A35004EE20D /* CustomFont.swift */; };
 		4CC2AF4A2AA98E7100138E11 /* DisplaySettingsBackgroundFileChooser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC2AF492AA98E7100138E11 /* DisplaySettingsBackgroundFileChooser.swift */; };
 		4CC2AF4C2AA993A700138E11 /* PomodoroBackgroundCircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC2AF4B2AA993A700138E11 /* PomodoroBackgroundCircularProgressView.swift */; };
 		4CC2AF4E2AA996E200138E11 /* PomodoroState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC2AF4D2AA996E200138E11 /* PomodoroState.swift */; };
@@ -64,6 +65,7 @@
 
 /* Begin PBXFileReference section */
 		4C27443F2AA8952E00DFD5E0 /* SwordRPC-master */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "SwordRPC-master"; path = "../SwordRPC-master"; sourceTree = "<group>"; };
+		4C49AC072AAA2A35004EE20D /* CustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFont.swift; sourceTree = "<group>"; };
 		4CC2AF492AA98E7100138E11 /* DisplaySettingsBackgroundFileChooser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplaySettingsBackgroundFileChooser.swift; sourceTree = "<group>"; };
 		4CC2AF4B2AA993A700138E11 /* PomodoroBackgroundCircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroBackgroundCircularProgressView.swift; sourceTree = "<group>"; };
 		4CC2AF4D2AA996E200138E11 /* PomodoroState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroState.swift; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				4CFE55912AA8A74700299450 /* TextFieldWithStepper.swift */,
+				4C49AC072AAA2A35004EE20D /* CustomFont.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -442,6 +445,7 @@
 				4CC2AF562AA9BB1300138E11 /* IntegrationsSettingsView.swift in Sources */,
 				4CD8DAA52AA854960077D9B9 /* SettingsView.swift in Sources */,
 				4CD8DA752AA83F0D0077D9B9 /* Persistence.swift in Sources */,
+				4C49AC082AAA2A35004EE20D /* CustomFont.swift in Sources */,
 				4CC2AF4E2AA996E200138E11 /* PomodoroState.swift in Sources */,
 				4CC2AF542AA9B8D700138E11 /* SpotifyHandler.swift in Sources */,
 				4CD8DA6E2AA83F0C0077D9B9 /* ContentView.swift in Sources */,

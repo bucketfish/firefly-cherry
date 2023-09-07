@@ -11,6 +11,10 @@ import SwiftUI
 
 struct PomodoroStartButton: ButtonStyle {
     @AppStorage("cornerRadius") private var cornerRadius: Double = 10
+    
+    @AppStorage("useCustomFont") private var useCustomFont = false
+    @AppStorage("customFontName") private var customFontName = ""
+
 
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
@@ -19,7 +23,8 @@ struct PomodoroStartButton: ButtonStyle {
             .padding(.vertical, 10)
 //            .background(.white)
             .cornerRadius(cornerRadius - 5)
-            .font(.title)
+            .font(.custom(useCustomFont ? customFontName : "", size: 22, relativeTo: .title))
+
             .contentShape(Rectangle())
             .overlay (
                 RoundedRectangle(cornerRadius: cornerRadius - 5)

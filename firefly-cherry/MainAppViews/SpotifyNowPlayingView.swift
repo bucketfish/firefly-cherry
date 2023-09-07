@@ -11,6 +11,10 @@ struct SpotifyNowPlayingView: View {
     @AppStorage("cornerRadius") private var cornerRadius: Double = 10
     @AppStorage("customColor") private var customColorString: String = ""
     
+    @AppStorage("useCustomFont") private var useCustomFont = false
+    @AppStorage("customFontName") private var customFontName = ""
+
+    
     @AppStorage("showNextPrev") private var showNextPrev = true
 
     @State var songName = ""
@@ -42,7 +46,9 @@ struct SpotifyNowPlayingView: View {
                     } placeholder: {}
                     
                     Text("\(songName)")
-                        .font(.title2)
+//                        .font(.title2)
+                        .font(.custom(useCustomFont ? customFontName : "", size: 18, relativeTo: .title2))
+
                         .onAppear { periodicallyUpdateSongName() }
                     
                     Button {

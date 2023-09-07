@@ -10,6 +10,10 @@ import Subsonic
 
 struct PomodoroView: View {
     
+    @AppStorage("useCustomFont") private var useCustomFont = false
+    @AppStorage("customFontName") private var customFontName = ""
+
+    
     @AppStorage("enableSpotify") private var enableSpotify = true
 
     @AppStorage("cornerRadius") private var cornerRadius: Double = 10
@@ -86,9 +90,10 @@ struct PomodoroView: View {
             
                 
                 Text(formatTimer(duration))
-                    .font(.custom("Avenir", size: 120, relativeTo: .largeTitle))
+                    .font(.custom(useCustomFont ? customFontName : "", size: 120, relativeTo: .largeTitle))
                     .bold()
-                    .padding(.bottom, -20)
+//                    .padding(.bottom, -20)
+                    .padding(.top, 10)
                     .foregroundColor(Color("PomodoroText"))
                 
                 if (enableSpotify == true) {

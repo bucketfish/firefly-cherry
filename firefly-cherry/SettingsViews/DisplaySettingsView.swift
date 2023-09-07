@@ -34,6 +34,9 @@ struct DisplaySettingsView: View {
     @State var customColor: Color = Color("AccentColor")
     @AppStorage("colorScheme") private var colorScheme: ColorScheme = .system
     
+    @AppStorage("useCustomFont") private var useCustomFont = false
+    @AppStorage("customFontName") private var customFontName = ""
+    
     
     @AppStorage("imageInterpolation") private var imageInterpolation = false
     @AppStorage("imageType") private var imageType: ImageType = .premade
@@ -54,9 +57,6 @@ struct DisplaySettingsView: View {
     var body: some View {
         Form {
             Section (header: Text("general appearance").bold()) {
-                
-                
-                
                 Slider(value: $cornerRadius, in: 0...25, step: 1) {
                     Text("corner radius")
                 }
@@ -84,6 +84,12 @@ struct DisplaySettingsView: View {
                         customColor = stringToColor(string: customColorString)
                     }
                 }
+                
+                Toggle("use custom font", isOn: $useCustomFont)
+                
+                TextField("custom font name", text: $customFontName)
+                    .textFieldStyle(.roundedBorder)
+                    .disabled(!useCustomFont)
                 
                 
             }
