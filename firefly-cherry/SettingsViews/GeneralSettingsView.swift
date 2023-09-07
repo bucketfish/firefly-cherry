@@ -9,13 +9,10 @@ import SwiftUI
 import Subsonic
 
 struct GeneralSettingsView: View {
-    @AppStorage("useDiscordRPC") private var useDiscordRPC = true
     
     var body: some View {
         Form {
-            Section (header: Text("discord rich presence").bold()) {
-                Toggle("use discord rich presence", isOn: $useDiscordRPC)
-            }
+            
             
         }
     }

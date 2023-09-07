@@ -39,7 +39,6 @@ struct SpotifyNowPlayingView: View {
                             .frame(width: 25, height: 25)
                             .cornerRadius(cornerRadius / 2)
                     } placeholder: {
-//                        ProgressView()
                     }
                     
                     Text("\(songName)")
