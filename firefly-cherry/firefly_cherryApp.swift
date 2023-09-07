@@ -12,6 +12,7 @@ struct firefly_cherryApp: App {
     let persistenceController = PersistenceController.shared
     
     @AppStorage("colorScheme") private var colorScheme: ColorScheme = .system
+//    @AppStorage("customAccentColor") private var customAccentColor = Color("PomodoroText")
     @Environment(\.colorScheme) private var defaultScheme
 
     
@@ -19,11 +20,11 @@ struct firefly_cherryApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .accentColor(Color("PomodoroText"))
                 .preferredColorScheme(colorScheme == ColorScheme.system ? defaultScheme : colorScheme == ColorScheme.dark ? .dark : .light)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
                 .onDisappear {
                     NSApplication.shared.terminate(self)
-                    
                 }
         }
         .windowStyle(.hiddenTitleBar)

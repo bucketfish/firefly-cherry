@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct PomodoroBackgroundBarProgressView: View {
+    @AppStorage("customColor") private var customColorString: String = ""
+
     @AppStorage("pomodoroLength") private var pomodoroLength = 25
     @AppStorage("shortbreakLength") private var shortbreakLength = 5
     @AppStorage("longbreakLength") private var longbreakLength = 30
@@ -21,7 +23,7 @@ struct PomodoroBackgroundBarProgressView: View {
     var body: some View {
         
         let pomodoroStyle = PomodoroBarProgressStyle(
-                    stroke: Color("AccentColor"),
+                    stroke: stringToColor(string: customColorString),
                     fill: Color("PomodoroText"),
                     caption: ""
                 )

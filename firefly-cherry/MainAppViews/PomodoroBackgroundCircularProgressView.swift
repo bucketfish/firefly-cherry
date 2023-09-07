@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct PomodoroBackgroundCircularProgressView: View {
+    @AppStorage("customColor") private var customColorString: String = ""
+
     @AppStorage("pomodoroLength") private var pomodoroLength = 25
     @AppStorage("shortbreakLength") private var shortbreakLength = 5
     @AppStorage("longbreakLength") private var longbreakLength = 30
@@ -22,7 +24,7 @@ struct PomodoroBackgroundCircularProgressView: View {
         ZStack {
             Circle()
                 .stroke(
-                    Color("AccentColor"), lineWidth: 8
+                    stringToColor(string: customColorString), lineWidth: 8
                 )
             
             Circle()

@@ -10,6 +10,8 @@ import Subsonic
 
 struct PomodoroView: View {
     
+    @AppStorage("customColor") private var customColorString: String = ""
+
     @AppStorage("pomodoroLength") private var pomodoroLength = 25
     @AppStorage("shortbreakLength") private var shortbreakLength = 5
     @AppStorage("longbreakLength") private var longbreakLength = 30
@@ -74,7 +76,7 @@ struct PomodoroView: View {
 
                         
                     }
-                    .background(Color("AccentColor"))
+                    .background(stringToColor(string: customColorString))
                     .cornerRadius(10)
                     
                     
@@ -127,7 +129,7 @@ struct PomodoroView: View {
                     .padding(.trailing, 5)
                     .padding([.trailing, .top, .bottom], 5)
                 }
-                .background(Color("AccentColor"))
+                .background(stringToColor(string: customColorString))
                 .cornerRadius(10)
                 
                 if (progressBarType == .bottom) {

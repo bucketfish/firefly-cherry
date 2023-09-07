@@ -17,11 +17,13 @@ struct SettingsView: View {
     var body: some View {
         TabView {
             GeneralSettingsView()
+                
                 .tabItem {
                     Label("general", systemImage: "gearshape")
                 }
                 .tag(Tabs.general)
             PomodoroSettingsView()
+                
                 .tabItem {
                     Label("pomodoro", systemImage: "clock")
                 }
@@ -33,6 +35,7 @@ struct SettingsView: View {
                 .tag(Tabs.display)
 
         }
+    
         .padding(20)
         .frame(minWidth: 400)
         

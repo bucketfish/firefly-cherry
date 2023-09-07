@@ -7,8 +7,31 @@
 
 import SwiftUI
 
+func colorToString(color: Color)-> String {
+    let uiColor = NSColor(color)
+    var red: CGFloat = 0
+    var green: CGFloat = 0
+    var blue: CGFloat = 0
+    var alpha: CGFloat = 0
+    uiColor.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
+    
+    return "\(red),\(green),\(blue),\(alpha)"
+}
+
+func stringToColor(string: String) -> Color {
+    let rgbArray = string.components(separatedBy: ",")
+    if let red = Double (rgbArray[0]), let green = Double (rgbArray[1]), let blue = Double(rgbArray[2]), let alpha = Double (rgbArray[3]) {
+        return Color(.sRGB, red: red, green: green, blue: blue, opacity: alpha)
+    }
+    return Color("AccentColor")
+}
+
 struct DisplaySettingsView: View {
+    @AppStorage("customColor") private var customColorString: String = ""
+    @State var customColor: Color = Color("AccentColor")
     @AppStorage("colorScheme") private var colorScheme: ColorScheme = .system
+    
+    
     @AppStorage("imageType") private var imageType: ImageType = .premade
     @AppStorage("webImageLink") private var webImageLink: String = ""
     @AppStorage("localImageLink") private var localImageLink: URL?
@@ -30,6 +53,22 @@ struct DisplaySettingsView: View {
                     }
                 }
                 .pickerStyle(.segmented)
+                
+                HStack {
+                    ColorPicker("boxes color", selection: $customColor)
+                        .onChange(of: customColor) { _ in
+                            customColorString = colorToString(color: customColor)
+                        }
+                        .onAppear {
+                            customColor = stringToColor(string: customColorString)
+                        }
+                    
+                    Button("reset color") {
+                        customColorString = "\(1.000),\(0.714),\(0.757),\(0.67)"
+                        customColor = stringToColor(string: customColorString)
+                    }
+                }
+                
                 
             }
             
