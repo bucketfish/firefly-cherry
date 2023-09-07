@@ -14,6 +14,8 @@ struct DisplaySettingsView: View {
     @AppStorage("localImageLink") private var localImageLink: URL?
     @AppStorage("backgroundImageIndex") private var backgroundImageIndex = 0
     
+    @AppStorage("progressBarType") private var progressBarType: ProgressBarType = .circular
+    
     var backgroundImages = [
         "sample_background", "sunset"
     ]
@@ -22,9 +24,13 @@ struct DisplaySettingsView: View {
         Form {
             Section (header: Text("colors").bold()) {
                 Picker(selection: $colorScheme, label: Text("color scheme")) {
-                    Text("light").tag(ColorScheme.light)
-                    Text("dark").tag(ColorScheme.dark)
-                    Text("system").tag(ColorScheme.system)
+//                    Text("light").tag(ColorScheme.light)
+//                    Text("dark").tag(ColorScheme.dark)
+//                    Text("system").tag(ColorScheme.system)
+                    
+                    ForEach(ColorScheme.allCases, id: \.id) { type in
+                        Text(type.rawValue).tag(type)
+                    }
                 }
                 .pickerStyle(.segmented)
                 
@@ -37,9 +43,11 @@ struct DisplaySettingsView: View {
             
             Section (header: Text("background image").bold()) {
                 Picker(selection: $imageType, label: Text("image source")) {
-                    Text("default").tag(ImageType.premade)
-                    Text("web image").tag(ImageType.web)
-                    Text("custom").tag(ImageType.upload)
+                    
+                    ForEach(ImageType.allCases, id: \.id) { type in
+                        Text(type.rawValue).tag(type)
+                    }
+                    
                 }
                 .pickerStyle(.segmented)
                 
@@ -58,14 +66,25 @@ struct DisplaySettingsView: View {
                 }
                 else {
                     DisplaySettingsBackgroundFileChooser(filepath: $localImageLink)
-                    
                 }
             }
             
+            Divider()
+                .padding(.bottom)
+            
+            Section(header: Text("progress bar").bold()) {
+                Picker(selection: $progressBarType, label: Text("type")) {
+                    ForEach(ProgressBarType.allCases, id: \.id) { type in
+                        Text(type.rawValue).tag(type)
+                    }
+                }
+                .pickerStyle(.segmented)
+            }
+            
         }
-    
-    }
         
+    }
+    
 }
 
 struct DisplaySettingsView_Previews: PreviewProvider {

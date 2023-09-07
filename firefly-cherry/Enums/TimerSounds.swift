@@ -10,5 +10,5 @@ import Foundation
 enum TimerSounds: String, Equatable, CaseIterable {
     case harp = "harp"
     case marimba = "marimba"
-
+    var id: Self {self}
 }

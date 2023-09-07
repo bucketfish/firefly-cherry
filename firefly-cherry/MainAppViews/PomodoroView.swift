@@ -8,10 +8,6 @@
 import SwiftUI
 import Subsonic
 
-enum PomodoroState {
-    case pomodoro, short_break, long_break
-}
-
 struct PomodoroView: View {
     
     @AppStorage("pomodoroLength") private var pomodoroLength = 25
@@ -22,6 +18,8 @@ struct PomodoroView: View {
     
     @AppStorage("timerSound") private var timerSound: TimerSounds = .harp
     @AppStorage("timerVolume") private var timerVolume = 0.5
+    
+    @AppStorage("progressBarType") private var progressBarType: ProgressBarType = .circular
 
     
     @State var duration = 25 * 60
@@ -32,7 +30,11 @@ struct PomodoroView: View {
     
     
     var body: some View {
-  
+        ZStack {
+            if (progressBarType == .circular) {
+                PomodoroBackgroundCircularProgressView(state: $current_state, current: $duration)
+            }
+
             VStack (spacing: 0){
                 
                 Text("\(String(repeating: "🍅", count: pomodoro_count))")
@@ -118,6 +120,7 @@ struct PomodoroView: View {
                 .cornerRadius(10)
                 
             }
+        }
     }
     
     func formatTimer(_ duration:Int) -> String {
@@ -186,24 +189,28 @@ struct PomodoroView: View {
             pauseTimer()
         }
         
-        switch state {
-        case .pomodoro:
-            duration = pomodoroLength * 60
-        case .short_break:
-            duration = shortbreakLength * 60
-        case .long_break:
-            duration = longbreakLength * 60
-        }
-        
         current_state = state
+        
+        duration = stateLength(state) * 60
         
         
         if (autostart) {
             runTimer()
         }
-
         
     }
+    
+    func stateLength(_ state: PomodoroState) -> Int {
+        switch state {
+        case .pomodoro:
+            return pomodoroLength
+        case .short_break:
+            return shortbreakLength
+        case .long_break:
+            return longbreakLength
+        }
+    }
+
 }
 
 struct PomodoroView_Previews: PreviewProvider {
