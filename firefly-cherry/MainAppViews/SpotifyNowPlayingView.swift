@@ -10,8 +10,9 @@ import SwiftUI
 struct SpotifyNowPlayingView: View {
     @AppStorage("cornerRadius") private var cornerRadius: Double = 10
     @AppStorage("customColor") private var customColorString: String = ""
-
     
+    @AppStorage("showNextPrev") private var showNextPrev = true
+
     @State var songName = ""
     @State var songUrl = ""
     @State var spotifyRunning = true
@@ -21,50 +22,48 @@ struct SpotifyNowPlayingView: View {
             HStack (spacing: 4) {
                 Group {
                     
-                    Button {
-                        
-                    } label: {
-                        Image(systemName: "backward.fill")
-                            .font(.title3)
+                    if (showNextPrev) {
+                        Button {
+                            
+                        } label: {
+                            Image(systemName: "backward.fill")
+                                .font(.title3)
+                        }
+                        .buttonStyle(.plain)
                     }
-                    .buttonStyle(.plain)
-                    .padding(.leading, 5)
                     
                    
                     AsyncImage(url: URL(string: songUrl)) { image in
                         image
-
                             .resizable()
                             .scaledToFill()
                             .frame(width: 25, height: 25)
                             .cornerRadius(cornerRadius / 2)
-                    } placeholder: {
-                    }
+                    } placeholder: {}
                     
                     Text("\(songName)")
                         .font(.title2)
                         .onAppear { periodicallyUpdateSongName() }
                     
                     Button {
-                        
+
                     } label: {
                         Image(systemName: "play.fill")
                             .font(.title3)
                     }
                     .buttonStyle(.plain)
                     
-                    Button {
-                        
-                    } label: {
-                        Image(systemName: "forward.fill")
-                            .font(.title3)
+                    if (showNextPrev) {
+                        Button {
+                            
+                        } label: {
+                            Image(systemName: "forward.fill")
+                                .font(.title3)
+                        }
+                        .buttonStyle(.plain)
                     }
-                    .buttonStyle(.plain)
-                    .padding(.trailing, 5)
                     
                 }
-                
-                .padding(.vertical, 5)
                 
             }
             .foregroundColor(Color("PomodoroText"))

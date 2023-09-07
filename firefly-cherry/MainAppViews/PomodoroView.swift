@@ -99,7 +99,6 @@ struct PomodoroView: View {
                 
                 if (progressBarType == .middle) {
                     PomodoroBackgroundBarProgressView(state: $current_state, current: $duration)
-                        .padding(.top, -10)
                         .padding(.bottom, 10)
                 }
                 

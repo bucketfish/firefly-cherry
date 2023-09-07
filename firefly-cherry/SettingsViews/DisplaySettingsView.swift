@@ -53,7 +53,7 @@ struct DisplaySettingsView: View {
     
     var body: some View {
         Form {
-            Section (header: Text("").bold()) {
+            Section (header: Text("general appearance").bold()) {
                 
                 
                 
