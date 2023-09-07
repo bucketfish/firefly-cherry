@@ -47,7 +47,7 @@ struct DisplaySettingsView: View {
     var body: some View {
         Form {
             Section (header: Text("colors").bold()) {
-                Picker(selection: $colorScheme, label: Text("color scheme")) {
+                Picker(selection: $colorScheme, label: Text("text color")) {
                     ForEach(ColorScheme.allCases, id: \.id) { type in
                         Text(type.rawValue).tag(type)
                     }
