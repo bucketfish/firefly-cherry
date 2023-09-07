@@ -10,9 +10,9 @@ import SwiftUI
 struct BackgroundImageView: View {
     @AppStorage("imageType") private var imageType: ImageType = .premade
     @AppStorage("webImageLink") private var webImageLink = ""
+    @AppStorage("localImageLink") private var localImageLink: URL?
     @AppStorage("backgroundImageIndex") private var backgroundImageIndex = 0
     
-    @State var testoggle = true
     var backgroundImages = [
         "sample_background", "sunset"
     ]
@@ -24,17 +24,23 @@ struct BackgroundImageView: View {
                 image
                     .resizable()
                     .scaledToFill()
-                    
-                
             } placeholder: {
                 ProgressView()
             }
             .ignoresSafeArea()
-            .onChange(of: webImageLink) {newLink in
-                testoggle.toggle()
-            }
-            
         }
+        
+        else if (imageType == .upload) {
+            AsyncImage(url: localImageLink) { image in
+                image
+                    .resizable()
+                    .scaledToFill()
+            } placeholder: {
+                ProgressView()
+            }
+            .ignoresSafeArea()
+        }
+        
         else {
             Image(backgroundImages[backgroundImageIndex])
                 .resizable()

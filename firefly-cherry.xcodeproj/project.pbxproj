@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4C2744412AA8964700DFD5E0 /* SwordRPC in Frameworks */ = {isa = PBXBuildFile; productRef = 4C2744402AA8964700DFD5E0 /* SwordRPC */; };
+		4CC2AF4A2AA98E7100138E11 /* DisplaySettingsBackgroundFileChooser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC2AF492AA98E7100138E11 /* DisplaySettingsBackgroundFileChooser.swift */; };
 		4CD8DA6C2AA83F0C0077D9B9 /* firefly_cherryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD8DA6B2AA83F0C0077D9B9 /* firefly_cherryApp.swift */; };
 		4CD8DA6E2AA83F0C0077D9B9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD8DA6D2AA83F0C0077D9B9 /* ContentView.swift */; };
 		4CD8DA702AA83F0D0077D9B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CD8DA6F2AA83F0D0077D9B9 /* Assets.xcassets */; };
@@ -55,6 +56,7 @@
 
 /* Begin PBXFileReference section */
 		4C27443F2AA8952E00DFD5E0 /* SwordRPC-master */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "SwordRPC-master"; path = "../SwordRPC-master"; sourceTree = "<group>"; };
+		4CC2AF492AA98E7100138E11 /* DisplaySettingsBackgroundFileChooser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplaySettingsBackgroundFileChooser.swift; sourceTree = "<group>"; };
 		4CD8DA682AA83F0C0077D9B9 /* firefly-cherry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "firefly-cherry.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CD8DA6B2AA83F0C0077D9B9 /* firefly_cherryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firefly_cherryApp.swift; sourceTree = "<group>"; };
 		4CD8DA6D2AA83F0C0077D9B9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 				4CFE558A2AA8A6E300299450 /* GeneralSettingsView.swift */,
 				4CFE558C2AA8A6F700299450 /* PomodoroSettingsView.swift */,
 				4CFE558E2AA8A70E00299450 /* DisplaySettingsView.swift */,
+				4CC2AF492AA98E7100138E11 /* DisplaySettingsBackgroundFileChooser.swift */,
 			);
 			path = SettingsViews;
 			sourceTree = "<group>";
@@ -398,6 +401,7 @@
 				4CFE55972AA8A78700299450 /* ColorScheme.swift in Sources */,
 				4CFE558D2AA8A6F700299450 /* PomodoroSettingsView.swift in Sources */,
 				4CD8DA9C2AA83F810077D9B9 /* PomodoroView.swift in Sources */,
+				4CC2AF4A2AA98E7100138E11 /* DisplaySettingsBackgroundFileChooser.swift in Sources */,
 				4CD8DA782AA83F0D0077D9B9 /* firefly_cherry.xcdatamodeld in Sources */,
 				4CD8DAAD2AA871D80077D9B9 /* RPCHandler.swift in Sources */,
 				4CFE558F2AA8A70E00299450 /* DisplaySettingsView.swift in Sources */,

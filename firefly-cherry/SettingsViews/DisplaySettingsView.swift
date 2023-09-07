@@ -11,6 +11,7 @@ struct DisplaySettingsView: View {
     @AppStorage("colorScheme") private var colorScheme: ColorScheme = .system
     @AppStorage("imageType") private var imageType: ImageType = .premade
     @AppStorage("webImageLink") private var webImageLink: String = ""
+    @AppStorage("localImageLink") private var localImageLink: URL?
     @AppStorage("backgroundImageIndex") private var backgroundImageIndex = 0
     
     var backgroundImages = [
@@ -56,8 +57,7 @@ struct DisplaySettingsView: View {
                         .textFieldStyle(.roundedBorder)
                 }
                 else {
-                    Text("coming soon!")
-                    
+                    DisplaySettingsBackgroundFileChooser(filepath: $localImageLink)
                     
                 }
             }
