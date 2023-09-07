@@ -159,10 +159,9 @@
 				4CFE55902AA8A72100299450 /* Components */,
 				4CFE55892AA8A6D200299450 /* SettingsViews */,
 				4CD8DA9D2AA843B20077D9B9 /* Styles */,
+				4CE7B6CA2AA8C874009D3781 /* MainAppViews */,
 				4CD8DA6B2AA83F0C0077D9B9 /* firefly_cherryApp.swift */,
 				4CD8DA6D2AA83F0C0077D9B9 /* ContentView.swift */,
-				4CD8DA9B2AA83F810077D9B9 /* PomodoroView.swift */,
-				4CD8DAA62AA85E4D0077D9B9 /* BackgroundImageView.swift */,
 				4CD8DA6F2AA83F0D0077D9B9 /* Assets.xcassets */,
 				4CD8DA742AA83F0D0077D9B9 /* Persistence.swift */,
 				4CD8DA792AA83F0D0077D9B9 /* firefly_cherry.entitlements */,
@@ -207,6 +206,15 @@
 				4CD8DAA02AA848280077D9B9 /* PomodoroStartButton.swift */,
 			);
 			path = Styles;
+			sourceTree = "<group>";
+		};
+		4CE7B6CA2AA8C874009D3781 /* MainAppViews */ = {
+			isa = PBXGroup;
+			children = (
+				4CD8DA9B2AA83F810077D9B9 /* PomodoroView.swift */,
+				4CD8DAA62AA85E4D0077D9B9 /* BackgroundImageView.swift */,
+			);
+			path = MainAppViews;
 			sourceTree = "<group>";
 		};
 		4CFE55892AA8A6D200299450 /* SettingsViews */ = {
