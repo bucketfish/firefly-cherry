@@ -12,7 +12,7 @@ import SwiftUI
 
 struct SettingsView: View {
     private enum Tabs: Hashable {
-        case general, pomodoro, display
+        case general, pomodoro, display, spotify
     }
     var body: some View {
         TabView {
@@ -33,6 +33,12 @@ struct SettingsView: View {
                     Label("display", systemImage: "display")
                 }
                 .tag(Tabs.display)
+            
+            SpotifySettingsView()
+                .tabItem{
+                    Label("spotify", systemImage: "music.note")
+                }
+                .tag(Tabs.spotify)
 
         }
     

@@ -10,6 +10,9 @@ import Subsonic
 
 struct PomodoroView: View {
     
+    @AppStorage("enableSpotify") private var enableSpotify = true
+
+    
     @AppStorage("customColor") private var customColorString: String = ""
 
     @AppStorage("pomodoroLength") private var pomodoroLength = 25
@@ -85,12 +88,19 @@ struct PomodoroView: View {
                 Text(formatTimer(duration))
                     .font(.custom("Avenir", size: 120, relativeTo: .largeTitle))
                     .bold()
+                    .padding(.bottom, -20)
                     .foregroundColor(Color("PomodoroText"))
+                
+                if (enableSpotify == true) {
+                    SpotifyNowPlayingView()
+                        .padding(.top, -10)
+                        .padding(.bottom, 10)
+                }
                 
                 if (progressBarType == .middle) {
                     PomodoroBackgroundBarProgressView(state: $current_state, current: $duration)
+                        .padding(.top, -10)
                         .padding(.bottom, 10)
-                        .padding(.top, -20)
                 }
                 
                 HStack {

@@ -13,6 +13,9 @@
 		4CC2AF4E2AA996E200138E11 /* PomodoroState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC2AF4D2AA996E200138E11 /* PomodoroState.swift */; };
 		4CC2AF502AA998DB00138E11 /* ProgressBarType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC2AF4F2AA998DB00138E11 /* ProgressBarType.swift */; };
 		4CC2AF522AA99C0800138E11 /* PomodoroBackgroundBarProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC2AF512AA99C0800138E11 /* PomodoroBackgroundBarProgressView.swift */; };
+		4CC2AF542AA9B8D700138E11 /* SpotifyHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC2AF532AA9B8D700138E11 /* SpotifyHandler.swift */; };
+		4CC2AF562AA9BB1300138E11 /* SpotifySettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC2AF552AA9BB1300138E11 /* SpotifySettingsView.swift */; };
+		4CC2AF592AA9C6E400138E11 /* SpotifyNowPlayingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC2AF582AA9C6E400138E11 /* SpotifyNowPlayingView.swift */; };
 		4CD8DA6C2AA83F0C0077D9B9 /* firefly_cherryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD8DA6B2AA83F0C0077D9B9 /* firefly_cherryApp.swift */; };
 		4CD8DA6E2AA83F0C0077D9B9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD8DA6D2AA83F0C0077D9B9 /* ContentView.swift */; };
 		4CD8DA702AA83F0D0077D9B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CD8DA6F2AA83F0D0077D9B9 /* Assets.xcassets */; };
@@ -65,6 +68,10 @@
 		4CC2AF4D2AA996E200138E11 /* PomodoroState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroState.swift; sourceTree = "<group>"; };
 		4CC2AF4F2AA998DB00138E11 /* ProgressBarType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarType.swift; sourceTree = "<group>"; };
 		4CC2AF512AA99C0800138E11 /* PomodoroBackgroundBarProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroBackgroundBarProgressView.swift; sourceTree = "<group>"; };
+		4CC2AF532AA9B8D700138E11 /* SpotifyHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyHandler.swift; sourceTree = "<group>"; };
+		4CC2AF552AA9BB1300138E11 /* SpotifySettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifySettingsView.swift; sourceTree = "<group>"; };
+		4CC2AF572AA9BEAC00138E11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		4CC2AF582AA9C6E400138E11 /* SpotifyNowPlayingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyNowPlayingView.swift; sourceTree = "<group>"; };
 		4CD8DA682AA83F0C0077D9B9 /* firefly-cherry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "firefly-cherry.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CD8DA6B2AA83F0C0077D9B9 /* firefly_cherryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firefly_cherryApp.swift; sourceTree = "<group>"; };
 		4CD8DA6D2AA83F0C0077D9B9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -164,6 +171,7 @@
 		4CD8DA6A2AA83F0C0077D9B9 /* firefly-cherry */ = {
 			isa = PBXGroup;
 			children = (
+				4CC2AF572AA9BEAC00138E11 /* Info.plist */,
 				4CFE559D2AA8AEFB00299450 /* Resources */,
 				4CFE55932AA8A76400299450 /* Enums */,
 				4CFE55902AA8A72100299450 /* Components */,
@@ -180,6 +188,7 @@
 				4CD8DAAC2AA871D80077D9B9 /* RPCHandler.swift */,
 				4CFE55982AA8A8E500299450 /* .gitignore */,
 				4CFE559A2AA8A97300299450 /* README.md */,
+				4CC2AF532AA9B8D700138E11 /* SpotifyHandler.swift */,
 			);
 			path = "firefly-cherry";
 			sourceTree = "<group>";
@@ -225,6 +234,7 @@
 				4CD8DAA62AA85E4D0077D9B9 /* BackgroundImageView.swift */,
 				4CC2AF4B2AA993A700138E11 /* PomodoroBackgroundCircularProgressView.swift */,
 				4CC2AF512AA99C0800138E11 /* PomodoroBackgroundBarProgressView.swift */,
+				4CC2AF582AA9C6E400138E11 /* SpotifyNowPlayingView.swift */,
 			);
 			path = MainAppViews;
 			sourceTree = "<group>";
@@ -237,6 +247,7 @@
 				4CFE558C2AA8A6F700299450 /* PomodoroSettingsView.swift */,
 				4CFE558E2AA8A70E00299450 /* DisplaySettingsView.swift */,
 				4CC2AF492AA98E7100138E11 /* DisplaySettingsBackgroundFileChooser.swift */,
+				4CC2AF552AA9BB1300138E11 /* SpotifySettingsView.swift */,
 			);
 			path = SettingsViews;
 			sourceTree = "<group>";
@@ -424,10 +435,13 @@
 				4CFE558B2AA8A6E300299450 /* GeneralSettingsView.swift in Sources */,
 				4CFE55952AA8A76E00299450 /* ImageType.swift in Sources */,
 				4CD8DAA72AA85E4D0077D9B9 /* BackgroundImageView.swift in Sources */,
+				4CC2AF562AA9BB1300138E11 /* SpotifySettingsView.swift in Sources */,
 				4CD8DAA52AA854960077D9B9 /* SettingsView.swift in Sources */,
 				4CD8DA752AA83F0D0077D9B9 /* Persistence.swift in Sources */,
 				4CC2AF4E2AA996E200138E11 /* PomodoroState.swift in Sources */,
+				4CC2AF542AA9B8D700138E11 /* SpotifyHandler.swift in Sources */,
 				4CD8DA6E2AA83F0C0077D9B9 /* ContentView.swift in Sources */,
+				4CC2AF592AA9C6E400138E11 /* SpotifyNowPlayingView.swift in Sources */,
 				4CFE55A32AA8AF7D00299450 /* TimerSounds.swift in Sources */,
 				4CD8DA9F2AA843D40077D9B9 /* PomodoroStateButtonStyles.swift in Sources */,
 				4CD8DA6C2AA83F0C0077D9B9 /* firefly_cherryApp.swift in Sources */,
@@ -595,6 +609,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "firefly-cherry/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "firefly-cherry";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -624,6 +639,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "firefly-cherry/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "firefly-cherry";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
