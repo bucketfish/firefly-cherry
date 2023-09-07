@@ -8,8 +8,7 @@
 import Foundation
 import SwiftUI
 
-func testPlaySong() {
-
+func getPlaySongAccess() {
     let options: NSDictionary = [kAXTrustedCheckOptionPrompt.takeUnretainedValue() as String : true]
     let accessEnabled = AXIsProcessTrustedWithOptions(options)
           
@@ -19,50 +18,32 @@ func testPlaySong() {
     } else {
        print("Access Granted")
     }
-    
-    
-    let myAppleScript = """
-            tell application "Spotify"
-                set c to current track
-            end tell
-
-            return name of c as text
-
-    """
-    var error: NSDictionary?
-    DispatchQueue.global(qos: .background).async {
-        if let scriptObject = NSAppleScript(source: myAppleScript) {
-            if let outputString = scriptObject.executeAndReturnError(&error).stringValue {
-                print(outputString)
-            } else if (error != nil) {
-                print("error: ", error!)
-            }
-        }
-    }
 }
 
-
-
-func getSongName(completion: @escaping (String)->()) {
+func getSongName(completion: @escaping (NSAppleEventDescriptor)->()) {
     let myAppleScript = """
+        if application "Spotify" is running then
             tell application "Spotify"
                 set c to current track
+                return {(get name of current track) as text & " · " & (get artist of current track) as text,  get artwork url of current track as text}
             end tell
-
-            return name of c as text
+        else
+            return "NOTRUNNING"
+        end if
 
     """
     var error: NSDictionary?
-    var songName = ""
     
     DispatchQueue.global(qos: .background).async {
         if let scriptObject = NSAppleScript(source: myAppleScript) {
-            if let outputString = scriptObject.executeAndReturnError(&error).stringValue {
-                songName = outputString
-                completion(songName)
-            } else if (error != nil) {
-                print("error: ", error!)
-            }
+            let outputString = scriptObject.executeAndReturnError(&error)
+            completion(outputString)
+//            if let outputString = scriptObject.executeAndReturnError(&error).stringValue {
+//                print(outputString)
+//                completion(outputString)
+//            } else if (error != nil) {
+//                print("error: ", error!)
+//            }
         }
     }
     

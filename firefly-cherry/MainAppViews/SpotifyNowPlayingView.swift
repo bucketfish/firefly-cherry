@@ -12,58 +12,87 @@ struct SpotifyNowPlayingView: View {
 
     
     @State var songName = ""
+    @State var songUrl = ""
     @State var spotifyRunning = true
     
     var body: some View {
-        HStack {
-            
-            Group {
-                
-                Button {
+        if (songName != "NOTRUNNING") {
+            HStack {
+                Group {
                     
-                } label: {
-                    Image(systemName: "backward.fill")
+                    Button {
+                        
+                    } label: {
+                        Image(systemName: "backward.fill")
+                            .font(.title3)
+                    }
+                    .buttonStyle(.plain)
+                    .padding(.leading, 5)
+                    
+                   
+                    AsyncImage(url: URL(string: songUrl)) { image in
+                        image
+
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 25, height: 25)
+                            .cornerRadius(5)
+                    } placeholder: {
+                        ProgressView()
+                    }
+                    
+                    Text("\(songName)")
                         .font(.title2)
-                }
-                .buttonStyle(.plain)
-                .padding(.leading, 5)
-                
-                Text("\(songName)")
-                    .font(.title2)
-                    .onAppear { periodicallyUpdateSongName() }
-                
-                Button {
+                        .onAppear { periodicallyUpdateSongName() }
                     
-                } label: {
-                    Image(systemName: "play.fill")
-                        .font(.title2)
+                    Button {
+                        
+                    } label: {
+                        Image(systemName: "play.fill")
+                            .font(.title3)
+                    }
+                    .buttonStyle(.plain)
+                    
+                    Button {
+                        
+                    } label: {
+                        Image(systemName: "forward.fill")
+                            .font(.title3)
+                    }
+                    .buttonStyle(.plain)
+                    .padding(.trailing, 5)
+                    
                 }
-                .buttonStyle(.plain)
                 
-                Button {
-                    
-                } label: {
-                    Image(systemName: "forward.fill")
-                        .font(.title2)
-                }
-                .buttonStyle(.plain)
-                .padding(.trailing, 5)
-                    
+                .padding(.vertical, 5)
+                
             }
-            
-            .padding(.vertical, 5)
+            .foregroundColor(Color("PomodoroText"))
+            .cornerRadius(10)
+            .opacity(0.8)
+        }
+        else {
+            Text("spotify is not running!")
+                .font(.title2)
+                .foregroundColor(Color("PomodoroText"))
+                .padding(.vertical, 5)
+                .opacity(0.8)
             
         }
-        .foregroundColor(Color("PomodoroText"))
-//        .background(stringToColor(string: customColorString))
-        .cornerRadius(10)
         
         
     }
     
     func periodicallyUpdateSongName() {
+        getPlaySongAccess()
+        
         getSongName { result in
-            songName = result
+            songName = result.atIndex(1)?.stringValue ?? ""
+            songUrl = result.atIndex(2)?.stringValue ?? ""
+            
+            print(songUrl)
+
+//            songName = result
         }
         
         _ = Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { timer in
@@ -73,7 +102,8 @@ struct SpotifyNowPlayingView: View {
             }
             
             getSongName { result in
-                songName = result
+                songName = result.atIndex(1)?.stringValue ?? ""
+                songUrl = result.atIndex(2)?.stringValue ?? ""
             }
 
         }

@@ -14,12 +14,12 @@ struct SpotifySettingsView: View {
     var body: some View {
         
         Form {
-            Section {
+            Section (header: Text("spotify display").bold() ){
                 Toggle("enable spotify display", isOn: $enableSpotify)
             }
             //
             Button("test") {
-                testPlaySong()
+                getPlaySongAccess()
             }
         }
         
