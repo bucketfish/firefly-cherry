@@ -15,6 +15,7 @@ struct DisplaySettingsView: View {
     @AppStorage("backgroundImageIndex") private var backgroundImageIndex = 0
     
     @AppStorage("progressBarType") private var progressBarType: ProgressBarType = .circular
+    @AppStorage("progressBarOpacity") private var progressBarOpacity = 0.5
     
     var backgroundImages = [
         "sample_background", "sunset"
@@ -24,10 +25,6 @@ struct DisplaySettingsView: View {
         Form {
             Section (header: Text("colors").bold()) {
                 Picker(selection: $colorScheme, label: Text("color scheme")) {
-//                    Text("light").tag(ColorScheme.light)
-//                    Text("dark").tag(ColorScheme.dark)
-//                    Text("system").tag(ColorScheme.system)
-                    
                     ForEach(ColorScheme.allCases, id: \.id) { type in
                         Text(type.rawValue).tag(type)
                     }
@@ -35,7 +32,6 @@ struct DisplaySettingsView: View {
                 .pickerStyle(.segmented)
                 
             }
-            
             
             Divider()
                 .padding(.bottom)
@@ -79,6 +75,10 @@ struct DisplaySettingsView: View {
                     }
                 }
                 .pickerStyle(.segmented)
+                
+                Slider(value: $progressBarOpacity, in: 0.1...1, step: 0.1) {
+                    Text("opacity")
+                }
             }
             
         }

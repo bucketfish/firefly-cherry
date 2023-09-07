@@ -11,6 +11,9 @@ struct PomodoroBackgroundBarProgressView: View {
     @AppStorage("pomodoroLength") private var pomodoroLength = 25
     @AppStorage("shortbreakLength") private var shortbreakLength = 5
     @AppStorage("longbreakLength") private var longbreakLength = 30
+    
+    @AppStorage("progressBarOpacity") private var progressBarOpacity = 0.5
+
 
     // in seconds
     @Binding var state: PomodoroState
@@ -26,8 +29,11 @@ struct PomodoroBackgroundBarProgressView: View {
         ProgressView(value: CGFloat((stateLength(state) * 60 - current)) / CGFloat(stateLength(state) * 60))
             .progressViewStyle(pomodoroStyle)
             .frame(width: 500)
+            .opacity(progressBarOpacity)
 
     }
+        
+
     
     func stateLength(_ state: PomodoroState) -> Int {
         switch state {
@@ -85,7 +91,6 @@ struct PomodoroBarProgressStyle<Stroke: ShapeStyle, Background: ShapeStyle>: Pro
                     .font(.caption)
             }
         }
-        .opacity(0.5)
     }
 }
 

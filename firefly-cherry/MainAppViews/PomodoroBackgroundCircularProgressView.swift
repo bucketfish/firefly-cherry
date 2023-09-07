@@ -11,6 +11,9 @@ struct PomodoroBackgroundCircularProgressView: View {
     @AppStorage("pomodoroLength") private var pomodoroLength = 25
     @AppStorage("shortbreakLength") private var shortbreakLength = 5
     @AppStorage("longbreakLength") private var longbreakLength = 30
+    
+    @AppStorage("progressBarOpacity") private var progressBarOpacity = 0.5
+
 
     // in seconds
     @Binding var state: PomodoroState
@@ -36,7 +39,7 @@ struct PomodoroBackgroundCircularProgressView: View {
             
         }
         .frame(width: 500, height: 500)
-        .opacity(0.5)
+        .opacity(progressBarOpacity)
         
     }
     
