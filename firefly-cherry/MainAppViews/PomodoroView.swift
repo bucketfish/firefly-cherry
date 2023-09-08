@@ -46,6 +46,7 @@ struct PomodoroView: View {
     
     var body: some View {
         ZStack {
+            
             if (progressBarType == .circular) {
                 PomodoroBackgroundCircularProgressView(state: $current_state, current: $duration)
             }
@@ -157,9 +158,23 @@ struct PomodoroView: View {
                     PomodoroBackgroundBarProgressView(state: $current_state, current: $duration)
                         .padding(.top, 10)
                 }
-                
             }
+            
+//            ZStack {
+//                UpdateCheckView()
+//                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
+//            }
+            
+            
+            
+
+
         }
+
+
+
+        
+
     }
     
     func formatTimer(_ duration:Int) -> String {

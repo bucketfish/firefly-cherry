@@ -24,6 +24,9 @@ struct ContentView: View {
             
             PomodoroView()
             
+            
+
+            
 //            VStack {
 //                HStack {
 //                    Text("test")
@@ -33,6 +36,7 @@ struct ContentView: View {
 //            }
             
         }
+        
         
         
 //        NavigationView {
