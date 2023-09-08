@@ -2,7 +2,7 @@
 
 <img src="https://github.com/bucketfish/firefly-cherry/assets/66538443/7651dc1d-4253-4f3b-a3da-c298b51896c8" width="300"></img>
 <img src="https://github.com/bucketfish/firefly-cherry/assets/66538443/38335157-7a46-4ae9-b4db-aa8417e4eb65" width="300"></img>
-<img src="https://github.com/bucketfish/firefly-cherry/assets/66538443/058e79eb-982e-48bb-b885-361d3c7fec42" width="300"></img>
+<img src="https://github.com/bucketfish/firefly-cherry/assets/66538443/c02eca86-9b18-4afc-9cba-c0ded85bba94" width="300"></img>
 <img src="https://cdn.discordapp.com/attachments/950558891366830141/1149583585930653736/Screenshot_2023-09-08_at_1.54.35_PM.png" width="300"></img>
 
 install it by downloading the firefly-cherry.app.zip on the right, under releases 🥳
