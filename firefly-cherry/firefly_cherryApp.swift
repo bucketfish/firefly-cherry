@@ -33,6 +33,9 @@ struct firefly_cherryApp: App {
         Settings {
             SettingsView()
         }
+        
         #endif
+        
+        
     }
 }
