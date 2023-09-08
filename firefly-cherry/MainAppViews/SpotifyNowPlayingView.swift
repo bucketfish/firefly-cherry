@@ -31,10 +31,7 @@ struct SpotifyNowPlayingView: View {
                     if (showNextPrev) {
                         Button {
                             prevSong {
-                                getSongName { result in
-                                    songName = result.atIndex(1)?.stringValue ?? ""
-                                    songUrl = result.atIndex(2)?.stringValue ?? ""
-                                }
+                                updateSongName()
                             }
                         } label: {
                             Image(systemName: "backward.fill")
@@ -53,7 +50,6 @@ struct SpotifyNowPlayingView: View {
                     } placeholder: {}
                     
                     Text("\(songName)")
-//                        .font(.title2)
                         .font(.custom(useCustomFont ? customFontName : "", size: 18, relativeTo: .title2))
 
                         .onAppear { periodicallyUpdateSongName() }
@@ -61,7 +57,6 @@ struct SpotifyNowPlayingView: View {
                     Button {
                         toggleIsPlaying { returnIsPlaying in
                             isPlaying = returnIsPlaying.booleanValue ?? false
-                            
                         }
 
                     } label: {
@@ -73,10 +68,7 @@ struct SpotifyNowPlayingView: View {
                     if (showNextPrev) {
                         Button {
                             nextSong {
-                                getSongName { result in
-                                    songName = result.atIndex(1)?.stringValue ?? ""
-                                    songUrl = result.atIndex(2)?.stringValue ?? ""
-                                }
+                                updateSongName()
                             }
                         } label: {
                             Image(systemName: "forward.fill")
@@ -100,31 +92,29 @@ struct SpotifyNowPlayingView: View {
             
         }
         
-        
     }
     
-    func periodicallyUpdateSongName() {
-        getIsPlaying { value in
-            isPlaying = !value.booleanValue
-        }
-        
-        getPlaySongAccess()
-        
+    func updateSongName() {
         getSongName { result in
             songName = result.atIndex(1)?.stringValue ?? ""
             songUrl = result.atIndex(2)?.stringValue ?? ""
         }
+    }
+    func periodicallyUpdateSongName() {
+        getPlaySongAccess()
+        
+        getIsPlaying { value in
+            isPlaying = !value.booleanValue
+        }
+        
+        updateSongName()
         
         _ = Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { timer in
-            
             if (!spotifyRunning) {
                 timer.invalidate()
             }
             
-            getSongName { result in
-                songName = result.atIndex(1)?.stringValue ?? ""
-                songUrl = result.atIndex(2)?.stringValue ?? ""
-            }
+            updateSongName()
 
         }
     }
