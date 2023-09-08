@@ -9,9 +9,9 @@ features ✨
 - different sounds to choose from & more coming soon
 - custom pomodoro timings
 - discord rich presence!
+- spotify "now playing" integration 🎵
 
 coming soon 🌱
-- spotify "now playing" integration (or maybe even visualiser 🤯)
 - ability to upload custom timer sounds
 - custom pomodoro iterations
 - pomodoro & focus stats
