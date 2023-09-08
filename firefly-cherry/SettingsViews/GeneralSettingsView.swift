@@ -12,7 +12,9 @@ struct GeneralSettingsView: View {
     
     var body: some View {
         Form {
-            
+            Button("test") {
+                NSApplication.shared.orderFrontCharacterPalette(nil) 
+            }
             
         }
     }

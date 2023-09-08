@@ -34,6 +34,8 @@ struct DisplaySettingsView: View {
     @State var customColor: Color = Color("AccentColor")
     @AppStorage("colorScheme") private var colorScheme: ColorScheme = .system
     
+    @AppStorage("pomodoroSymbol") private var pomodoroSymbol = "🍅"
+    
     @AppStorage("useCustomFont") private var useCustomFont = false
     @AppStorage("customFontName") private var customFontName = ""
     
@@ -59,13 +61,7 @@ struct DisplaySettingsView: View {
     
     var body: some View {
         Form {
-            Section (header: Text("general appearance").bold()) {
-                Slider(value: $cornerRadius, in: 0...25, step: 1) {
-                    Text("corner radius")
-                }
-                
-
-
+            Section (header: Text("font & color").bold()) {
                 Picker(selection: $colorScheme, label: Text("text color")) {
                     ForEach(ColorScheme.allCases, id: \.id) { type in
                         Text(type.rawValue).tag(type)
@@ -88,21 +84,32 @@ struct DisplaySettingsView: View {
                     }
                 }
                 
+
+                
                 Toggle("use custom font", isOn: $useCustomFont)
                 
                 TextField("custom font name", text: $customFontName)
                     .textFieldStyle(.roundedBorder)
                     .disabled(!useCustomFont)
+            }
+            
+            Divider()
+                .padding(.bottom)
+            
+            Section (header: Text("spacing & layout").bold() ) {
+
                 
+                Slider(value: $cornerRadius, in: 0...25, step: 1) {
+                    Text("corner radius")
+                }
                 Slider(value: $timerTopPadding, in: -50...50) {
                     Text("timer top gap")
                 }
                 Slider(value: $timerBottomPadding, in: -50...50) {
                     Text("timer bottom gap")
                 }
-                
-                
             }
+            
             
             Divider()
                 .padding(.bottom)
@@ -165,6 +172,21 @@ struct DisplaySettingsView: View {
                 
                 Slider(value: $progressBarOpacity, in: 0.1...1, step: 0.1) {
                     Text("opacity")
+                }
+            }
+            
+            Divider()
+                .padding(.bottom)
+            
+            Section(header: Text("misc settings").bold()) {
+                HStack {
+                    TextField("pomodoro symbol", text: $pomodoroSymbol)
+                        .frame(width: 200)
+                        .textFieldStyle(.roundedBorder)
+
+                    Button("open character palette") {
+                        NSApplication.shared.orderFrontCharacterPalette(nil)
+                    }
                 }
             }
             

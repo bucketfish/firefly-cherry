@@ -21,6 +21,8 @@ struct PomodoroView: View {
     
     @AppStorage("timerTopPadding") private var timerTopPadding: Double = 10
     @AppStorage("timerBottomPadding") private var timerBottomPadding: Double = 10
+    
+    @AppStorage("pomodoroSymbol") private var pomodoroSymbol = "🍅"
 
 
     @AppStorage("pomodoroLength") private var pomodoroLength = 25
@@ -50,8 +52,9 @@ struct PomodoroView: View {
 
             VStack (spacing: 0){
                 
-                Text("\(String(repeating: "🍅", count: pomodoro_count))")
-                    .font(.largeTitle)
+                Text("\(String(repeating: pomodoroSymbol, count: pomodoro_count))")
+                    .font(.custom(useCustomFont ? customFontName : "", size: 24, relativeTo: .largeTitle))
+                    .foregroundColor(Color("PomodoroText"))
                     .padding(.bottom, 10)
                 
                 if (progressBarType == .top) {
