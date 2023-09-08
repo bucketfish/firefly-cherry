@@ -1,6 +1,9 @@
 #  firefly-cherry — joyful pomodoro :)
 
-![Screenshot 2023-09-06 at 9 24 59 PM](https://github.com/bucketfish/firefly-cherry/assets/66538443/cb1c9bf4-4622-4a61-8b6a-2dd301a6f2da)
+<img src="https://github.com/bucketfish/firefly-cherry/assets/66538443/7651dc1d-4253-4f3b-a3da-c298b51896c8" width="300"></img>
+<img src="https://github.com/bucketfish/firefly-cherry/assets/66538443/38335157-7a46-4ae9-b4db-aa8417e4eb65" width="300"></img>
+<img src="https://github.com/bucketfish/firefly-cherry/assets/66538443/058e79eb-982e-48bb-b885-361d3c7fec42" width="300"></img>
+
 
 install it by downloading the firefly-cherry.app.zip on the right, under releases 🥳
 
