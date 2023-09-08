@@ -9,7 +9,7 @@ install it by downloading the firefly-cherry.app.zip on the right, under release
 
 ‼️ getting a security issue? ‼️
 - right click the app -> open -> allow it to run, OR open system preferences -> privacy & security -> scroll down and allow it to run
-- \[technical stuff] this app needs to disabled sandboxed mode in order to 1. connect locally to your discord for rich presence, and 2. run applescripts to manage your spotify :)
+- \[technical stuff] why security issue? this app needs to disable sandboxed mode in order to 1. connect locally to your discord for rich presence, and 2. run applescripts to manage your spotify :)
 
 features ✨
 - custom backgrounds
