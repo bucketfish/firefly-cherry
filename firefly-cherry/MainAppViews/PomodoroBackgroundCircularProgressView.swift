@@ -15,6 +15,10 @@ struct PomodoroBackgroundCircularProgressView: View {
     @AppStorage("longbreakLength") private var longbreakLength = 30
     
     @AppStorage("progressBarOpacity") private var progressBarOpacity = 0.5
+    
+    @AppStorage("progressBarWidth") private var progressBarWidth: Double = 8
+    @AppStorage("progressBarRadius") private var progressBarRadius: Double = 500
+
 
 
     // in seconds
@@ -24,7 +28,7 @@ struct PomodoroBackgroundCircularProgressView: View {
         ZStack {
             Circle()
                 .stroke(
-                    stringToColor(string: customColorString), lineWidth: 8
+                    stringToColor(string: customColorString), lineWidth: progressBarWidth
                 )
             
             Circle()
@@ -32,7 +36,7 @@ struct PomodoroBackgroundCircularProgressView: View {
                 .stroke(
                     Color("PomodoroText"),
                     style: StrokeStyle(
-                        lineWidth: 8,
+                        lineWidth: progressBarWidth,
                         lineCap: .round
                         )
                 )
@@ -40,7 +44,7 @@ struct PomodoroBackgroundCircularProgressView: View {
             
             
         }
-        .frame(width: 500, height: 500)
+        .frame(width: progressBarRadius, height: progressBarRadius)
         .opacity(progressBarOpacity)
         
     }

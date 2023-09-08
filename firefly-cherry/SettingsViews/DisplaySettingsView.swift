@@ -51,6 +51,8 @@ struct DisplaySettingsView: View {
     
     @AppStorage("progressBarType") private var progressBarType: ProgressBarType = .circular
     @AppStorage("progressBarOpacity") private var progressBarOpacity = 0.5
+    @AppStorage("progressBarRadius") private var progressBarRadius: Double = 500
+    @AppStorage("progressBarWidth") private var progressBarWidth: Double = 8
     
     var backgroundImages = [
         "sample_background", "sunset"
@@ -170,9 +172,20 @@ struct DisplaySettingsView: View {
                 }
                 .pickerStyle(.segmented)
                 
-                Slider(value: $progressBarOpacity, in: 0.1...1, step: 0.1) {
+                Slider(value: $progressBarRadius, in:200...1000) {
+                    Text("circle radius")
+                }
+                .disabled(!(progressBarType == .circular))
+                
+                Slider(value: $progressBarWidth, in: 5...100) {
+                    Text("width")
+                }
+                .disabled(progressBarType == .none)
+                
+                Slider(value: $progressBarOpacity, in: 0.1...1) {
                     Text("opacity")
                 }
+                .disabled(progressBarType == .none)
             }
             
             Divider()

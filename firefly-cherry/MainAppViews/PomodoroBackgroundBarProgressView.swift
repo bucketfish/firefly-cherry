@@ -14,6 +14,9 @@ struct PomodoroBackgroundBarProgressView: View {
     @AppStorage("shortbreakLength") private var shortbreakLength = 5
     @AppStorage("longbreakLength") private var longbreakLength = 30
     
+    @AppStorage("progressBarWidth") private var progressBarWidth: Double = 8
+
+    
     @AppStorage("progressBarOpacity") private var progressBarOpacity = 0.5
 
 
@@ -25,7 +28,8 @@ struct PomodoroBackgroundBarProgressView: View {
         let pomodoroStyle = PomodoroBarProgressStyle(
                     stroke: stringToColor(string: customColorString),
                     fill: Color("PomodoroText"),
-                    caption: ""
+                    caption: "",
+                    height: progressBarWidth + 2
                 )
         
         ProgressView(value: CGFloat((stateLength(state) * 60 - current)) / CGFloat(stateLength(state) * 60))
