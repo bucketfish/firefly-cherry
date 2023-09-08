@@ -21,6 +21,8 @@ struct SpotifyNowPlayingView: View {
     @State var songUrl = ""
     @State var spotifyRunning = true
     
+    @State var isPlaying = false
+    
     var body: some View {
         if (songName != "NOTRUNNING") {
             HStack (spacing: 4) {
@@ -52,9 +54,13 @@ struct SpotifyNowPlayingView: View {
                         .onAppear { periodicallyUpdateSongName() }
                     
                     Button {
+                        toggleIsPlaying { returnIsPlaying in
+                            isPlaying = returnIsPlaying.booleanValue ?? false
+                            
+                        }
 
                     } label: {
-                        Image(systemName: "play.fill")
+                        Image(systemName: isPlaying ? "pause.fill" : "play.fill")
                             .font(.title3)
                     }
                     .buttonStyle(.plain)
@@ -88,15 +94,15 @@ struct SpotifyNowPlayingView: View {
     }
     
     func periodicallyUpdateSongName() {
+        getIsPlaying { value in
+            isPlaying = !value.booleanValue
+        }
+        
         getPlaySongAccess()
         
         getSongName { result in
             songName = result.atIndex(1)?.stringValue ?? ""
             songUrl = result.atIndex(2)?.stringValue ?? ""
-            
-            print(songUrl)
-
-//            songName = result
         }
         
         _ = Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { timer in

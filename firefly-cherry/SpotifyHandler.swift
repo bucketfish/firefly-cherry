@@ -11,12 +11,12 @@ import SwiftUI
 func getPlaySongAccess() {
     let options: NSDictionary = [kAXTrustedCheckOptionPrompt.takeUnretainedValue() as String : true]
     let accessEnabled = AXIsProcessTrustedWithOptions(options)
-          
-
+    
+    
     if !accessEnabled {
-       print("Access Not Enabled")
+        print("Access Not Enabled")
     } else {
-       print("Access Granted")
+        print("Access Granted")
     }
 }
 
@@ -30,7 +30,7 @@ func getSongName(completion: @escaping (NSAppleEventDescriptor)->()) {
         else
             return "NOTRUNNING"
         end if
-
+    
     """
     var error: NSDictionary?
     
@@ -38,13 +38,48 @@ func getSongName(completion: @escaping (NSAppleEventDescriptor)->()) {
         if let scriptObject = NSAppleScript(source: myAppleScript) {
             let outputString = scriptObject.executeAndReturnError(&error)
             completion(outputString)
-//            if let outputString = scriptObject.executeAndReturnError(&error).stringValue {
-//                print(outputString)
-//                completion(outputString)
-//            } else if (error != nil) {
-//                print("error: ", error!)
-//            }
         }
     }
     
+}
+
+func toggleIsPlaying(completion: @escaping (NSAppleEventDescriptor)->()) {
+    let myAppleScript = """
+        using terms from application "Spotify"
+            if player state of application "Spotify" is paused then
+                tell application "Spotify" to play
+                return true
+            else
+                tell application "Spotify" to pause
+                return false
+            end if
+        end using terms from
+        """
+    
+    var error: NSDictionary?
+    
+    
+    DispatchQueue.global(qos: .background).async {
+        if let scriptObject = NSAppleScript(source: myAppleScript) {
+            let outputString = scriptObject.executeAndReturnError(&error)
+            completion(outputString)
+        }
+    }
+}
+
+func getIsPlaying(completion: @escaping (NSAppleEventDescriptor)->()) {
+    let myAppleScript = """
+        using terms from application "Spotify"
+            return (player state of application "Spotify" is paused)
+        end using terms from
+        """
+    
+    var error: NSDictionary?
+    
+    DispatchQueue.global(qos: .background).async {
+        if let scriptObject = NSAppleScript(source: myAppleScript) {
+            let outputString = scriptObject.executeAndReturnError(&error)
+            completion(outputString)
+        }
+    }
 }
