@@ -18,6 +18,10 @@ struct PomodoroView: View {
 
     @AppStorage("cornerRadius") private var cornerRadius: Double = 10
     @AppStorage("customColor") private var customColorString: String = ""
+    
+    @AppStorage("timerTopPadding") private var timerTopPadding: Double = 10
+    @AppStorage("timerBottomPadding") private var timerBottomPadding: Double = 10
+
 
     @AppStorage("pomodoroLength") private var pomodoroLength = 25
     @AppStorage("shortbreakLength") private var shortbreakLength = 5
@@ -92,8 +96,8 @@ struct PomodoroView: View {
                 Text(formatTimer(duration))
                     .font(.custom(useCustomFont ? customFontName : "", size: 120, relativeTo: .largeTitle))
                     .bold()
-//                    .padding(.bottom, -20)
-                    .padding(.top, 10)
+                    .padding(.bottom, timerBottomPadding)
+                    .padding(.top, timerTopPadding)
                     .foregroundColor(Color("PomodoroText"))
                 
                 if (enableSpotify == true) {

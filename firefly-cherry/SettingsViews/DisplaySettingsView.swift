@@ -37,6 +37,9 @@ struct DisplaySettingsView: View {
     @AppStorage("useCustomFont") private var useCustomFont = false
     @AppStorage("customFontName") private var customFontName = ""
     
+    @AppStorage("timerTopPadding") private var timerTopPadding: Double = 10
+    @AppStorage("timerBottomPadding") private var timerBottomPadding: Double = 0
+    
     
     @AppStorage("imageInterpolation") private var imageInterpolation = false
     @AppStorage("imageType") private var imageType: ImageType = .premade
@@ -90,6 +93,13 @@ struct DisplaySettingsView: View {
                 TextField("custom font name", text: $customFontName)
                     .textFieldStyle(.roundedBorder)
                     .disabled(!useCustomFont)
+                
+                Slider(value: $timerTopPadding, in: -50...50) {
+                    Text("timer top gap")
+                }
+                Slider(value: $timerBottomPadding, in: -50...50) {
+                    Text("timer bottom gap")
+                }
                 
                 
             }
