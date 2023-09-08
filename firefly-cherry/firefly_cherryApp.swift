@@ -26,7 +26,28 @@ struct firefly_cherryApp: App {
                 .onDisappear {
                     NSApplication.shared.terminate(self)
                 }
+            
         }
+//        .commands {
+//            CommandGroup(replacing: .appInfo) {
+//                Button("About firefly-cherry") {
+//                    NSApplication.shared.orderFrontStandardAboutPanel(
+//                        options: [
+//                            NSApplication.AboutPanelOptionKey.credits: NSAttributedString(
+//                                string: "firefly-cherry is a cute & customisable pomodoro app made by bucketfish :)"
+////                                attributes: [
+////                                    NSAttributedString.Key.font: NSFont.boldSystemFont(
+////                                        ofSize: NSFont.smallSystemFontSize)
+////                                ]
+//                            ),
+//                            NSApplication.AboutPanelOptionKey(
+//                                rawValue: "Copyright"
+//                            ): "© 2023 bucketfish"
+//                        ]
+//                    )
+//                }
+//            }
+//        }
         .windowStyle(.hiddenTitleBar)
         
         #if os(macOS)

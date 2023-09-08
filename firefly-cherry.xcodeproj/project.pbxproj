@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4C2744412AA8964700DFD5E0 /* SwordRPC in Frameworks */ = {isa = PBXBuildFile; productRef = 4C2744402AA8964700DFD5E0 /* SwordRPC */; };
+		4C42FB1D2AAADD6900BC8789 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4C42FB1C2AAADD6900BC8789 /* Credits.rtf */; };
 		4C49AC082AAA2A35004EE20D /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C49AC072AAA2A35004EE20D /* CustomFont.swift */; };
 		4CC2AF4A2AA98E7100138E11 /* DisplaySettingsBackgroundFileChooser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC2AF492AA98E7100138E11 /* DisplaySettingsBackgroundFileChooser.swift */; };
 		4CC2AF4C2AA993A700138E11 /* PomodoroBackgroundCircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC2AF4B2AA993A700138E11 /* PomodoroBackgroundCircularProgressView.swift */; };
@@ -65,6 +66,7 @@
 
 /* Begin PBXFileReference section */
 		4C27443F2AA8952E00DFD5E0 /* SwordRPC-master */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "SwordRPC-master"; path = "../SwordRPC-master"; sourceTree = "<group>"; };
+		4C42FB1C2AAADD6900BC8789 /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		4C49AC072AAA2A35004EE20D /* CustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFont.swift; sourceTree = "<group>"; };
 		4CC2AF492AA98E7100138E11 /* DisplaySettingsBackgroundFileChooser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplaySettingsBackgroundFileChooser.swift; sourceTree = "<group>"; };
 		4CC2AF4B2AA993A700138E11 /* PomodoroBackgroundCircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroBackgroundCircularProgressView.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				4CFE55982AA8A8E500299450 /* .gitignore */,
 				4CFE559A2AA8A97300299450 /* README.md */,
 				4CC2AF532AA9B8D700138E11 /* SpotifyHandler.swift */,
+				4C42FB1C2AAADD6900BC8789 /* Credits.rtf */,
 			);
 			path = "firefly-cherry";
 			sourceTree = "<group>";
@@ -399,6 +402,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CD8DA732AA83F0D0077D9B9 /* Preview Assets.xcassets in Resources */,
+				4C42FB1D2AAADD6900BC8789 /* Credits.rtf in Resources */,
 				4CFE55A12AA8AF0E00299450 /* harp.mp3 in Resources */,
 				4CFE55992AA8A8E500299450 /* .gitignore in Resources */,
 				4CFE559F2AA8AF0900299450 /* marimba.mp3 in Resources */,
