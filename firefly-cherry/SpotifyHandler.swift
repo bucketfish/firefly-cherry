@@ -67,6 +67,47 @@ func toggleIsPlaying(completion: @escaping (NSAppleEventDescriptor)->()) {
     }
 }
 
+
+
+
+func nextSong(completion: @escaping ()->()) {
+    let myAppleScript = """
+        tell application "Spotify"
+            next track
+        end tell
+        """
+    
+    var error: NSDictionary?
+    
+    
+    DispatchQueue.global(qos: .background).async {
+        if let scriptObject = NSAppleScript(source: myAppleScript) {
+            let outputString = scriptObject.executeAndReturnError(&error)
+            completion()
+        }
+    }
+}
+
+
+func prevSong(completion: @escaping ()->()) {
+    let myAppleScript = """
+        tell application "Spotify"
+            previous track
+        end tell
+        """
+    
+    var error: NSDictionary?
+    
+    
+    DispatchQueue.global(qos: .background).async {
+        if let scriptObject = NSAppleScript(source: myAppleScript) {
+            let outputString = scriptObject.executeAndReturnError(&error)
+            completion()
+        }
+    }
+}
+
+
 func getIsPlaying(completion: @escaping (NSAppleEventDescriptor)->()) {
     let myAppleScript = """
         using terms from application "Spotify"

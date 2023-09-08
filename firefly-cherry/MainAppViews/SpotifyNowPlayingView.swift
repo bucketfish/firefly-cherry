@@ -30,7 +30,12 @@ struct SpotifyNowPlayingView: View {
                     
                     if (showNextPrev) {
                         Button {
-                            
+                            prevSong {
+                                getSongName { result in
+                                    songName = result.atIndex(1)?.stringValue ?? ""
+                                    songUrl = result.atIndex(2)?.stringValue ?? ""
+                                }
+                            }
                         } label: {
                             Image(systemName: "backward.fill")
                                 .font(.title3)
@@ -67,7 +72,12 @@ struct SpotifyNowPlayingView: View {
                     
                     if (showNextPrev) {
                         Button {
-                            
+                            nextSong {
+                                getSongName { result in
+                                    songName = result.atIndex(1)?.stringValue ?? ""
+                                    songUrl = result.atIndex(2)?.stringValue ?? ""
+                                }
+                            }
                         } label: {
                             Image(systemName: "forward.fill")
                                 .font(.title3)
