@@ -158,7 +158,11 @@ struct PomodoroView: View {
                     PomodoroBackgroundBarProgressView(state: $current_state, current: $duration)
                         .padding(.top, 10)
                 }
+                
+                
+                UpdateCheckView()
             }
+            
             
 //            ZStack {
 //                UpdateCheckView()

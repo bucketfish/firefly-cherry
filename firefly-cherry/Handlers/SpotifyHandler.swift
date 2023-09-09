@@ -118,6 +118,7 @@ func getIsPlaying(completion: @escaping (NSAppleEventDescriptor)->()) {
     var error: NSDictionary?
     
     DispatchQueue.global(qos: .background).async {
+        
         if let scriptObject = NSAppleScript(source: myAppleScript) {
             let outputString = scriptObject.executeAndReturnError(&error)
             completion(outputString)
