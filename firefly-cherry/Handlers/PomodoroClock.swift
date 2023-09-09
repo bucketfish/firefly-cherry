@@ -22,11 +22,15 @@ class PomodoroClock: ObservableObject {
     @AppStorage("shortbreakLength") var shortbreakLength = 5
     @AppStorage("longbreakLength") var longbreakLength = 30
     
-    var currentStateDuration = 25 * 60 // total duration for current state
+    @AppStorage("useDiscordRPC") private var useDiscordRPC = true
+    @AppStorage("dRPCWhilePaused") private var dRPCWhilePaused = true
+
     
     // current iteration
     var currentPomodoroCount = 1
     
+    var currentStateDuration = 25 * 60 // total duration for current state
+
     var currentStateEndTime = Date() // supposed end time, if clock is running
     var currentUpdatedTime = Date() // current "time"
     var pausedDurationLeft: TimeInterval = 0 // seconds left in timer, if paused
@@ -109,8 +113,10 @@ class PomodoroClock: ObservableObject {
         self.currentUpdatedTime = Date()
         self.updateDisplayTime()
         
-        // TODO: update discord
-        // if (useDiscordRPC) {setupRPC(pomocount: currentPomodoroCount, pomototal: pomodoroIterations, state: currentPomodoroState, countdownTime: currentStateDuration, showPaused: dRPCWhilePaused)}
+        // update discord rich presence
+        if (self.useDiscordRPC) {
+            connectRPC(pomoCount: self.currentPomodoroCount, pomoIterations: self.pomodoroIterations, currentState: self.currentPomodoroState, endingTime: self.currentStateEndTime)
+        }
         
         // update time every second
         _ = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
@@ -144,8 +150,10 @@ class PomodoroClock: ObservableObject {
         
         self.updateDisplayTime()
         
-        // TODO: update discord rpc
-        // if (useDiscordRPC) { setupRPC(pomocount: currentPomodoroCount, pomototal: pomodoroIterations, state: currentPomodoroState, paused: true, showPaused: dRPCWhilePaused) }
+        // update discord rich presence
+        if (self.useDiscordRPC) {
+            connectRPC(pomoCount: self.currentPomodoroCount, pomoIterations: self.pomodoroIterations, currentState: self.currentPomodoroState, endingTime: self.currentStateEndTime, isPaused: true, showWhenPaused: self.dRPCWhilePaused)
+        }
     }
     
     

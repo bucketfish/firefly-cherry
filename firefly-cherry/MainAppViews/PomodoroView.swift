@@ -18,10 +18,7 @@ struct PomodoroView: View {
     
     @AppStorage("timerTopPadding") private var timerTopPadding: Double = 10
     @AppStorage("timerBottomPadding") private var timerBottomPadding: Double = 10
-    
-    @AppStorage("useDiscordRPC") private var useDiscordRPC = true
-    @AppStorage("dRPCWhilePaused") private var dRPCWhilePaused = true
-    
+        
     @AppStorage("progressBarType") private var progressBarType: ProgressBarType = .circular
     
 //    @EnvironmentObject var soundPlayer: CustomSoundPlayer
