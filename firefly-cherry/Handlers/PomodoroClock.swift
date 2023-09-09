@@ -13,9 +13,8 @@ class PomodoroClock: ObservableObject {
     @Published var timePercentage = 0.0 // percentage for updating progress bar!
     @Published var timerRunning = false
     @Published var currentPomodoroState: PomodoroState = .pomodoro // current state
-    @Published var displayPomodoroIterations = ""
+    @Published var currentPomodoroCount = 1
     
-    @AppStorage("pomodoroSymbol") var pomodoroSymbol = "🍅"
     @AppStorage("pomodoroIterations") var pomodoroIterations = 4
     
     @AppStorage("pomodoroLength") var pomodoroLength = 25
@@ -24,10 +23,6 @@ class PomodoroClock: ObservableObject {
     
     @AppStorage("useDiscordRPC") private var useDiscordRPC = true
     @AppStorage("dRPCWhilePaused") private var dRPCWhilePaused = true
-
-    
-    // current iteration
-    var currentPomodoroCount = 1
     
     var currentStateDuration = 25 * 60 // total duration for current state
 
@@ -37,7 +32,6 @@ class PomodoroClock: ObservableObject {
     
     let dcf = DateComponentsFormatter()
     
-//    var soundPlayer: CustomSoundPlayer?
     let soundPlayer = CustomSoundPlayer.shared
 
     
@@ -48,7 +42,6 @@ class PomodoroClock: ObservableObject {
         self.dcf.zeroFormattingBehavior = .pad
         
         self.pausedDurationLeft = TimeInterval(pomodoroLength * 60)
-        self.displayPomodoroIterations = self.pomodoroSymbol
         
         updateDisplayTime()
     }
@@ -95,7 +88,6 @@ class PomodoroClock: ObservableObject {
     
     func increasePomoCount() {
         self.currentPomodoroCount += 1
-        self.displayPomodoroIterations = String(repeating: self.pomodoroSymbol, count: self.currentPomodoroCount)
     }
     
     

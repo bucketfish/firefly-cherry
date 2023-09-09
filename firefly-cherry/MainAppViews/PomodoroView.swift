@@ -20,6 +20,8 @@ struct PomodoroView: View {
         
     @AppStorage("progressBarType") private var progressBarType: ProgressBarType = .circular
     
+    @AppStorage("pomodoroSymbol") var pomodoroSymbol = "🍅"
+    
     let soundPlayer = CustomSoundPlayer.shared
     
     @ObservedObject var pomodoroClock = PomodoroClock()
@@ -33,7 +35,7 @@ struct PomodoroView: View {
             
             VStack (spacing: 0){
                 // MARK: pomodoro counter
-                Text(pomodoroClock.displayPomodoroIterations)
+                Text(String(repeating: pomodoroSymbol, count: pomodoroClock.currentPomodoroCount))
                     .customFont(.title)
                     .foregroundColor(Color("PomodoroText"))
                     .padding(.bottom, 10)
