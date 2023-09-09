@@ -28,7 +28,6 @@ struct PomodoroBackgroundBarProgressView: View {
         let pomodoroStyle = PomodoroBarProgressStyle(
                     stroke: stringToColor(string: customColorString),
                     fill: Color("PomodoroText"),
-                    caption: "",
                     height: progressBarWidth + 2
                 )
         
@@ -58,7 +57,6 @@ struct PomodoroBackgroundBarProgressView: View {
 struct PomodoroBarProgressStyle<Stroke: ShapeStyle, Background: ShapeStyle>: ProgressViewStyle {
     var stroke: Stroke
     var fill: Background
-    var caption: String = ""
     var cornerRadius: CGFloat = 25
     var height: CGFloat = 6
     var borderWidth: CGFloat = 1
@@ -91,11 +89,7 @@ struct PomodoroBarProgressStyle<Stroke: ShapeStyle, Background: ShapeStyle>: Pro
                     
                 }
             )
-            
-            if !caption.isEmpty {
-                Text("\(caption)")
-                    .font(.caption)
-            }
+
         }
     }
 }

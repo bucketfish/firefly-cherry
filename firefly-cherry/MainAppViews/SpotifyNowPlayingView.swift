@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct SpotifyNowPlayingView: View {
+    @EnvironmentObject var style: PomodoroStyle
+    
     @AppStorage("cornerRadius") private var cornerRadius: Double = 10
     @AppStorage("customColor") private var customColorString: String = ""
     
-    @AppStorage("useCustomFont") private var useCustomFont = false
-    @AppStorage("customFontName") private var customFontName = ""
+//    @AppStorage("useCustomFont") private var useCustomFont = false
+//    @AppStorage("customFontName") private var customFontName = ""
 
     @AppStorage("showNextPrev") private var showNextPrev = true
 
@@ -49,7 +51,8 @@ struct SpotifyNowPlayingView: View {
                     } placeholder: {}
                     
                     Text("\(songName)")
-                        .font(.custom(useCustomFont ? customFontName : "", size: 18, relativeTo: .title2))
+                        .customFont(.title2)
+                        .foregroundColor(Color("PomodoroText"))
                         .onAppear { periodicallyUpdateSongName() }
                     
                     Button {
@@ -83,7 +86,7 @@ struct SpotifyNowPlayingView: View {
         }
         else {
             Text("spotify is not running!")
-                .font(.custom(useCustomFont ? customFontName : "", size: 18, relativeTo: .title2))
+                .customFont(.title2)
                 .foregroundColor(Color("PomodoroText"))
                 .padding(.vertical, 5)
                 .opacity(0.8)

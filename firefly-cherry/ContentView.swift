@@ -11,6 +11,8 @@ import CoreData
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
     
+    @StateObject var style = PomodoroStyle()
+    
 
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
@@ -24,7 +26,8 @@ struct ContentView: View {
             BackgroundImageView()
             
             PomodoroView()
-            
+                .environmentObject(style)
+
         }
 //        .environmentObject(soundPlayer)
         

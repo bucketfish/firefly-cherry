@@ -11,11 +11,7 @@ struct UpdateCheckView: View {
     @Environment(\.openURL) var openURL
     @State var needsUpdate = false
     
-    @State var updateUrl = ""
-    
-    @AppStorage("useCustomFont") private var useCustomFont = false
-    @AppStorage("customFontName") private var customFontName = ""
-    
+    @State var updateUrl = ""    
     
     
     var body: some View {
@@ -35,8 +31,8 @@ struct UpdateCheckView: View {
                             .padding(.vertical)
                         
                         Text("new update available!")
+                            .customFont(.title2)
                             .padding(.vertical)
-                            .font(.custom(useCustomFont ? customFontName : "", size: 18, relativeTo: .title2))
                             .foregroundColor(Color("PomodoroText"))
                         
                     }

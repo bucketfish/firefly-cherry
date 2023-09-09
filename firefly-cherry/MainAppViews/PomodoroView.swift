@@ -11,10 +11,6 @@ struct PomodoroView: View {
     
     @AppStorage("showUpdates") private var showUpdates = true
 
-    
-    @AppStorage("useCustomFont") private var useCustomFont = false
-    @AppStorage("customFontName") private var customFontName = ""
-
     @AppStorage("enableSpotify") private var enableSpotify = true
 
     @AppStorage("cornerRadius") private var cornerRadius: Double = 10
@@ -36,6 +32,7 @@ struct PomodoroView: View {
     @AppStorage("progressBarType") private var progressBarType: ProgressBarType = .circular
     
     @EnvironmentObject var soundPlayer: CustomSoundPlayer
+    @EnvironmentObject var style: PomodoroStyle
 
     @State var duration = 25 * 60
     @State var current_state: PomodoroState = .pomodoro
@@ -54,7 +51,7 @@ struct PomodoroView: View {
             VStack (spacing: 0){
                 
                 Text("\(String(repeating: pomodoroSymbol, count: pomodoro_count))")
-                    .font(.custom(useCustomFont ? customFontName : "", size: 24, relativeTo: .largeTitle))
+                    .customFont(.title)
                     .foregroundColor(Color("PomodoroText"))
                     .padding(.bottom, 10)
                 
@@ -71,20 +68,14 @@ struct PomodoroView: View {
                         .padding([.leading, .top, .bottom], 5)
                         
                         Button("short break") {
-                            
                             changeTimerState(.short_break, autostart: false)
-                            
-                            
                         }
                         .buttonStyle(PomodoroStateButton(selected: current_state == .short_break))
                         .padding(.vertical, 5)
 
                         
                         Button("long break") {
-                            
                             changeTimerState(.long_break, autostart: false)
-                            
-                            
                         }
                         .buttonStyle(PomodoroStateButton(selected: current_state == .long_break))
                         .padding([.trailing, .top, .bottom], 5)
@@ -94,11 +85,8 @@ struct PomodoroView: View {
                     .background(stringToColor(string: customColorString))
                     .cornerRadius(cornerRadius)
                     
-                    
-            
-                
                 Text(formatTimer(duration))
-                    .font(.custom(useCustomFont ? customFontName : "", size: 120, relativeTo: .largeTitle))
+                    .customFont(.largeTitle, customSize: 120)
                     .bold()
                     .padding(.bottom, timerBottomPadding)
                     .padding(.top, timerTopPadding)

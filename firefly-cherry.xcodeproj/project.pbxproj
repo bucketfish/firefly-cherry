@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C12F5722AAC624100CB282B /* PomodoroStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C12F5712AAC624100CB282B /* PomodoroStyle.swift */; };
+		4C12F5742AAC638E00CB282B /* CustomText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C12F5732AAC638E00CB282B /* CustomText.swift */; };
 		4C2744412AA8964700DFD5E0 /* SwordRPC in Frameworks */ = {isa = PBXBuildFile; productRef = 4C2744402AA8964700DFD5E0 /* SwordRPC */; };
 		4C29F65C2AAC25E500261B47 /* CustomSoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C29F65B2AAC25E500261B47 /* CustomSoundPlayer.swift */; };
 		4C4087082AAB1F900056DABA /* UpdateCheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4087072AAB1F900056DABA /* UpdateCheckView.swift */; };
@@ -67,6 +69,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C12F5712AAC624100CB282B /* PomodoroStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroStyle.swift; sourceTree = "<group>"; };
+		4C12F5732AAC638E00CB282B /* CustomText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomText.swift; sourceTree = "<group>"; };
 		4C27443F2AA8952E00DFD5E0 /* SwordRPC-master */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "SwordRPC-master"; path = "../SwordRPC-master"; sourceTree = "<group>"; };
 		4C29F65B2AAC25E500261B47 /* CustomSoundPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSoundPlayer.swift; sourceTree = "<group>"; };
 		4C4087072AAB1F900056DABA /* UpdateCheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCheckView.swift; sourceTree = "<group>"; };
@@ -163,6 +167,7 @@
 				4CC2AF532AA9B8D700138E11 /* SpotifyHandler.swift */,
 				4C40870A2AAB1FC00056DABA /* UpdateCheckHandler.swift */,
 				4C29F65B2AAC25E500261B47 /* CustomSoundPlayer.swift */,
+				4C12F5712AAC624100CB282B /* PomodoroStyle.swift */,
 			);
 			path = Handlers;
 			sourceTree = "<group>";
@@ -279,6 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				4CFE55912AA8A74700299450 /* TextFieldWithStepper.swift */,
+				4C12F5732AAC638E00CB282B /* CustomText.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -455,6 +461,7 @@
 				4CC2AF522AA99C0800138E11 /* PomodoroBackgroundBarProgressView.swift in Sources */,
 				4CD8DAAD2AA871D80077D9B9 /* RPCHandler.swift in Sources */,
 				4CFE558F2AA8A70E00299450 /* DisplaySettingsView.swift in Sources */,
+				4C12F5742AAC638E00CB282B /* CustomText.swift in Sources */,
 				4CD8DAA12AA848280077D9B9 /* PomodoroStartButton.swift in Sources */,
 				4C4087082AAB1F900056DABA /* UpdateCheckView.swift in Sources */,
 				4CC2AF4C2AA993A700138E11 /* PomodoroBackgroundCircularProgressView.swift in Sources */,
@@ -468,6 +475,7 @@
 				4CC2AF4E2AA996E200138E11 /* PomodoroState.swift in Sources */,
 				4CC2AF542AA9B8D700138E11 /* SpotifyHandler.swift in Sources */,
 				4CD8DA6E2AA83F0C0077D9B9 /* ContentView.swift in Sources */,
+				4C12F5722AAC624100CB282B /* PomodoroStyle.swift in Sources */,
 				4CC2AF592AA9C6E400138E11 /* SpotifyNowPlayingView.swift in Sources */,
 				4CFE55A32AA8AF7D00299450 /* TimerSounds.swift in Sources */,
 				4CD8DA9F2AA843D40077D9B9 /* PomodoroStateButtonStyles.swift in Sources */,
