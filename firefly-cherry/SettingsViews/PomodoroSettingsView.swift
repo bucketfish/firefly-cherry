@@ -14,6 +14,8 @@ struct PomodoroSettingsView: View {
     @AppStorage("shortbreakLength") private var shortbreakLength = 5
     @AppStorage("longbreakLength") private var longbreakLength = 30
     
+    @AppStorage("pomodoroIterations") private var pomodoroIterations = 4
+    
     @AppStorage("timerSound") private var timerSound = TimerSounds.harp
     @AppStorage("useCustomTimerSound") private var useCustomTimerSound = false
     @AppStorage("customTimerSoundPath") private var customTimerSoundPath: URL?
@@ -36,6 +38,11 @@ struct PomodoroSettingsView: View {
                     shortbreakLength = 5
                     longbreakLength = 30
                 }
+                
+                TextFieldWithStepper(title: "iterations", value: $pomodoroIterations)
+                    .onChange(of: pomodoroIterations) { newValue in
+                        pomodoroIterations = max(newValue, 1)
+                    }
                 
             }
             
