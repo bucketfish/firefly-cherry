@@ -8,12 +8,25 @@
 import Foundation
 import SwordRPC
 
-let rpc = SwordRPC(appId: "1148902945304363072")
+var rpc = SwordRPC(appId: "1148902945304363072")
 
 var connected = false
 
-func setupRPC(pomocount: Int, state: PomodoroState, countdownTime: Int = 0, paused: Bool = false) {
+func setupRPC(pomocount: Int, state: PomodoroState, countdownTime: Int = 0, paused: Bool = false, showPaused: Bool = true) {
 
+    
+    if (paused && !showPaused) {
+        rpc.disconnect()
+        connected = false
+        return
+    }
+    
+    
+    if (!connected) {
+        rpc = SwordRPC(appId: "1148902945304363072")
+        print(rpc.connect())
+        connected = true
+    }
     
     //    rpc.onConnect { rpc in
     
@@ -41,6 +54,8 @@ func setupRPC(pomocount: Int, state: PomodoroState, countdownTime: Int = 0, paus
         //        }
         
     }
+    
+
     //      presence.assets.largeImage = "map1"
     //      presence.assets.largeText = "Map 1"
     //      presence.assets.smallImage = "character1"
@@ -53,16 +68,13 @@ func setupRPC(pomocount: Int, state: PomodoroState, countdownTime: Int = 0, paus
     //      presence.secrets.joinRequest = "joinRequestSecret"
     
     rpc.setPresence(presence)
-    
-    if (!connected) {
-        print(rpc.connect())
-        connected = true
-    }
+
     
 }
 
 func disconnectRPC() {
     rpc.disconnect()
+    connected = false
 }
 
 

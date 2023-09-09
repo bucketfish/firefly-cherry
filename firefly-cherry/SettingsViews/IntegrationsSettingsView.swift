@@ -9,6 +9,7 @@ import SwiftUI
 
 struct IntegrationsSettingsView: View {
     @AppStorage("useDiscordRPC") private var useDiscordRPC = true
+    @AppStorage("dRPCWhilePaused") private var dRPCWhilePaused = true
     
     @AppStorage("enableSpotify") private var enableSpotify = true
     @AppStorage("showNextPrev") private var showNextPrev = true
@@ -18,6 +19,9 @@ struct IntegrationsSettingsView: View {
         Form {
             Section (header: Text("discord").bold()) {
                 Toggle("use discord rich presence", isOn: $useDiscordRPC)
+                
+                Toggle("show rich presence while paused", isOn: $dRPCWhilePaused)
+                    .disabled(!useDiscordRPC)
             }
             
             Divider()

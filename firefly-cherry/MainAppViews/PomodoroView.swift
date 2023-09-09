@@ -28,6 +28,7 @@ struct PomodoroView: View {
     @AppStorage("longbreakLength") private var longbreakLength = 30
     
     @AppStorage("useDiscordRPC") private var useDiscordRPC = true
+    @AppStorage("dRPCWhilePaused") private var dRPCWhilePaused = true
     
     @AppStorage("progressBarType") private var progressBarType: ProgressBarType = .circular
     
@@ -188,7 +189,7 @@ struct PomodoroView: View {
             return
         }
         
-        if (useDiscordRPC) {setupRPC(pomocount: pomodoro_count, state: current_state, countdownTime: duration)}
+        if (useDiscordRPC) {setupRPC(pomocount: pomodoro_count, state: current_state, countdownTime: duration, showPaused: dRPCWhilePaused)}
         
         timerRunning = true
         _ = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
@@ -211,7 +212,7 @@ struct PomodoroView: View {
     func pauseTimer() {
         timerRunning = false
         
-        if (useDiscordRPC) { setupRPC(pomocount: pomodoro_count, state: current_state, paused: true) }
+        if (useDiscordRPC) { setupRPC(pomocount: pomodoro_count, state: current_state, paused: true, showPaused: dRPCWhilePaused) }
     }
     // MARK: time's up
     func nextTimerState() {
