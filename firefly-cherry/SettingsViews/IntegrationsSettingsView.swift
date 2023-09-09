@@ -13,9 +13,6 @@ struct IntegrationsSettingsView: View {
     @AppStorage("enableSpotify") private var enableSpotify = true
     @AppStorage("showNextPrev") private var showNextPrev = true
 
-    
-
-
     var body: some View {
         
         Form {

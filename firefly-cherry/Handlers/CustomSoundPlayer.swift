@@ -13,6 +13,7 @@ class CustomSoundPlayer: ObservableObject {
     var soundPath: URL? = nil
     var volume: Float = 0.5
     
+    
     init(player: AVAudioPlayer? = nil, soundPath: URL? = nil) {
         self.player = player
         self.soundPath = soundPath
@@ -43,6 +44,7 @@ class CustomSoundPlayer: ObservableObject {
     
     func play() {
         player?.stop()
+        player?.volume = self.volume
         player?.prepareToPlay()
         
         if self.soundPath != nil {

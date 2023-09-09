@@ -12,7 +12,6 @@ struct PomodoroView: View {
     @AppStorage("useCustomFont") private var useCustomFont = false
     @AppStorage("customFontName") private var customFontName = ""
 
-    
     @AppStorage("enableSpotify") private var enableSpotify = true
 
     @AppStorage("cornerRadius") private var cornerRadius: Double = 10

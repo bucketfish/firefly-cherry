@@ -9,6 +9,6 @@ import Foundation
 
 // for background images
 enum ImageType: String, Equatable, CaseIterable {
-    case premade, web, upload
+    case premade, web, local
     var id: Self { self }
 }

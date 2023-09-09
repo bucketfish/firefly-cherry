@@ -33,7 +33,7 @@ struct BackgroundImageView: View {
             .ignoresSafeArea()
         }
         
-        else if (imageType == .upload) {
+        else if (imageType == .local) {
             AsyncImage(url: localImageLink) { image in
                 image
                     .interpolation(imageInterpolation ? .medium : .none)

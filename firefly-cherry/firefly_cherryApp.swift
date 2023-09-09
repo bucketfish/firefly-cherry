@@ -12,12 +12,15 @@ struct firefly_cherryApp: App {
     let persistenceController = PersistenceController.shared
     
     @AppStorage("colorScheme") private var colorScheme: ColorScheme = .system
+    
+    @AppStorage("timerSound") private var timerSound = TimerSounds.harp
+    @AppStorage("useCustomTimerSound") private var useCustomTimerSound = false
+    @AppStorage("customTimerSoundPath") private var customTimerSoundPath: URL?
+    @AppStorage("timerVolume") private var timerVolume = 0.5
+
     @StateObject var soundPlayer = CustomSoundPlayer()
 
-//    @AppStorage("customAccentColor") private var customAccentColor = Color("PomodoroText")
     @Environment(\.colorScheme) private var defaultScheme
-
-    
 
     var body: some Scene {
         WindowGroup {
@@ -25,10 +28,16 @@ struct firefly_cherryApp: App {
                 .accentColor(Color("PomodoroText"))
                 .preferredColorScheme(colorScheme == ColorScheme.system ? defaultScheme : colorScheme == ColorScheme.dark ? .dark : .light)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environmentObject(soundPlayer)
                 .onDisappear {
                     NSApplication.shared.terminate(self)
                 }
-                .environmentObject(soundPlayer)
+                .onAppear {
+                    // set up sound system first
+                    if (useCustomTimerSound) { soundPlayer.setSound(customTimerSoundPath) }
+                    else { soundPlayer.setPremadeSound(timerSound.rawValue) }
+                    soundPlayer.setVolume(Float(timerVolume))
+                }
 
                 
             
