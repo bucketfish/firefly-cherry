@@ -24,19 +24,16 @@ struct PomodoroView: View {
     
     @AppStorage("pomodoroSymbol") private var pomodoroSymbol = "🍅"
 
-
     @AppStorage("pomodoroLength") private var pomodoroLength = 25
     @AppStorage("shortbreakLength") private var shortbreakLength = 5
     @AppStorage("longbreakLength") private var longbreakLength = 30
     
     @AppStorage("useDiscordRPC") private var useDiscordRPC = true
     
-    @AppStorage("timerSound") private var timerSound: TimerSounds = .harp
-    @AppStorage("timerVolume") private var timerVolume = 0.5
-    
     @AppStorage("progressBarType") private var progressBarType: ProgressBarType = .circular
-
     
+    @EnvironmentObject var soundPlayer: CustomSoundPlayer
+
     @State var duration = 25 * 60
     @State var current_state: PomodoroState = .pomodoro
     @State var pomodoro_count = 1
@@ -216,7 +213,8 @@ struct PomodoroView: View {
     }
     // MARK: time's up
     func nextTimerState() {
-        play(sound: timerSound.rawValue + ".mp3", volume: timerVolume)
+        
+        soundPlayer.play()
         
         if (current_state == .pomodoro) {
             pomodoro_count += 1

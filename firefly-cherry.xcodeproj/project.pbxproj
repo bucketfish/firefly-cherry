@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4C2744412AA8964700DFD5E0 /* SwordRPC in Frameworks */ = {isa = PBXBuildFile; productRef = 4C2744402AA8964700DFD5E0 /* SwordRPC */; };
+		4C29F65C2AAC25E500261B47 /* CustomSoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C29F65B2AAC25E500261B47 /* CustomSoundPlayer.swift */; };
 		4C4087082AAB1F900056DABA /* UpdateCheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4087072AAB1F900056DABA /* UpdateCheckView.swift */; };
 		4C40870B2AAB1FC00056DABA /* UpdateCheckHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C40870A2AAB1FC00056DABA /* UpdateCheckHandler.swift */; };
 		4C42FB1D2AAADD6900BC8789 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4C42FB1C2AAADD6900BC8789 /* Credits.rtf */; };
@@ -34,6 +35,7 @@
 		4CD8DAA52AA854960077D9B9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD8DAA42AA854960077D9B9 /* SettingsView.swift */; };
 		4CD8DAA72AA85E4D0077D9B9 /* BackgroundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD8DAA62AA85E4D0077D9B9 /* BackgroundImageView.swift */; };
 		4CD8DAAD2AA871D80077D9B9 /* RPCHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD8DAAC2AA871D80077D9B9 /* RPCHandler.swift */; };
+		4CDE00402AAB6A91001CDD5B /* PomodoroSettingsAlarmSoundFileChooser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDE003F2AAB6A91001CDD5B /* PomodoroSettingsAlarmSoundFileChooser.swift */; };
 		4CE0FB7A2AA9EBBE009BC9E0 /* BackgroundImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE0FB792AA9EBBE009BC9E0 /* BackgroundImages.swift */; };
 		4CFE558B2AA8A6E300299450 /* GeneralSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFE558A2AA8A6E300299450 /* GeneralSettingsView.swift */; };
 		4CFE558D2AA8A6F700299450 /* PomodoroSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFE558C2AA8A6F700299450 /* PomodoroSettingsView.swift */; };
@@ -67,6 +69,7 @@
 
 /* Begin PBXFileReference section */
 		4C27443F2AA8952E00DFD5E0 /* SwordRPC-master */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "SwordRPC-master"; path = "../SwordRPC-master"; sourceTree = "<group>"; };
+		4C29F65B2AAC25E500261B47 /* CustomSoundPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSoundPlayer.swift; sourceTree = "<group>"; };
 		4C4087072AAB1F900056DABA /* UpdateCheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCheckView.swift; sourceTree = "<group>"; };
 		4C40870A2AAB1FC00056DABA /* UpdateCheckHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCheckHandler.swift; sourceTree = "<group>"; };
 		4C42FB1C2AAADD6900BC8789 /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
@@ -98,6 +101,7 @@
 		4CD8DAA42AA854960077D9B9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		4CD8DAA62AA85E4D0077D9B9 /* BackgroundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundImageView.swift; sourceTree = "<group>"; };
 		4CD8DAAC2AA871D80077D9B9 /* RPCHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPCHandler.swift; sourceTree = "<group>"; };
+		4CDE003F2AAB6A91001CDD5B /* PomodoroSettingsAlarmSoundFileChooser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroSettingsAlarmSoundFileChooser.swift; sourceTree = "<group>"; };
 		4CE0FB792AA9EBBE009BC9E0 /* BackgroundImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundImages.swift; sourceTree = "<group>"; };
 		4CFE558A2AA8A6E300299450 /* GeneralSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSettingsView.swift; sourceTree = "<group>"; };
 		4CFE558C2AA8A6F700299450 /* PomodoroSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroSettingsView.swift; sourceTree = "<group>"; };
@@ -160,6 +164,7 @@
 				4CD8DAAC2AA871D80077D9B9 /* RPCHandler.swift */,
 				4CC2AF532AA9B8D700138E11 /* SpotifyHandler.swift */,
 				4C40870A2AAB1FC00056DABA /* UpdateCheckHandler.swift */,
+				4C29F65B2AAC25E500261B47 /* CustomSoundPlayer.swift */,
 			);
 			path = Handlers;
 			sourceTree = "<group>";
@@ -266,6 +271,7 @@
 				4CFE558C2AA8A6F700299450 /* PomodoroSettingsView.swift */,
 				4CFE558E2AA8A70E00299450 /* DisplaySettingsView.swift */,
 				4CC2AF492AA98E7100138E11 /* DisplaySettingsBackgroundFileChooser.swift */,
+				4CDE003F2AAB6A91001CDD5B /* PomodoroSettingsAlarmSoundFileChooser.swift */,
 				4CC2AF552AA9BB1300138E11 /* IntegrationsSettingsView.swift */,
 			);
 			path = SettingsViews;
@@ -446,6 +452,7 @@
 				4CFE55972AA8A78700299450 /* ColorScheme.swift in Sources */,
 				4CFE558D2AA8A6F700299450 /* PomodoroSettingsView.swift in Sources */,
 				4CD8DA9C2AA83F810077D9B9 /* PomodoroView.swift in Sources */,
+				4CDE00402AAB6A91001CDD5B /* PomodoroSettingsAlarmSoundFileChooser.swift in Sources */,
 				4CC2AF4A2AA98E7100138E11 /* DisplaySettingsBackgroundFileChooser.swift in Sources */,
 				4CD8DA782AA83F0D0077D9B9 /* firefly_cherry.xcdatamodeld in Sources */,
 				4C40870B2AAB1FC00056DABA /* UpdateCheckHandler.swift in Sources */,
@@ -468,6 +475,7 @@
 				4CC2AF592AA9C6E400138E11 /* SpotifyNowPlayingView.swift in Sources */,
 				4CFE55A32AA8AF7D00299450 /* TimerSounds.swift in Sources */,
 				4CD8DA9F2AA843D40077D9B9 /* PomodoroStateButtonStyles.swift in Sources */,
+				4C29F65C2AAC25E500261B47 /* CustomSoundPlayer.swift in Sources */,
 				4CD8DA6C2AA83F0C0077D9B9 /* firefly_cherryApp.swift in Sources */,
 				4CFE55922AA8A74700299450 /* TextFieldWithStepper.swift in Sources */,
 			);

@@ -12,6 +12,8 @@ struct firefly_cherryApp: App {
     let persistenceController = PersistenceController.shared
     
     @AppStorage("colorScheme") private var colorScheme: ColorScheme = .system
+    @StateObject var soundPlayer = CustomSoundPlayer()
+
 //    @AppStorage("customAccentColor") private var customAccentColor = Color("PomodoroText")
     @Environment(\.colorScheme) private var defaultScheme
 
@@ -26,6 +28,7 @@ struct firefly_cherryApp: App {
                 .onDisappear {
                     NSApplication.shared.terminate(self)
                 }
+                .environmentObject(soundPlayer)
 
                 
             
@@ -36,6 +39,7 @@ struct firefly_cherryApp: App {
         #if os(macOS)
         Settings {
             SettingsView()
+                .environmentObject(soundPlayer)
         }
         
         #endif

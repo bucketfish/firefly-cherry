@@ -10,6 +10,7 @@ import CoreData
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
+    
 
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
@@ -24,18 +25,9 @@ struct ContentView: View {
             
             PomodoroView()
             
-            
-
-            
-//            VStack {
-//                HStack {
-//                    Text("test")
-//                }
-//                .padding(.top, 20)
-//                Spacer()
-//            }
-            
         }
+//        .environmentObject(soundPlayer)
+        
         
         
         

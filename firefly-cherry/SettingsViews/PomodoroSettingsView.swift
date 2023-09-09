@@ -7,15 +7,21 @@
 
 import SwiftUI
 import Subsonic
+import AVFoundation
 
 struct PomodoroSettingsView: View {
     @AppStorage("pomodoroLength") private var pomodoroLength = 25
     @AppStorage("shortbreakLength") private var shortbreakLength = 5
     @AppStorage("longbreakLength") private var longbreakLength = 30
-
+    
     @AppStorage("timerSound") private var timerSound = TimerSounds.harp
+    @AppStorage("useCustomTimerSound") private var useCustomTimerSound = false
+    @AppStorage("customTimerSoundPath") private var customTimerSoundPath: URL?
     @AppStorage("timerVolume") private var timerVolume = 0.5
+    
+    @EnvironmentObject var soundPlayer: CustomSoundPlayer
 
+    @State var avAudioPlayer: AVAudioPlayer!
 
     var body: some View {
         Form {
@@ -36,27 +42,60 @@ struct PomodoroSettingsView: View {
                 .padding(.bottom)
             
             Section (header: Text("timer alarm").bold()) {
-                Picker(selection: $timerSound, label: Text("alarm sound")) {
-                    Text("harp").tag(TimerSounds.harp)
-                    Text("marimba").tag(TimerSounds.marimba)
+                Toggle("custom alarm sound", isOn: $useCustomTimerSound)
+                
+                if (!useCustomTimerSound) {
+                    Picker(selection: $timerSound, label: Text("alarm sound")) {
+                        Text("harp").tag(TimerSounds.harp)
+                        Text("marimba").tag(TimerSounds.marimba)
+                    }
+                    .onChange(of: timerSound) { _ in
+                        soundPlayer.setPremadeSound(timerSound.rawValue)
+                        soundPlayer.play()
+                    }
                 }
-                .onChange(of: timerSound) { _ in
-                    stopAllManagedSounds()
-                    play(sound: timerSound.rawValue + ".mp3", volume: timerVolume)
+                else {
+                    HStack {
+                        PomodoroSettingsAlarmSoundFileChooser(filepath: $customTimerSoundPath)
+                        
+                        Text(customTimerSoundPath?.lastPathComponent ?? "")
+                        
+                        Button {
+                            soundPlayer.play()
+
+                        } label: {
+                            Image(systemName: "speaker.wave.2.fill")
+                        }
+                    }
+                    .onChange(of: customTimerSoundPath) { _ in
+                        soundPlayer.setSound(customTimerSoundPath)
+                    }
+                    .onAppear {
+                        soundPlayer.setSound(customTimerSoundPath)
+                    }
+                    
+                    
                 }
+                
+                
+                
                 
                 Slider(value: $timerVolume, onEditingChanged: { editing in
                     if (!editing) {
-                        stopAllManagedSounds()
-                        play(sound: timerSound.rawValue + ".mp3", volume: timerVolume)
+                        soundPlayer.setVolume(Float(timerVolume))
+                        soundPlayer.play()
+//
+//                        stopAllManagedSounds()
+//
+//                        if (useCustomTimerSound) {
+//                            avAudioPlayer.volume = Float(timerVolume)
+//                        }
+//                        play(sound: timerSound.rawValue + ".mp3", volume: timerVolume)
+                        
                     }
                 }) {
                     Text("volume")
                 }
-//                .onChange(of: timerVolume) { _ in
-//                    play(sound: timerSound.rawValue + ".mp3", volume: timerVolume)
-//
-//                }
                 
                 
             }
