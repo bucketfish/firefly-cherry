@@ -99,6 +99,9 @@ struct PomodoroView: View {
                     .padding(.bottom, timerBottomPadding)
                     .padding(.top, timerTopPadding)
                     .foregroundColor(Color("PomodoroText"))
+                    .onAppear {
+                        duration = pomodoroLength * 60
+                    }
                 
                 if (enableSpotify == true) {
                     SpotifyNowPlayingView()
