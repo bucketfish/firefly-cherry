@@ -21,7 +21,6 @@ struct UpdateCheckView: View {
             Button {
                 openURL(URL(string: updateUrl)!)
 
-//                NSApp.sendAction(Selector(("showSettingsWindow:")), to: nil, from: nil)
             } label: {
                 HStack {
                     if (needsUpdate) {

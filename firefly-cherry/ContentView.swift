@@ -12,6 +12,7 @@ struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
     
     @StateObject var style = PomodoroStyle()
+    @StateObject var backgroundStyle = BackgroundStyle()
     
 
     @FetchRequest(
@@ -24,6 +25,7 @@ struct ContentView: View {
         ZStack {
             
             BackgroundImageView()
+                .environmentObject(backgroundStyle)
             
             PomodoroView()
                 .environmentObject(style)

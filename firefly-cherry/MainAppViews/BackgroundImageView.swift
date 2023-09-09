@@ -8,23 +8,18 @@
 import SwiftUI
 
 struct BackgroundImageView: View {
-    @AppStorage("imageType") private var imageType: ImageType = .premade
-    @AppStorage("imageInterpolation") private var imageInterpolation = false
 
-    @AppStorage("webImageLink") private var webImageLink = ""
-    @AppStorage("localImageLink") private var localImageLink: URL?
-    @AppStorage("backgroundImageIndex") private var backgroundImageIndex = 0
+    @EnvironmentObject var backgroundStyle: BackgroundStyle
     
     var backgroundImages = [
         "sample_background", "sunset"
     ]
 
-    
     var body: some View {
-        if (imageType == .web) {
-            AsyncImage(url: URL(string: webImageLink)) { image in
+        if (backgroundStyle.imageType == .web) {
+            AsyncImage(url: URL(string: backgroundStyle.webImageLink)) { image in
                 image
-                    .interpolation(imageInterpolation ? .medium : .none)
+                    .interpolation(backgroundStyle.imageInterpolation ? .medium : .none)
                     .resizable()
                     .scaledToFill()
             } placeholder: {
@@ -33,10 +28,10 @@ struct BackgroundImageView: View {
             .ignoresSafeArea()
         }
         
-        else if (imageType == .local) {
-            AsyncImage(url: localImageLink) { image in
+        else if (backgroundStyle.imageType == .local) {
+            AsyncImage(url: backgroundStyle.localImageLink) { image in
                 image
-                    .interpolation(imageInterpolation ? .medium : .none)
+                    .interpolation(backgroundStyle.imageInterpolation ? .medium : .none)
                     .resizable()
                     .scaledToFill()
             } placeholder: {
@@ -46,7 +41,7 @@ struct BackgroundImageView: View {
         }
         
         else {
-            Image(backgroundImages[backgroundImageIndex])
+            Image(backgroundImages[backgroundStyle.backgroundImageIndex])
                 .resizable()
                 .scaledToFill()
                 .ignoresSafeArea()

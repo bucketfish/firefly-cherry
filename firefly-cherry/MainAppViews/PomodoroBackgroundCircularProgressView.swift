@@ -19,8 +19,6 @@ struct PomodoroBackgroundCircularProgressView: View {
     @AppStorage("progressBarWidth") private var progressBarWidth: Double = 8
     @AppStorage("progressBarRadius") private var progressBarRadius: Double = 500
 
-
-
     // in seconds
     @Binding var state: PomodoroState
     @Binding var current: Int

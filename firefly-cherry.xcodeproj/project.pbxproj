@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4C12F5722AAC624100CB282B /* PomodoroStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C12F5712AAC624100CB282B /* PomodoroStyle.swift */; };
 		4C12F5742AAC638E00CB282B /* CustomText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C12F5732AAC638E00CB282B /* CustomText.swift */; };
+		4C12F5762AAC6D4900CB282B /* BackgroundStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C12F5752AAC6D4900CB282B /* BackgroundStyle.swift */; };
 		4C2744412AA8964700DFD5E0 /* SwordRPC in Frameworks */ = {isa = PBXBuildFile; productRef = 4C2744402AA8964700DFD5E0 /* SwordRPC */; };
 		4C29F65C2AAC25E500261B47 /* CustomSoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C29F65B2AAC25E500261B47 /* CustomSoundPlayer.swift */; };
 		4C4087082AAB1F900056DABA /* UpdateCheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4087072AAB1F900056DABA /* UpdateCheckView.swift */; };
@@ -71,6 +72,7 @@
 /* Begin PBXFileReference section */
 		4C12F5712AAC624100CB282B /* PomodoroStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroStyle.swift; sourceTree = "<group>"; };
 		4C12F5732AAC638E00CB282B /* CustomText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomText.swift; sourceTree = "<group>"; };
+		4C12F5752AAC6D4900CB282B /* BackgroundStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundStyle.swift; sourceTree = "<group>"; };
 		4C27443F2AA8952E00DFD5E0 /* SwordRPC-master */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "SwordRPC-master"; path = "../SwordRPC-master"; sourceTree = "<group>"; };
 		4C29F65B2AAC25E500261B47 /* CustomSoundPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSoundPlayer.swift; sourceTree = "<group>"; };
 		4C4087072AAB1F900056DABA /* UpdateCheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCheckView.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 				4C40870A2AAB1FC00056DABA /* UpdateCheckHandler.swift */,
 				4C29F65B2AAC25E500261B47 /* CustomSoundPlayer.swift */,
 				4C12F5712AAC624100CB282B /* PomodoroStyle.swift */,
+				4C12F5752AAC6D4900CB282B /* BackgroundStyle.swift */,
 			);
 			path = Handlers;
 			sourceTree = "<group>";
@@ -460,6 +463,7 @@
 				4C40870B2AAB1FC00056DABA /* UpdateCheckHandler.swift in Sources */,
 				4CC2AF522AA99C0800138E11 /* PomodoroBackgroundBarProgressView.swift in Sources */,
 				4CD8DAAD2AA871D80077D9B9 /* RPCHandler.swift in Sources */,
+				4C12F5762AAC6D4900CB282B /* BackgroundStyle.swift in Sources */,
 				4CFE558F2AA8A70E00299450 /* DisplaySettingsView.swift in Sources */,
 				4C12F5742AAC638E00CB282B /* CustomText.swift in Sources */,
 				4CD8DAA12AA848280077D9B9 /* PomodoroStartButton.swift in Sources */,

@@ -42,7 +42,6 @@ struct DisplaySettingsView: View {
     @AppStorage("timerTopPadding") private var timerTopPadding: Double = 10
     @AppStorage("timerBottomPadding") private var timerBottomPadding: Double = 0
     
-    
     @AppStorage("imageInterpolation") private var imageInterpolation = false
     @AppStorage("imageType") private var imageType: ImageType = .premade
     @AppStorage("webImageLink") private var webImageLink: String = ""
