@@ -20,6 +20,20 @@ func getPlaySongAccess() {
     }
 }
 
+
+func runAppleScript(_ script: String, completion: @escaping (NSAppleEventDescriptor)->()) {
+    var error: NSDictionary?
+    
+//    DispatchQueue.main.async {
+        if let scriptObject = NSAppleScript(source: script) {
+            let outputString = scriptObject.executeAndReturnError(&error)
+            completion(outputString)
+        }
+//    }
+    
+}
+
+
 func getSongName(completion: @escaping (NSAppleEventDescriptor)->()) {
     let myAppleScript = """
         if application "Spotify" is running then
@@ -32,15 +46,11 @@ func getSongName(completion: @escaping (NSAppleEventDescriptor)->()) {
         end if
     
     """
-    var error: NSDictionary?
     
-    DispatchQueue.global(qos: .background).async {
-        if let scriptObject = NSAppleScript(source: myAppleScript) {
-            let outputString = scriptObject.executeAndReturnError(&error)
-            completion(outputString)
-        }
+    runAppleScript(myAppleScript) { output in
+        completion(output)
     }
-    
+
 }
 
 func toggleIsPlaying(completion: @escaping (NSAppleEventDescriptor)->()) {
@@ -56,14 +66,8 @@ func toggleIsPlaying(completion: @escaping (NSAppleEventDescriptor)->()) {
         end using terms from
         """
     
-    var error: NSDictionary?
-    
-    
-    DispatchQueue.global(qos: .background).async {
-        if let scriptObject = NSAppleScript(source: myAppleScript) {
-            let outputString = scriptObject.executeAndReturnError(&error)
-            completion(outputString)
-        }
+    runAppleScript(myAppleScript) { output in
+        completion(output)
     }
 }
 
@@ -77,15 +81,7 @@ func nextSong(completion: @escaping ()->()) {
         end tell
         """
     
-    var error: NSDictionary?
-    
-    
-    DispatchQueue.global(qos: .background).async {
-        if let scriptObject = NSAppleScript(source: myAppleScript) {
-            let outputString = scriptObject.executeAndReturnError(&error)
-            completion()
-        }
-    }
+    runAppleScript(myAppleScript) { _ in }
 }
 
 
@@ -96,15 +92,7 @@ func prevSong(completion: @escaping ()->()) {
         end tell
         """
     
-    var error: NSDictionary?
-    
-    
-    DispatchQueue.global(qos: .background).async {
-        if let scriptObject = NSAppleScript(source: myAppleScript) {
-            let outputString = scriptObject.executeAndReturnError(&error)
-            completion()
-        }
-    }
+    runAppleScript(myAppleScript) { _ in }
 }
 
 
@@ -115,13 +103,7 @@ func getIsPlaying(completion: @escaping (NSAppleEventDescriptor)->()) {
         end using terms from
         """
     
-    var error: NSDictionary?
-    
-    DispatchQueue.global(qos: .background).async {
-        
-        if let scriptObject = NSAppleScript(source: myAppleScript) {
-            let outputString = scriptObject.executeAndReturnError(&error)
-            completion(outputString)
-        }
+    runAppleScript(myAppleScript) { output in
+        completion(output)
     }
 }
