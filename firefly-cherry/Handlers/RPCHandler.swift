@@ -12,7 +12,7 @@ var rpc = SwordRPC(appId: "1148902945304363072")
 
 var connected = false
 
-func setupRPC(pomocount: Int, state: PomodoroState, countdownTime: Int = 0, paused: Bool = false, showPaused: Bool = true) {
+func setupRPC(pomocount: Int, pomototal: Int, state: PomodoroState, countdownTime: Int = 0, paused: Bool = false, showPaused: Bool = true) {
 
     
     if (paused && !showPaused) {
@@ -46,7 +46,7 @@ func setupRPC(pomocount: Int, state: PomodoroState, countdownTime: Int = 0, paus
 //    }
 //
     
-    presence.state = "\(String(repeating: "🍅", count: pomocount)) (\(String(pomocount)) of 4)"
+    presence.state = "\(String(repeating: "🍅", count: (pomocount - 1) % pomototal + 1)) (\(String( (pomocount - 1) % pomototal + 1)) of \(String(pomototal)))"
     
     if (!paused) {
         presence.timestamps.start = Date() //Int(Date().timeIntervalSince1970)

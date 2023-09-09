@@ -189,7 +189,7 @@ struct PomodoroView: View {
             return
         }
         
-        if (useDiscordRPC) {setupRPC(pomocount: pomodoro_count, state: current_state, countdownTime: duration, showPaused: dRPCWhilePaused)}
+        if (useDiscordRPC) {setupRPC(pomocount: pomodoro_count, pomototal: pomodoroIterations, state: current_state, countdownTime: duration, showPaused: dRPCWhilePaused)}
         
         timerRunning = true
         _ = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
@@ -212,7 +212,7 @@ struct PomodoroView: View {
     func pauseTimer() {
         timerRunning = false
         
-        if (useDiscordRPC) { setupRPC(pomocount: pomodoro_count, state: current_state, paused: true, showPaused: dRPCWhilePaused) }
+        if (useDiscordRPC) { setupRPC(pomocount: pomodoro_count, pomototal: pomodoroIterations, state: current_state, paused: true, showPaused: dRPCWhilePaused) }
     }
     // MARK: time's up
     func nextTimerState() {
