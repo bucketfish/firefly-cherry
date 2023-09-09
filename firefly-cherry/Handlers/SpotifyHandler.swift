@@ -111,7 +111,7 @@ func prevSong(completion: @escaping ()->()) {
 func getIsPlaying(completion: @escaping (NSAppleEventDescriptor)->()) {
     let myAppleScript = """
         using terms from application "Spotify"
-            return (player state of application "Spotify" is paused)
+            return (player state of application "Spotify" is playing)
         end using terms from
         """
     

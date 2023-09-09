@@ -14,7 +14,6 @@ struct SpotifyNowPlayingView: View {
     @AppStorage("useCustomFont") private var useCustomFont = false
     @AppStorage("customFontName") private var customFontName = ""
 
-    
     @AppStorage("showNextPrev") private var showNextPrev = true
 
     @State var songName = ""
@@ -51,12 +50,11 @@ struct SpotifyNowPlayingView: View {
                     
                     Text("\(songName)")
                         .font(.custom(useCustomFont ? customFontName : "", size: 18, relativeTo: .title2))
-
                         .onAppear { periodicallyUpdateSongName() }
                     
                     Button {
                         toggleIsPlaying { returnIsPlaying in
-                            isPlaying = returnIsPlaying.booleanValue ?? false
+                            isPlaying = returnIsPlaying.booleanValue
                         }
 
                     } label: {
@@ -85,11 +83,10 @@ struct SpotifyNowPlayingView: View {
         }
         else {
             Text("spotify is not running!")
-                .font(.title2)
+                .font(.custom(useCustomFont ? customFontName : "", size: 18, relativeTo: .title2))
                 .foregroundColor(Color("PomodoroText"))
                 .padding(.vertical, 5)
                 .opacity(0.8)
-            
         }
         
     }
@@ -104,7 +101,7 @@ struct SpotifyNowPlayingView: View {
         getPlaySongAccess()
         
         getIsPlaying { value in
-            isPlaying = !value.booleanValue
+            isPlaying = value.booleanValue
         }
         
         updateSongName()
@@ -113,9 +110,7 @@ struct SpotifyNowPlayingView: View {
             if (!spotifyRunning) {
                 timer.invalidate()
             }
-            
             updateSongName()
-
         }
     }
 }

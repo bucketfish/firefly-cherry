@@ -22,7 +22,6 @@ struct SettingsView: View {
                 }
                 .tag(Tabs.general)
             PomodoroSettingsView()
-                
                 .tabItem {
                     Label("pomodoro", systemImage: "clock")
                 }
@@ -38,11 +37,9 @@ struct SettingsView: View {
                     Label("integrations", systemImage: "app.connected.to.app.below.fill")
                 }
                 .tag(Tabs.integrations)
-
         }
-    
         .padding(20)
-        .frame(minWidth: 400)
+        .frame(minWidth: 500)
         
     }
 }
