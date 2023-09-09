@@ -19,7 +19,9 @@ struct UpdateCheckView: View {
         HStack {
             
             Button {
-                openURL(URL(string: updateUrl)!)
+                if let url = URL(string: updateUrl) {
+                    openURL(url)
+                }
 
             } label: {
                 HStack {

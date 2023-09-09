@@ -36,11 +36,11 @@ class CustomSoundPlayer: ObservableObject {
     }
     
     func setPremadeSound(_ soundName:String) {
-        self.soundPath = URL(fileURLWithPath: Bundle.main.path(forResource: soundName + ".mp3", ofType:nil)!)
-        
-        if let soundPath = self.soundPath {
-            player = try? AVAudioPlayer(contentsOf: soundPath, fileTypeHint: AVFileType.mp3.rawValue)
-            player?.volume = self.volume
+    
+        if let bundlePath = Bundle.main.path(forResource: soundName + ".mp3", ofType:nil) {
+                self.soundPath = URL(fileURLWithPath: bundlePath)
+                player = try? AVAudioPlayer(contentsOf: URL(fileURLWithPath: bundlePath), fileTypeHint: AVFileType.mp3.rawValue)
+                player?.volume = self.volume
         }
     }
     

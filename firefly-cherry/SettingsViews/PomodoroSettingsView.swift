@@ -67,7 +67,7 @@ struct PomodoroSettingsView: View {
                         Text("marimba").tag(TimerSounds.marimba)
                     }
                     .onChange(of: timerSound) { _ in
-                        // when chosen, set it & test!
+                        // when chosen, set it & test
                         soundPlayer.setPremadeSound(timerSound.rawValue)
                         soundPlayer.play()
                     }

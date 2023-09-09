@@ -16,24 +16,25 @@ struct Version: Identifiable, Codable {
 
 func getLatestVersion(completion: @escaping (String, String) -> ()) {
     // NO WAY I GOT THIS WORKING
-    let url = URL(string:"https://api.github.com/repos/bucketfish/firefly-cherry/releases/latest")!
-    
-    URLSession.shared.dataTask(with: url){
-        data, response, error in
-        
-        let decoder = JSONDecoder()
-        
-        if let data = data{
-            do{
-                let data = try decoder.decode(Version.self, from: data)
-                completion(data.tag_name, data.html_url)
+    if let url = URL(string:"https://api.github.com/repos/bucketfish/firefly-cherry/releases/latest") {
+        URLSession.shared.dataTask(with: url){
+            data, response, error in
             
-            }catch{
-                print(error)
-                completion("", "")
+            let decoder = JSONDecoder()
+            
+            if let data = data{
+                do{
+                    let data = try decoder.decode(Version.self, from: data)
+                    completion(data.tag_name, data.html_url)
+                
+                }catch{
+                    print(error)
+                    completion("", "")
+                }
             }
-        }
-    }.resume()
+        }.resume()
+    }
+    
 }
 
 

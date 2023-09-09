@@ -30,7 +30,9 @@ struct GeneralSettingsView: View {
                     }
                 
                 Button("download latest update") {
-                    openURL(URL(string: updateUrl)!)
+                    if let url = URL(string:updateUrl) {
+                        openURL (url)
+                    }
                 }
                 .disabled(!needsUpdate)
                 
