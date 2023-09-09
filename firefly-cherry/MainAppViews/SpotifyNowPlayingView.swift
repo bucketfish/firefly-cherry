@@ -96,13 +96,14 @@ struct SpotifyNowPlayingView: View {
             songName = result.atIndex(1)?.stringValue ?? ""
             songUrl = result.atIndex(2)?.stringValue ?? ""
         }
-    }
-    func periodicallyUpdateSongName() {
-        getPlaySongAccess()
         
         getIsPlaying { value in
             isPlaying = value.booleanValue
         }
+        
+    }
+    func periodicallyUpdateSongName() {
+        getPlaySongAccess()
         
         updateSongName()
         
