@@ -19,6 +19,11 @@ struct IntegrationsSettingsView: View {
         Form {
             Section (header: Text("discord").bold()) {
                 Toggle("use discord rich presence", isOn: $useDiscordRPC)
+                    .onChange(of: useDiscordRPC) { _ in
+                        if (!useDiscordRPC) {
+                            disconnectRPC()
+                        }
+                    }
                 
                 Toggle("show rich presence while paused", isOn: $dRPCWhilePaused)
                     .disabled(!useDiscordRPC)
