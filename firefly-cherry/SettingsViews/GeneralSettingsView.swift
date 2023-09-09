@@ -10,6 +10,8 @@ import SwiftUI
 struct GeneralSettingsView: View {
     @Environment(\.openURL) var openURL
     
+    @AppStorage("showUpdates") private var showUpdates = true
+    
     @State var needsUpdate = false
     @State var updateUrl = ""
     
@@ -31,6 +33,9 @@ struct GeneralSettingsView: View {
                     openURL(URL(string: updateUrl)!)
                 }
                 .disabled(!needsUpdate)
+                
+                Toggle("tell me when there's an update!", isOn: $showUpdates)
+                
             }
         }
     }

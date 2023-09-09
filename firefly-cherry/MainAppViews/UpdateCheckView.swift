@@ -17,6 +17,7 @@ struct UpdateCheckView: View {
     @AppStorage("customFontName") private var customFontName = ""
     
     
+    
     var body: some View {
         
         HStack {

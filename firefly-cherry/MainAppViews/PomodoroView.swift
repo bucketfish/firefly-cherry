@@ -9,6 +9,9 @@ import SwiftUI
 
 struct PomodoroView: View {
     
+    @AppStorage("showUpdates") private var showUpdates = true
+
+    
     @AppStorage("useCustomFont") private var useCustomFont = false
     @AppStorage("customFontName") private var customFontName = ""
 
@@ -160,7 +163,7 @@ struct PomodoroView: View {
                 }
                 
                 
-                UpdateCheckView()
+                if (showUpdates) { UpdateCheckView() }
             }
             
             
