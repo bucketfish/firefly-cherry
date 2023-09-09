@@ -51,6 +51,12 @@ struct PomodoroSettingsView: View {
             
             Section (header: Text("timer alarm").bold()) {
                 Toggle("custom alarm sound", isOn: $useCustomTimerSound)
+                    .onChange(of: useCustomTimerSound) { _ in
+                        if (useCustomTimerSound) {
+                            soundPlayer.setSound(customTimerSoundPath)
+                        }
+                        else {soundPlayer.setPremadeSound(timerSound.rawValue)}
+                    }
                 
                 if (!useCustomTimerSound) {
                     // choose among default sounds
