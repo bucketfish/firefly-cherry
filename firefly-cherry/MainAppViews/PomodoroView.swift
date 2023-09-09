@@ -21,6 +21,7 @@ struct PomodoroView: View {
     @AppStorage("timerBottomPadding") private var timerBottomPadding: Double = 10
     
     @AppStorage("pomodoroSymbol") private var pomodoroSymbol = "🍅"
+    @AppStorage("pomodoroIterations") private var pomodoroIterations = 4
 
     @AppStorage("pomodoroLength") private var pomodoroLength = 25
     @AppStorage("shortbreakLength") private var shortbreakLength = 5
@@ -194,11 +195,11 @@ struct PomodoroView: View {
             }
             else {
                 duration -= 1
-            }
-            
-            if (duration <= 0) {
-                timer.invalidate()
-                nextTimerState()
+                
+                if (duration <= 0) {
+                    timer.invalidate()
+                    nextTimerState()
+                }
             }
             
         }
@@ -216,8 +217,8 @@ struct PomodoroView: View {
         
         if (current_state == .pomodoro) {
             pomodoro_count += 1
-        
-            if (pomodoro_count > 4) {
+            
+            if ((pomodoro_count - 1) % pomodoroIterations == 0) {
                 changeTimerState(.long_break)
             }
             else {
@@ -247,7 +248,6 @@ struct PomodoroView: View {
         if (autostart) {
             runTimer()
         }
-        
     }
     
     func stateLength(_ state: PomodoroState) -> Int {
