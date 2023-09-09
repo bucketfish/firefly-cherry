@@ -9,6 +9,8 @@ import Foundation
 import AVFoundation
 
 class CustomSoundPlayer: ObservableObject {
+    static let shared = CustomSoundPlayer()
+    
     var player:AVAudioPlayer?
     var soundPath: URL? = nil
     var volume: Float = 0.5

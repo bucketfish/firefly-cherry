@@ -24,13 +24,14 @@ struct PomodoroView: View {
     
     @AppStorage("progressBarType") private var progressBarType: ProgressBarType = .circular
     
-    @EnvironmentObject var soundPlayer: CustomSoundPlayer
+//    @EnvironmentObject var soundPlayer: CustomSoundPlayer
+    let soundPlayer = CustomSoundPlayer.shared
+    
     @EnvironmentObject var style: PomodoroStyle
     
     @State var timerRunning = false
     
     @ObservedObject var pomodoroClock = PomodoroClock()
-    
     
     var body: some View {
         ZStack {
@@ -148,6 +149,9 @@ struct PomodoroView: View {
                 // MARK: updates view
                 if (showUpdates) { UpdateCheckView() }
             }
+        }
+        .onAppear {
+//            pomodoroClock.soundPlayer = $soundPlayer
         }
     }
 }

@@ -22,7 +22,9 @@ struct PomodoroSettingsView: View {
     @AppStorage("timerVolume") private var timerVolume = 0.5
     
     // global sound player!
-    @EnvironmentObject var soundPlayer: CustomSoundPlayer
+//    @EnvironmentObject var soundPlayer: CustomSoundPlayer
+    let soundPlayer = CustomSoundPlayer.shared
+
     
     var body: some View {
         Form {
