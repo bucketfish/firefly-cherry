@@ -13,7 +13,8 @@ class BackgroundStyle: ObservableObject {
     @AppStorage("imageType") var imageType: ImageType = .premade
     @AppStorage("webImageLink") var webImageLink: String = ""
     @AppStorage("localImageLink") var localImageLink: URL?
-    @AppStorage("backgroundImageIndex") var backgroundImageIndex = 0
+    @AppStorage("premadeBackgroundImage") var premadeBackgroundImage: BackgroundImages = .sunset
+
     
     init() {}
 

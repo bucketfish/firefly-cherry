@@ -10,8 +10,6 @@ import SwordRPC
 
 var rpc = SwordRPC(appId: "1148902945304363072")
 
-var connected = false
-
 var rpcConnected = false
 
 func connectRPC(pomoCount: Int, pomoIterations: Int, currentState: PomodoroState, endingTime: Date, isPaused: Bool = false, showWhenPaused: Bool = true) {
@@ -51,54 +49,9 @@ func connectRPC(pomoCount: Int, pomoIterations: Int, currentState: PomodoroState
 
 func disconnectRPC() {
     rpc.disconnect()
-    connected = false
+    rpcConnected = false
 }
 
-
-//
-//func connectRPCOld(pomocount: Int, pomototal: Int, state: PomodoroState, countdownTime: Int = 0, paused: Bool = false, showPaused: Bool = true) {
-//
-//    if (paused && !showPaused) {
-//        rpc.disconnect()
-//        connected = false
-//        return
-//    }
-//
-//
-//    if (!connected) {
-//        rpc = SwordRPC(appId: "1148902945304363072")
-//        print(rpc.connect())
-//        connected = true
-//    }
-//
-//    //    rpc.onConnect { rpc in
-//
-//    var presence = RichPresence()
-//
-//    switch state {
-//    case .pomodoro:
-//        presence.details = "pomodoro timer" + (paused ? " / paused" : "")
-//    case .short_break:
-//        presence.details = "short break" + (paused ? " / paused" : "")
-//    case .long_break:
-//        presence.details = "long break" + (paused ? " / paused" : "")
-//    }
-////
-////    if (paused) {
-////        presence.details += " / paused"
-////    }
-////
-//
-//    presence.state = "\(String(repeating: "🍅", count: (pomocount - 1) % pomototal + 1)) (\(String( (pomocount - 1) % pomototal + 1)) of \(String(pomototal)))"
-//
-//    if (!paused) {
-//        presence.timestamps.start = Date() //Int(Date().timeIntervalSince1970)
-//        presence.timestamps.end = Date() + TimeInterval(countdownTime) //Int((Date() + TimeInterval(countdownTime)).timeIntervalSince1970) // 600s = 10m
-//        //        }
-//
-//    }
-//
-//
 //    //      presence.assets.largeImage = "map1"
 //    //      presence.assets.largeText = "Map 1"
 //    //      presence.assets.smallImage = "character1"
@@ -110,12 +63,6 @@ func disconnectRPC() {
 //    //      presence.secrets.join = "joinSecret"
 //    //      presence.secrets.joinRequest = "joinRequestSecret"
 //
-//    rpc.setPresence(presence)
-//
-//
-//}
-
-
 
 
 

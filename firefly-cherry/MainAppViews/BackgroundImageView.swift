@@ -8,12 +8,7 @@
 import SwiftUI
 
 struct BackgroundImageView: View {
-
     @EnvironmentObject var backgroundStyle: BackgroundStyle
-    
-    var backgroundImages = [
-        "sample_background", "sunset"
-    ]
 
     var body: some View {
         if (backgroundStyle.imageType == .web) {
@@ -41,7 +36,7 @@ struct BackgroundImageView: View {
         }
         
         else {
-            Image(backgroundImages[backgroundStyle.backgroundImageIndex])
+            Image(backgroundStyle.premadeBackgroundImage.rawValue)
                 .resizable()
                 .scaledToFill()
                 .ignoresSafeArea()

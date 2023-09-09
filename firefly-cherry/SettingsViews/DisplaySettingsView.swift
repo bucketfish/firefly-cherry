@@ -46,7 +46,7 @@ struct DisplaySettingsView: View {
     @AppStorage("imageType") private var imageType: ImageType = .premade
     @AppStorage("webImageLink") private var webImageLink: String = ""
     @AppStorage("localImageLink") private var localImageLink: URL?
-    @AppStorage("backgroundImageIndex") private var backgroundImageIndex = 0
+    @AppStorage("premadeBackgroundImage") private var premadeBackgroundImage: BackgroundImages = .sunset
     
     @AppStorage("progressBarType") private var progressBarType: ProgressBarType = .circular
     @AppStorage("progressBarOpacity") private var progressBarOpacity = 0.5
@@ -127,11 +127,9 @@ struct DisplaySettingsView: View {
                 .pickerStyle(.segmented)
                 
                 if (imageType == .premade) {
-                    Picker(selection: $backgroundImageIndex, label: Text("choose image")) {
-                        ForEach(0..<backgroundImages.count) {count in
-                            HStack {
-                                Text(self.backgroundImages[count])
-                            }
+                    Picker(selection: $premadeBackgroundImage, label: Text("choose image")) {
+                        ForEach(BackgroundImages.allCases, id: \.id) { image in
+                            Text(image.rawValue)
                         }
                     }
                 }

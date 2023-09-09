@@ -18,10 +18,6 @@ struct PomodoroBackgroundCircularProgressView: View {
     
     @AppStorage("progressBarWidth") private var progressBarWidth: Double = 8
     @AppStorage("progressBarRadius") private var progressBarRadius: Double = 500
-
-    // in seconds
-//    @Binding var state: PomodoroState
-//    @Binding var current: Int
     
     @Binding var percentage: Double
     var body: some View {
@@ -32,7 +28,6 @@ struct PomodoroBackgroundCircularProgressView: View {
                 )
             
             Circle()
-//                .trim(from: 0, to: CGFloat((stateLength(state) * 60 - current)) / CGFloat(stateLength(state) * 60))
                 .trim(from: 0, to: CGFloat(percentage))
                 .stroke(
                     Color("PomodoroText"),
@@ -61,9 +56,3 @@ struct PomodoroBackgroundCircularProgressView: View {
         }
     }
 }
-//
-//struct PomodoroBackgroundCircularProgressView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        PomodoroBackgroundCircularProgressView(current: .constant(12 * 60))
-//    }
-//}
