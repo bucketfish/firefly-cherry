@@ -10,21 +10,14 @@ import SwiftUI
 struct PomodoroView: View {
     
     @AppStorage("showUpdates") private var showUpdates = true
-
+    
     @AppStorage("enableSpotify") private var enableSpotify = true
-
+    
     @AppStorage("cornerRadius") private var cornerRadius: Double = 10
     @AppStorage("customColor") private var customColorString: String = ""
     
     @AppStorage("timerTopPadding") private var timerTopPadding: Double = 10
     @AppStorage("timerBottomPadding") private var timerBottomPadding: Double = 10
-    
-    @AppStorage("pomodoroSymbol") private var pomodoroSymbol = "🍅"
-    @AppStorage("pomodoroIterations") private var pomodoroIterations = 4
-
-    @AppStorage("pomodoroLength") private var pomodoroLength = 25
-    @AppStorage("shortbreakLength") private var shortbreakLength = 5
-    @AppStorage("longbreakLength") private var longbreakLength = 30
     
     @AppStorage("useDiscordRPC") private var useDiscordRPC = true
     @AppStorage("dRPCWhilePaused") private var dRPCWhilePaused = true
@@ -33,86 +26,87 @@ struct PomodoroView: View {
     
     @EnvironmentObject var soundPlayer: CustomSoundPlayer
     @EnvironmentObject var style: PomodoroStyle
-
-    @State var duration = 25 * 60
-    @State var current_state: PomodoroState = .pomodoro
-    @State var pomodoro_count = 1
     
     @State var timerRunning = false
+    
+    @ObservedObject var pomodoroClock = PomodoroClock()
     
     
     var body: some View {
         ZStack {
-            
+            // MARK: circular progress bar
             if (progressBarType == .circular) {
-                PomodoroBackgroundCircularProgressView(state: $current_state, current: $duration)
+                PomodoroBackgroundCircularProgressView(percentage: $pomodoroClock.timePercentage)
             }
-
+            
             VStack (spacing: 0){
-                
-                Text("\(String(repeating: pomodoroSymbol, count: pomodoro_count))")
+                // MARK: pomodoro counter
+                Text(pomodoroClock.displayPomodoroIterations)
                     .customFont(.title)
                     .foregroundColor(Color("PomodoroText"))
                     .padding(.bottom, 10)
                 
+                // MARK: top progress bar
                 if (progressBarType == .top) {
-                    PomodoroBackgroundBarProgressView(state: $current_state, current: $duration)
+                    PomodoroBackgroundBarProgressView(percentage: $pomodoroClock.timePercentage)
                         .padding(.bottom, 10)
                 }
                 
-                    HStack {
-                        Button("pomodoro") {
-                            changeTimerState(.pomodoro, autostart: false)
-                        }
-                        .buttonStyle(PomodoroStateButton(selected: current_state == .pomodoro))
-                        .padding([.leading, .top, .bottom], 5)
-                        
-                        Button("short break") {
-                            changeTimerState(.short_break, autostart: false)
-                        }
-                        .buttonStyle(PomodoroStateButton(selected: current_state == .short_break))
-                        .padding(.vertical, 5)
-
-                        
-                        Button("long break") {
-                            changeTimerState(.long_break, autostart: false)
-                        }
-                        .buttonStyle(PomodoroStateButton(selected: current_state == .long_break))
-                        .padding([.trailing, .top, .bottom], 5)
-
-                        
+                // MARK: state buttons
+                HStack {
+                    Button("pomodoro") {
+                        pomodoroClock.changeTimerState(.pomodoro, autostart: false)
                     }
-                    .background(stringToColor(string: customColorString))
-                    .cornerRadius(cornerRadius)
+                    .buttonStyle(PomodoroStateButton(selected: pomodoroClock.currentPomodoroState == .pomodoro))
+                    .padding([.leading, .top, .bottom], 5)
                     
-                Text(formatTimer(duration))
+                    Button("short break") {
+                        pomodoroClock.changeTimerState(.short_break, autostart:false)
+                    }
+                    .buttonStyle(PomodoroStateButton(selected: pomodoroClock.currentPomodoroState == .short_break))
+                    .padding(.vertical, 5)
+                    
+                    
+                    Button("long break") {
+                        pomodoroClock.changeTimerState(.long_break, autostart: false)
+                    }
+                    .buttonStyle(PomodoroStateButton(selected: pomodoroClock.currentPomodoroState == .long_break))
+                    .padding([.trailing, .top, .bottom], 5)
+                    
+                    
+                }
+                .background(stringToColor(string: customColorString))
+                .cornerRadius(cornerRadius)
+                
+                // MARK: main timer
+                Text(pomodoroClock.displayTime)
                     .customFont(.largeTitle, customSize: 120)
                     .bold()
                     .padding(.bottom, timerBottomPadding)
                     .padding(.top, timerTopPadding)
                     .foregroundColor(Color("PomodoroText"))
-                    .onAppear {
-                        duration = pomodoroLength * 60
-                    }
                 
+                // MARK: spotify view
                 if (enableSpotify == true) {
                     SpotifyNowPlayingView()
                         .padding(.top, -10)
                         .padding(.bottom, 10)
                 }
                 
+                // MARK: middle progress bar
                 if (progressBarType == .middle) {
-                    PomodoroBackgroundBarProgressView(state: $current_state, current: $duration)
+                    PomodoroBackgroundBarProgressView(percentage: $pomodoroClock.timePercentage)
                         .padding(.bottom, 10)
                 }
                 
+                // MARK: timer start button
                 HStack {
-                    Button(timerRunning ? "pause" : "start") {
-                        switch timerRunning {
+                    Button(pomodoroClock.timerRunning ? "pause" : "start") {
+                        switch pomodoroClock.timerRunning {
                         case true:
-                            pauseTimer()
+                            pomodoroClock.pauseTimer()
                         case false:
-                            runTimer()
+                            pomodoroClock.runTimer()
                         }
                     }
                     .buttonStyle(PomodoroStartButton())
@@ -120,12 +114,12 @@ struct PomodoroView: View {
                     
                     
                     Button {
-                        resetTimer()
+                        pomodoroClock.resetTimer()
                     } label: {
                         Image(systemName: "arrow.counterclockwise")
                             .font(.largeTitle)
                             .foregroundColor(Color("PomodoroText"))
-
+                        
                     }
                     .buttonStyle(.plain)
                     .padding(.horizontal, 5)
@@ -136,7 +130,7 @@ struct PomodoroView: View {
                         Image(systemName: "gearshape.fill")
                             .font(.largeTitle)
                             .foregroundColor(Color("PomodoroText"))
-
+                        
                     }
                     .buttonStyle(.plain)
                     .padding(.trailing, 5)
@@ -145,121 +139,17 @@ struct PomodoroView: View {
                 .background(stringToColor(string: customColorString))
                 .cornerRadius(cornerRadius)
                 
+                // MARK: bottom progress bar
                 if (progressBarType == .bottom) {
-                    PomodoroBackgroundBarProgressView(state: $current_state, current: $duration)
+                    PomodoroBackgroundBarProgressView(percentage: $pomodoroClock.timePercentage)
                         .padding(.top, 10)
                 }
                 
-                
+                // MARK: updates view
                 if (showUpdates) { UpdateCheckView() }
             }
-            
-            
-//            ZStack {
-//                UpdateCheckView()
-//                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
-//            }
-            
-            
-            
-
-
-        }
-
-
-
-        
-
-    }
-    
-    func formatTimer(_ duration:Int) -> String {
-        let minutes = Int(duration / 60);
-        let seconds = Int(duration % 60);
-        
-        return (minutes < 10 ? "0" + String(minutes) : String(minutes)) + ":" + (seconds < 10 ? "0" + String(seconds) : String(seconds))
-    }
-    
-    func runTimer() {
-        if (timerRunning == true) {
-            return
-        }
-        
-        if (useDiscordRPC) {setupRPC(pomocount: pomodoro_count, pomototal: pomodoroIterations, state: current_state, countdownTime: duration, showPaused: dRPCWhilePaused)}
-        
-        timerRunning = true
-        _ = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
-            
-            if (!timerRunning) {
-                timer.invalidate()
-            }
-            else {
-                duration -= 1
-                
-                if (duration <= 0) {
-                    timer.invalidate()
-                    nextTimerState()
-                }
-            }
-            
         }
     }
-    
-    func pauseTimer() {
-        timerRunning = false
-        
-        if (useDiscordRPC) { setupRPC(pomocount: pomodoro_count, pomototal: pomodoroIterations, state: current_state, paused: true, showPaused: dRPCWhilePaused) }
-    }
-    // MARK: time's up
-    func nextTimerState() {
-        
-        soundPlayer.play()
-        
-        if (current_state == .pomodoro) {
-            pomodoro_count += 1
-            
-            if ((pomodoro_count - 1) % pomodoroIterations == 0) {
-                changeTimerState(.long_break)
-            }
-            else {
-                changeTimerState(.short_break)
-            }
-        }
-        else {
-            changeTimerState(.pomodoro)
-        }
-    }
-    
-    func resetTimer() {
-        changeTimerState(current_state, autostart: false);
-    }
-    
-    func changeTimerState(_ state: PomodoroState, autostart:Bool = true) {
-        
-        if (timerRunning) {
-            pauseTimer()
-        }
-        
-        current_state = state
-        
-        duration = stateLength(state) * 60
-        
-        
-        if (autostart) {
-            runTimer()
-        }
-    }
-    
-    func stateLength(_ state: PomodoroState) -> Int {
-        switch state {
-        case .pomodoro:
-            return pomodoroLength
-        case .short_break:
-            return shortbreakLength
-        case .long_break:
-            return longbreakLength
-        }
-    }
-
 }
 
 struct PomodoroView_Previews: PreviewProvider {

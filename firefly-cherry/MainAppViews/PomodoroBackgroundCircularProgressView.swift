@@ -20,8 +20,10 @@ struct PomodoroBackgroundCircularProgressView: View {
     @AppStorage("progressBarRadius") private var progressBarRadius: Double = 500
 
     // in seconds
-    @Binding var state: PomodoroState
-    @Binding var current: Int
+//    @Binding var state: PomodoroState
+//    @Binding var current: Int
+    
+    @Binding var percentage: Double
     var body: some View {
         ZStack {
             Circle()
@@ -30,7 +32,8 @@ struct PomodoroBackgroundCircularProgressView: View {
                 )
             
             Circle()
-                .trim(from: 0, to: CGFloat((stateLength(state) * 60 - current)) / CGFloat(stateLength(state) * 60))
+//                .trim(from: 0, to: CGFloat((stateLength(state) * 60 - current)) / CGFloat(stateLength(state) * 60))
+                .trim(from: 0, to: CGFloat(percentage))
                 .stroke(
                     Color("PomodoroText"),
                     style: StrokeStyle(

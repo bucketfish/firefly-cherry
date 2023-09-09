@@ -18,11 +18,16 @@ struct PomodoroBackgroundBarProgressView: View {
 
     
     @AppStorage("progressBarOpacity") private var progressBarOpacity = 0.5
+    
+    
 
 
     // in seconds
-    @Binding var state: PomodoroState
-    @Binding var current: Int
+//    @Binding var state: PomodoroState
+//    @Binding var current: Int
+    
+    @Binding var percentage: Double
+    
     var body: some View {
         
         let pomodoroStyle = PomodoroBarProgressStyle(
@@ -31,7 +36,7 @@ struct PomodoroBackgroundBarProgressView: View {
                     height: progressBarWidth + 2
                 )
         
-        ProgressView(value: CGFloat((stateLength(state) * 60 - current)) / CGFloat(stateLength(state) * 60))
+        ProgressView(value: CGFloat(percentage))
             .progressViewStyle(pomodoroStyle)
             .frame(width: 500)
             .opacity(progressBarOpacity)
@@ -61,6 +66,7 @@ struct PomodoroBarProgressStyle<Stroke: ShapeStyle, Background: ShapeStyle>: Pro
     var height: CGFloat = 6
     var borderWidth: CGFloat = 1
     var animation: Animation = .easeInOut
+    
     
     func makeBody(configuration: Configuration) -> some View {
         let fractionCompleted = configuration.fractionCompleted ?? 0
@@ -94,8 +100,8 @@ struct PomodoroBarProgressStyle<Stroke: ShapeStyle, Background: ShapeStyle>: Pro
     }
 }
 
-struct PomodoroBackgroundBarProgressView_Previews: PreviewProvider {
-    static var previews: some View {
-        PomodoroBackgroundBarProgressView(state: .constant(.pomodoro), current: .constant(12*60))
-    }
-}
+//struct PomodoroBackgroundBarProgressView_Previews: PreviewProvider {
+//    static var previews: some View {
+////        PomodoroBackgroundBarProgressView(state: .constant(.pomodoro), current: .constant(12*60))
+//    }
+//}
