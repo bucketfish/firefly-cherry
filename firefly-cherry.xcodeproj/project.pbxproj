@@ -44,7 +44,6 @@
 		4CFE55952AA8A76E00299450 /* ImageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFE55942AA8A76E00299450 /* ImageType.swift */; };
 		4CFE55972AA8A78700299450 /* ColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFE55962AA8A78700299450 /* ColorScheme.swift */; };
 		4CFE55992AA8A8E500299450 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 4CFE55982AA8A8E500299450 /* .gitignore */; };
-		4CFE559C2AA8AE3600299450 /* Subsonic in Frameworks */ = {isa = PBXBuildFile; productRef = 4CFE559B2AA8AE3600299450 /* Subsonic */; };
 		4CFE559F2AA8AF0900299450 /* marimba.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4CFE559E2AA8AF0900299450 /* marimba.mp3 */; };
 		4CFE55A12AA8AF0E00299450 /* harp.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4CFE55A02AA8AF0E00299450 /* harp.mp3 */; };
 		4CFE55A32AA8AF7D00299450 /* TimerSounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFE55A22AA8AF7D00299450 /* TimerSounds.swift */; };
@@ -121,7 +120,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CFE559C2AA8AE3600299450 /* Subsonic in Frameworks */,
 				4C2744412AA8964700DFD5E0 /* SwordRPC in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -325,7 +323,6 @@
 			name = "firefly-cherry";
 			packageProductDependencies = (
 				4C2744402AA8964700DFD5E0 /* SwordRPC */,
-				4CFE559B2AA8AE3600299450 /* Subsonic */,
 			);
 			productName = "firefly-cherry";
 			productReference = 4CD8DA682AA83F0C0077D9B9 /* firefly-cherry.app */;
@@ -400,7 +397,6 @@
 			);
 			mainGroup = 4CD8DA5F2AA83F0C0077D9B9;
 			packageReferences = (
-				4CD8DAA82AA8676C0077D9B9 /* XCRemoteSwiftPackageReference "Subsonic" */,
 			);
 			productRefGroup = 4CD8DA692AA83F0C0077D9B9 /* Products */;
 			projectDirPath = "";
@@ -800,26 +796,10 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		4CD8DAA82AA8676C0077D9B9 /* XCRemoteSwiftPackageReference "Subsonic" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/twostraws/Subsonic";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.2.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
 /* Begin XCSwiftPackageProductDependency section */
 		4C2744402AA8964700DFD5E0 /* SwordRPC */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SwordRPC;
-		};
-		4CFE559B2AA8AE3600299450 /* Subsonic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 4CD8DAA82AA8676C0077D9B9 /* XCRemoteSwiftPackageReference "Subsonic" */;
-			productName = Subsonic;
 		};
 /* End XCSwiftPackageProductDependency section */
 

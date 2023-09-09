@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Subsonic
 import AVFoundation
 
 struct PomodoroSettingsView: View {

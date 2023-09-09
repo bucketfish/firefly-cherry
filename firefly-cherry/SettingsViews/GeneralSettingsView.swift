@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Subsonic
 
 struct GeneralSettingsView: View {
     @Environment(\.openURL) var openURL
