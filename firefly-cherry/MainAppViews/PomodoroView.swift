@@ -24,7 +24,7 @@ struct PomodoroView: View {
     
     let soundPlayer = CustomSoundPlayer.shared
     
-    @ObservedObject var pomodoroClock = PomodoroClock()
+    @StateObject var pomodoroClock = PomodoroClock()
     
     var body: some View {
         ZStack {
