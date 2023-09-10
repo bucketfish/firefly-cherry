@@ -31,9 +31,20 @@ func connectRPC(pomoCount: Int, pomoIterations: Int, currentState: PomodoroState
     
     // set current details on presence
     switch currentState {
-    case .pomodoro: presence.details = "pomodoro timer" + (isPaused ? " / paused" : "")
-    case .short_break: presence.details = "short break" + (isPaused ? " / paused" : "")
-    case .long_break: presence.details = "long break" + (isPaused ? " / paused" : "")
+    case .pomodoro:
+        presence.details = "pomodoro timer" + (isPaused ? " / paused" : "")
+        presence.assets.smallImage = "pomodoro_big"
+        presence.assets.smallText = "pomodoro"
+
+    case .short_break:
+        presence.details = "short break" + (isPaused ? " / paused" : "")
+        presence.assets.smallImage = "break_big"
+        presence.assets.smallText = "short break"
+
+    case .long_break:
+        presence.details = "long break" + (isPaused ? " / paused" : "")
+        presence.assets.smallImage = "break_big"
+        presence.assets.smallText = "long break"
     }
     
     // update pomodoro state
@@ -46,7 +57,7 @@ func connectRPC(pomoCount: Int, pomoIterations: Int, currentState: PomodoroState
     
     // show assets :)
     presence.assets.largeImage = "bigicon"
-    presence.assets.largeText = "firefly-cherry pomodoro"
+    presence.assets.largeText = "firefly-cherry"
 
     
     rpc.setPresence(presence)
