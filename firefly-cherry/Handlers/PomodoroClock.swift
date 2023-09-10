@@ -33,6 +33,8 @@ class PomodoroClock: ObservableObject {
     let dcf = DateComponentsFormatter()
     
     let soundPlayer = CustomSoundPlayer.shared
+    
+    var timer: Timer?
 
     
     // MARK: init
@@ -99,9 +101,10 @@ class PomodoroClock: ObservableObject {
         // setup timer, end time, current time
         self.timerRunning = true
         self.currentStateEndTime =
-        pausedDurationLeft.isZero ?
-        Date() + self.getStateLength(self.currentPomodoroState) :
-        Date() + pausedDurationLeft
+            pausedDurationLeft.isZero ?
+            Date() + self.getStateLength(self.currentPomodoroState) :
+            Date() + pausedDurationLeft
+        
         self.currentUpdatedTime = Date()
         self.updateDisplayTime()
         
@@ -111,11 +114,11 @@ class PomodoroClock: ObservableObject {
         }
         
         // update time every second
-        var curTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
+        self.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
             
             // stop the timer if it's stopped. well.
             if (!self.timerRunning) {
-                timer.invalidate()
+                self.timer?.invalidate()
             }
             
             else {
@@ -125,15 +128,17 @@ class PomodoroClock: ObservableObject {
                 
                 // stop the timer if time's up!!
                 if self.currentUpdatedTime >= self.currentStateEndTime {
-                    timer.invalidate()
+                    self.timer?.invalidate()
                     self.soundPlayer.play()
                     if (self.currentPomodoroState == .pomodoro) { self.increasePomoCount() }
                     self.changeTimerState(self.getNextTimerState(self.currentPomodoroCount))
                 }
             }
         }
-        RunLoop.current.add(curTimer, forMode: .common)
-        curTimer.tolerance = 0.1
+        if let timer = self.timer {
+            RunLoop.current.add(timer, forMode: .common)
+        }
+        self.timer?.tolerance = 0.1
     }
     
     
