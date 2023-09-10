@@ -6,15 +6,11 @@
 <img src="https://cdn.discordapp.com/attachments/950558891366830141/1149583585930653736/Screenshot_2023-09-08_at_1.54.35_PM.png" width="300"></img>
 
 features ✨
-- custom backgrounds
-- different sounds to choose from & more coming soon
-- custom pomodoro timings
-- discord rich presence!
+- customise everything — backgrounds, fonts, timer sounds, progress bars
+- discord rich presence <3
 - spotify "now playing" integration 🎵
 
 coming soon 🌱
-- ability to upload custom timer sounds
-- custom pomodoro iterations
 - pomodoro & focus stats
 - todo-lists & focus goals
 - background noise (white/brown noise, rain, etc)
