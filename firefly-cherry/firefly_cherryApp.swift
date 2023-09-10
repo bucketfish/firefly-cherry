@@ -18,9 +18,7 @@ struct firefly_cherryApp: App {
     @AppStorage("customTimerSoundPath") private var customTimerSoundPath: URL?
     @AppStorage("timerVolume") private var timerVolume = 0.5
 
-//    @StateObject var soundPlayer = CustomSoundPlayer()
     let soundPlayer = CustomSoundPlayer.shared
-
 
     @Environment(\.colorScheme) private var defaultScheme
 
@@ -30,7 +28,6 @@ struct firefly_cherryApp: App {
                 .accentColor(Color("PomodoroText"))
                 .preferredColorScheme(colorScheme == ColorScheme.system ? defaultScheme : colorScheme == ColorScheme.dark ? .dark : .light)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
-//                .environmentObject(soundPlayer)
                 .onDisappear {
                     NSApplication.shared.terminate(self)
                 }
