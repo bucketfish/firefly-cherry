@@ -8,23 +8,14 @@
 import SwiftUI
 
 struct PomodoroBackgroundCircularProgressView: View {
-    @AppStorage("customColor") private var customColorString: String = ""
-
-    @AppStorage("pomodoroLength") private var pomodoroLength = 25
-    @AppStorage("shortbreakLength") private var shortbreakLength = 5
-    @AppStorage("longbreakLength") private var longbreakLength = 30
-    
-    @AppStorage("progressBarOpacity") private var progressBarOpacity = 0.5
-    
-    @AppStorage("progressBarWidth") private var progressBarWidth: Double = 8
-    @AppStorage("progressBarRadius") private var progressBarRadius: Double = 500
+    @EnvironmentObject var style: PomodoroStyle
     
     @Binding var percentage: Double
     var body: some View {
         ZStack {
             Circle()
                 .stroke(
-                    stringToColor(string: customColorString), lineWidth: progressBarWidth
+                    stringToColor(string: style.customColorString), lineWidth: style.progressBarWidth
                 )
             
             Circle()
@@ -32,7 +23,7 @@ struct PomodoroBackgroundCircularProgressView: View {
                 .stroke(
                     Color("PomodoroText"),
                     style: StrokeStyle(
-                        lineWidth: progressBarWidth,
+                        lineWidth: style.progressBarWidth,
                         lineCap: .round
                         )
                 )
@@ -40,19 +31,9 @@ struct PomodoroBackgroundCircularProgressView: View {
             
             
         }
-        .frame(width: progressBarRadius, height: progressBarRadius)
-        .opacity(progressBarOpacity)
+        .frame(width: style.progressBarRadius, height: style.progressBarRadius)
+        .opacity(style.progressBarOpacity)
         
     }
-    
-    func stateLength(_ state: PomodoroState) -> Int {
-        switch state {
-        case .pomodoro:
-            return pomodoroLength
-        case .short_break:
-            return shortbreakLength
-        case .long_break:
-            return longbreakLength
-        }
-    }
+
 }

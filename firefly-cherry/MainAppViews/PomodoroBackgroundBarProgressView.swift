@@ -8,53 +8,26 @@
 import SwiftUI
 
 struct PomodoroBackgroundBarProgressView: View {
-    @AppStorage("customColor") private var customColorString: String = ""
-
-    @AppStorage("pomodoroLength") private var pomodoroLength = 25
-    @AppStorage("shortbreakLength") private var shortbreakLength = 5
-    @AppStorage("longbreakLength") private var longbreakLength = 30
     
-    @AppStorage("progressBarWidth") private var progressBarWidth: Double = 8
-
-    
-    @AppStorage("progressBarOpacity") private var progressBarOpacity = 0.5
-    
-    
-
-
-    // in seconds
-//    @Binding var state: PomodoroState
-//    @Binding var current: Int
+    @EnvironmentObject var style: PomodoroStyle
     
     @Binding var percentage: Double
     
     var body: some View {
         
         let pomodoroStyle = PomodoroBarProgressStyle(
-                    stroke: stringToColor(string: customColorString),
+                    stroke: stringToColor(string: style.customColorString),
                     fill: Color("PomodoroText"),
-                    height: progressBarWidth + 2
+                    height: style.progressBarWidth + 2
                 )
         
         ProgressView(value: CGFloat(percentage))
             .progressViewStyle(pomodoroStyle)
             .frame(width: 500)
-            .opacity(progressBarOpacity)
+            .opacity(style.progressBarOpacity)
 
     }
         
-
-    
-    func stateLength(_ state: PomodoroState) -> Int {
-        switch state {
-        case .pomodoro:
-            return pomodoroLength
-        case .short_break:
-            return shortbreakLength
-        case .long_break:
-            return longbreakLength
-        }
-    }
 }
 
 

@@ -10,7 +10,6 @@ import SwiftUI
 struct UpdateCheckView: View {
     @Environment(\.openURL) var openURL
     @State var needsUpdate = false
-    
     @State var updateUrl = ""    
     
     

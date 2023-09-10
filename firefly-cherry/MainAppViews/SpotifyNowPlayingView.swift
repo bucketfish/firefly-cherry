@@ -10,12 +10,6 @@ import SwiftUI
 struct SpotifyNowPlayingView: View {
     @EnvironmentObject var style: PomodoroStyle
     
-    @AppStorage("cornerRadius") private var cornerRadius: Double = 10
-    @AppStorage("customColor") private var customColorString: String = ""
-    
-//    @AppStorage("useCustomFont") private var useCustomFont = false
-//    @AppStorage("customFontName") private var customFontName = ""
-
     @AppStorage("showNextPrev") private var showNextPrev = true
 
     @State var songName = ""
@@ -47,7 +41,7 @@ struct SpotifyNowPlayingView: View {
                             .resizable()
                             .scaledToFill()
                             .frame(width: 25, height: 25)
-                            .cornerRadius(cornerRadius / 2)
+                            .cornerRadius(style.cornerRadius / 2)
                     } placeholder: {}
                     
                     Text("\(songName)")

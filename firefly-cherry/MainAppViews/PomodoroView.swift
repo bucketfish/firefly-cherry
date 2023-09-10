@@ -12,24 +12,18 @@ struct PomodoroView: View {
     
     @AppStorage("enableSpotify") private var enableSpotify = true
     
-    @AppStorage("cornerRadius") private var cornerRadius: Double = 10
-    @AppStorage("customColor") private var customColorString: String = ""
-    
-    @AppStorage("timerTopPadding") private var timerTopPadding: Double = 10
-    @AppStorage("timerBottomPadding") private var timerBottomPadding: Double = 10
-        
-    @AppStorage("progressBarType") private var progressBarType: ProgressBarType = .circular
-    
     @AppStorage("pomodoroSymbol") var pomodoroSymbol = "🍅"
     
     let soundPlayer = CustomSoundPlayer.shared
     
     @StateObject var pomodoroClock = PomodoroClock()
     
+    @EnvironmentObject var style: PomodoroStyle
+    
     var body: some View {
         ZStack {
             // MARK: circular progress bar
-            if (progressBarType == .circular) {
+            if (style.progressBarType == .circular) {
                 PomodoroBackgroundCircularProgressView(percentage: $pomodoroClock.timePercentage)
             }
             
@@ -41,7 +35,7 @@ struct PomodoroView: View {
                     .padding(.bottom, 10)
                 
                 // MARK: top progress bar
-                if (progressBarType == .top) {
+                if (style.progressBarType == .top) {
                     PomodoroBackgroundBarProgressView(percentage: $pomodoroClock.timePercentage)
                         .padding(.bottom, 10)
                 }
@@ -69,15 +63,15 @@ struct PomodoroView: View {
                     
                     
                 }
-                .background(stringToColor(string: customColorString))
-                .cornerRadius(cornerRadius)
+                .background(stringToColor(string: style.customColorString))
+                .cornerRadius(style.cornerRadius)
                 
                 // MARK: main timer
                 Text(pomodoroClock.displayTime)
                     .customFont(.largeTitle, customSize: 120)
                     .bold()
-                    .padding(.bottom, timerBottomPadding)
-                    .padding(.top, timerTopPadding)
+                    .padding(.bottom, style.timerBottomPadding)
+                    .padding(.top, style.timerTopPadding)
                     .foregroundColor(Color("PomodoroText"))
                 
                 // MARK: spotify view
@@ -88,7 +82,7 @@ struct PomodoroView: View {
                 }
                 
                 // MARK: middle progress bar
-                if (progressBarType == .middle) {
+                if (style.progressBarType == .middle) {
                     PomodoroBackgroundBarProgressView(percentage: $pomodoroClock.timePercentage)
                         .padding(.bottom, 10)
                 }
@@ -130,11 +124,11 @@ struct PomodoroView: View {
                     .padding(.trailing, 5)
                     .padding([.trailing, .top, .bottom], 5)
                 }
-                .background(stringToColor(string: customColorString))
-                .cornerRadius(cornerRadius)
+                .background(stringToColor(string: style.customColorString))
+                .cornerRadius(style.cornerRadius)
                 
                 // MARK: bottom progress bar
-                if (progressBarType == .bottom) {
+                if (style.progressBarType == .bottom) {
                     PomodoroBackgroundBarProgressView(percentage: $pomodoroClock.timePercentage)
                         .padding(.top, 10)
                 }
