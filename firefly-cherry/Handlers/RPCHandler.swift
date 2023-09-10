@@ -44,6 +44,11 @@ func connectRPC(pomoCount: Int, pomoIterations: Int, currentState: PomodoroState
         presence.timestamps.end = endingTime
     }
     
+    // show assets :)
+    presence.assets.largeImage = "bigicon"
+    presence.assets.largeText = "firefly-cherry pomodoro"
+
+    
     rpc.setPresence(presence)
 }
 
