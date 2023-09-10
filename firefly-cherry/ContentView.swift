@@ -22,12 +22,21 @@ struct ContentView: View {
     var body: some View {
         
         ZStack {
-            BackgroundImageView()
-                .environmentObject(backgroundStyle)
+            Color.clear
+                .ignoresSafeArea()
+                .background(
+                    BackgroundImageView()
+                        .environmentObject(backgroundStyle)
+                        .ignoresSafeArea()
+                        .scaledToFill()
+                )
             
             PomodoroView()
                 .environmentObject(style)
+            
+            OverlayView()
         }
+
     }
 }
         

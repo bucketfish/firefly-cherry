@@ -20,7 +20,6 @@ struct BackgroundImageView: View {
             } placeholder: {
                 ProgressView()
             }
-            .ignoresSafeArea()
         }
         
         else if (backgroundStyle.imageType == .local) {
@@ -32,14 +31,12 @@ struct BackgroundImageView: View {
             } placeholder: {
                 ProgressView()
             }
-            .ignoresSafeArea()
         }
         
         else {
             Image(backgroundStyle.premadeBackgroundImage.rawValue)
                 .resizable()
                 .scaledToFill()
-                .ignoresSafeArea()
         }
     }
 

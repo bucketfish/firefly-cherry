@@ -24,6 +24,7 @@
 		4CC2AF542AA9B8D700138E11 /* SpotifyHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC2AF532AA9B8D700138E11 /* SpotifyHandler.swift */; };
 		4CC2AF562AA9BB1300138E11 /* IntegrationsSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC2AF552AA9BB1300138E11 /* IntegrationsSettingsView.swift */; };
 		4CC2AF592AA9C6E400138E11 /* SpotifyNowPlayingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC2AF582AA9C6E400138E11 /* SpotifyNowPlayingView.swift */; };
+		4CC2CFEC2AAE04B3001C2AA5 /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC2CFEB2AAE04B3001C2AA5 /* OverlayView.swift */; };
 		4CD8DA6C2AA83F0C0077D9B9 /* firefly_cherryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD8DA6B2AA83F0C0077D9B9 /* firefly_cherryApp.swift */; };
 		4CD8DA6E2AA83F0C0077D9B9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD8DA6D2AA83F0C0077D9B9 /* ContentView.swift */; };
 		4CD8DA702AA83F0D0077D9B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CD8DA6F2AA83F0D0077D9B9 /* Assets.xcassets */; };
@@ -89,6 +90,7 @@
 		4CC2AF552AA9BB1300138E11 /* IntegrationsSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegrationsSettingsView.swift; sourceTree = "<group>"; };
 		4CC2AF572AA9BEAC00138E11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		4CC2AF582AA9C6E400138E11 /* SpotifyNowPlayingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyNowPlayingView.swift; sourceTree = "<group>"; };
+		4CC2CFEB2AAE04B3001C2AA5 /* OverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
 		4CD8DA682AA83F0C0077D9B9 /* firefly-cherry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "firefly-cherry.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CD8DA6B2AA83F0C0077D9B9 /* firefly_cherryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firefly_cherryApp.swift; sourceTree = "<group>"; };
 		4CD8DA6D2AA83F0C0077D9B9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -268,6 +270,7 @@
 				4CC2AF512AA99C0800138E11 /* PomodoroBackgroundBarProgressView.swift */,
 				4CC2AF582AA9C6E400138E11 /* SpotifyNowPlayingView.swift */,
 				4C4087072AAB1F900056DABA /* UpdateCheckView.swift */,
+				4CC2CFEB2AAE04B3001C2AA5 /* OverlayView.swift */,
 			);
 			path = MainAppViews;
 			sourceTree = "<group>";
@@ -465,6 +468,7 @@
 				4CD8DA782AA83F0D0077D9B9 /* firefly_cherry.xcdatamodeld in Sources */,
 				4C40870B2AAB1FC00056DABA /* UpdateCheckHandler.swift in Sources */,
 				4CC2AF522AA99C0800138E11 /* PomodoroBackgroundBarProgressView.swift in Sources */,
+				4CC2CFEC2AAE04B3001C2AA5 /* OverlayView.swift in Sources */,
 				4CD8DAAD2AA871D80077D9B9 /* RPCHandler.swift in Sources */,
 				4C12F5762AAC6D4900CB282B /* BackgroundStyle.swift in Sources */,
 				4CFE558F2AA8A70E00299450 /* DisplaySettingsView.swift in Sources */,
