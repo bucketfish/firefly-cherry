@@ -111,7 +111,7 @@ class PomodoroClock: ObservableObject {
         }
         
         // update time every second
-        _ = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
+        var curTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
             
             // stop the timer if it's stopped. well.
             if (!self.timerRunning) {
@@ -126,11 +126,14 @@ class PomodoroClock: ObservableObject {
                 // stop the timer if time's up!!
                 if self.currentUpdatedTime >= self.currentStateEndTime {
                     timer.invalidate()
+                    self.soundPlayer.play()
                     if (self.currentPomodoroState == .pomodoro) { self.increasePomoCount() }
                     self.changeTimerState(self.getNextTimerState(self.currentPomodoroCount))
                 }
             }
         }
+        RunLoop.current.add(curTimer, forMode: .common)
+        curTimer.tolerance = 0.1
     }
     
     
@@ -173,9 +176,7 @@ class PomodoroClock: ObservableObject {
     
     // MARK: get next timer state
     func getNextTimerState(_ pomoCount: Int) -> PomodoroState {
-        
-        self.soundPlayer.play()
-        
+                
         if (self.currentPomodoroState == .pomodoro) {
             if ((pomoCount - 1) % self.pomodoroIterations == 0) { return .long_break }
             else { return .short_break }
